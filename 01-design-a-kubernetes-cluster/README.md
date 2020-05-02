@@ -46,7 +46,25 @@ One benefit of using EKS is that it uses the High Availability-External etcd clu
 
 ## Steps
 
-1. Follow instructions, [Getting started with Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html), to install a Kubernetes cluster
+1. Follow instructions, [Getting started with Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html), to install a Kubernetes cluster; use all defaults
+
+2. Validate that Cluster is fully operational:
+
+```plaintext
+kubectl get nodes
+```
+
+3. List kubectl configuration; observe current context:
+
+```plaintext
+kubectl config view
+```
+
+4. Switch context:
+
+```plaintext
+kubectl config use-context XXXXX
+```
 
 **note**: At the time of this writing, the *eksctl* CLI tool had an issue that prevented me from using it.
 
