@@ -1,4 +1,4 @@
-# Installation, Configuration & Validation: Design a Kubernetes Cluster
+# Core Concepts: Understand the Kubernetes Cluster Architecture
 
 TODO: VIDEO
 
@@ -17,7 +17,6 @@ The worker node(s) host the Pods that are the components of the application work
 
 *- Kubernetes - [Kubernetes Components](https://kubernetes.io/docs/concepts/overview/components/)*
 
-
 In addition to Control Plane(s), Kubernetes clusters have etcd database(s):
 
 > Consistent and highly-available key value store used as Kubernetes' backing store for all cluster data.
@@ -34,7 +33,7 @@ Kubernetes supports a range of Cluster topologies, including two high availabili
 
 - (High Availability-External etcd) Multiple etcd hosts, multiple Control Plane Nodes; multiple Worker Nodes
 
-Before we create our Kubernetes Cluster, we need to create a network:
+Before we create our Kubernetes Cluster, we need to create a network to host the Nodes and/or etcd hosts:
 
 > Public and private subnets - This VPC has two public and two private subnets. One public and one private subnet are deployed to the same Availability Zone. The other public and private subnets are deployed to a second Availability Zone in the same Region. We recommend this option for all production deployments. This option allows you to deploy your worker nodes to private subnets and allows Kubernetes to deploy load balancers to the public subnets that can load balance traffic to pods running on worker nodes in the private subnets.
 
@@ -63,8 +62,10 @@ kubectl config view
 4. Switch context:
 
 ```plaintext
-kubectl config use-context XXXXX
+kubectl config use-context arn:aws:eks:us-east-1:143287522423:cluster/k8s-cka-tutorial
 ```
+
+**note**: Your context name will be different.
 
 **note**: At the time of this writing, the *eksctl* CLI tool had an issue that prevented me from using it.
 
