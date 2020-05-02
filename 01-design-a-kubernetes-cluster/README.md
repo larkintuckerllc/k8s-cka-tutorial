@@ -44,7 +44,7 @@ One benefit of using EKS is that it uses the High Availability-External etcd clu
 
 ![k8s networking](k8s-network.png)
 
-## Steps
+## Script
 
 1. Follow instructions, [Getting started with Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html), to install a Kubernetes cluster; use all defaults
 
@@ -68,4 +68,4 @@ kubectl config use-context XXXXX
 
 **note**: At the time of this writing, the *eksctl* CLI tool had an issue that prevented me from using it.
 
-**note**: While I did install the Kubernetes cluster using the AWS Management Console, I replicated the resultant cluster configuration in a Terraform configuration.
+**note**: While I did install the Kubernetes cluster using the AWS Management Console, I replicated the resultant cluster configuration in a Terraform configuration available in the *terraform* folder
