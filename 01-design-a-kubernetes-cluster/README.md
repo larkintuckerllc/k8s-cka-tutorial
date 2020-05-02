@@ -43,3 +43,11 @@ Before we create our Kubernetes Cluster, we need to create a network:
 One benefit of using EKS is that it uses the High Availability-External etcd cluster topology and supports the public / private network configuration:
 
 ![k8s networking](k8s-network.png)
+
+## Steps
+
+1. Follow instructions, [Getting started with Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html), to install a Kubernetes cluster
+
+**note**: At the time of this writing, the *eksctl* CLI tool had an issue that prevented me from using it.
+
+**note**: While I did install the Kubernetes cluster using the AWS Management Console, I replicated the resultant cluster configuration in a Terraform configuration.
