@@ -1,6 +1,4 @@
-# TODO: TITLE
-
-We begin this series by exploring the topic *Installation, Configuration & Validation: Design a Kubernetes Cluster*.
+# Installation, Configuration & Validation: Design a Kubernetes Cluster
 
 TODO: VIDEO
 
