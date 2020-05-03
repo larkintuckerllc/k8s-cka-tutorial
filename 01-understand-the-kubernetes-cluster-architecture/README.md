@@ -57,7 +57,7 @@ We now create an Amazon EKS cluster by following [Getting started with Amazon EK
 
 We also will want to deploy a Bastion host into the public subnet; e.g., launching an EC2 instance.
 
-**note**: While I did install the Kubernetes cluster using the AWS Management Console, I replicated the resultant cluster configuration in a Terraform configuration available in the *terraform* folder
+**note**: While I did install the Kubernetes cluster using the AWS Management Console, I replicated the resultant cluster configuration in a Terraform configuration available in the *terraform* folder.
 
 We validate that Cluster is fully operational:
 
@@ -65,13 +65,13 @@ We validate that Cluster is fully operational:
 kubectl get nodes
 ```
 
-List kubectl configuration; observe current context:
+We list our kubectl configuration; observe current context:
 
 ```plaintext
 kubectl config view
 ```
 
-Switch context:
+We switch context:
 
 ```plaintext
 kubectl config use-context arn:aws:eks:us-east-1:143287522423:cluster/k8s-cka-tutorial
@@ -79,4 +79,40 @@ kubectl config use-context arn:aws:eks:us-east-1:143287522423:cluster/k8s-cka-tu
 
 **note**: Your context name will be different.
 
-TODO: BASTION COMMANDS
+We wrap this up by running some troubleshooting commands on a Worker Node; we first add our PEM key to SSH Agent.
+
+```plaintext
+ssh-add ubuntu-laptop.pem
+```
+
+**note**: Your PEM file will be different.
+
+We can now login to our Bastion host with:
+
+```plaintext
+ssh -A ec2-user@3.80.176.141
+```
+
+**note**: Your IP address will be different.
+
+And from the Bastion host, we login to a Worker Node:
+
+```plaintext
+ssh 192.168.236.184
+```
+
+**note**: Your IP address will be different.
+
+We can confirm that we are indeed on a Worker Node by observing that is running the *kublet* service:
+
+```plaintext
+systemctl status kubelet
+```
+
+**note:** We will conver this in more detail later.
+
+We can also see that Docker is running a number of familiar containers:
+
+```plaintext
+docker container ls
+```
