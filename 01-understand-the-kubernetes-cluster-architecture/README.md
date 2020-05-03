@@ -2,7 +2,7 @@
 
 TODO: VIDEO
 
-## Concepts
+## Script
 
 We start with a basic understanding of Kubernetes:
 
@@ -43,30 +43,28 @@ One benefit of using EKS is that it uses the High Availability-External etcd clu
 
 ![k8s networking](k8s-network.png)
 
-## Script
+We now create an Amazon EKS cluster by following [Getting started with Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html);using all the defaults
 
-1. Follow instructions, [Getting started with Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html), to install a Kubernetes cluster; use all defaults
+**note**: At the time of this writing, the *eksctl* CLI tool had an issue that prevented me from using it.
 
-2. Validate that Cluster is fully operational:
+**note**: While I did install the Kubernetes cluster using the AWS Management Console, I replicated the resultant cluster configuration in a Terraform configuration available in the *terraform* folder
+
+We validate that Cluster is fully operational:
 
 ```plaintext
 kubectl get nodes
 ```
 
-3. List kubectl configuration; observe current context:
+List kubectl configuration; observe current context:
 
 ```plaintext
 kubectl config view
 ```
 
-4. Switch context:
+Switch context:
 
 ```plaintext
 kubectl config use-context arn:aws:eks:us-east-1:143287522423:cluster/k8s-cka-tutorial
 ```
 
 **note**: Your context name will be different.
-
-**note**: At the time of this writing, the *eksctl* CLI tool had an issue that prevented me from using it.
-
-**note**: While I did install the Kubernetes cluster using the AWS Management Console, I replicated the resultant cluster configuration in a Terraform configuration available in the *terraform* folder
