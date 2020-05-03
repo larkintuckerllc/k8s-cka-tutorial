@@ -109,10 +109,10 @@ We can confirm that we are indeed on a Worker Node by observing that is running 
 systemctl status kubelet
 ```
 
-**note:** We will conver this in more detail later.
-
-We can also see that Docker is running a number of familiar containers:
+We can also see that Docker is running a number of containers:
 
 ```plaintext
 docker container ls
 ```
+
+**note:** We will cover all this in more detail later.
