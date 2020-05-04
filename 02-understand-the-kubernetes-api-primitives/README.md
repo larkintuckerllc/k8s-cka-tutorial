@@ -1,4 +1,4 @@
-# Core Concepts: Understand the Kubernetes API Primatives
+# Core Concepts: Understand the Kubernetes API Primitives
 
 TODO: VIDEO
 
