@@ -48,6 +48,22 @@ We can get a list of the Namespaces with:
 kubectl get namespaces
 ```
 
+We see the following built-in Namespaces:
+
+* *default*: As the name suggests, this is the Namespace used when otherwise not specified
+
+* *kube-node-lease*: This is an internal Kubernetes Namespace
+
+* *kube-public*: This is a Namespace for objects that are generally readable; even by unauthenticated users
+
+* *kube-system*: This is an internal Kubernetes Namespace
+
+In addition to the built-in Namespaces, we can create additional ones:
+
+> Namespaces are intended for use in environments with many users spread across multiple teams, or projects. For clusters with a few to tens of users, you should not need to create or think about namespaces at all. Start using namespaces when you need the features they provide.
+
+*-Kubernetes-[Namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)*
+
 We can get a list of common objects across all namespaces with:
 
 ```plaintext
@@ -61,3 +77,50 @@ We can see that our Cluster already has a number of Kubernetes objects. Some, e.
 * [Amazon VPC Container Network Interface (CNI)](https://docs.aws.amazon.com/eks/latest/userguide/pod-networking.html): Supports native VPC networking
 
 As described in [Cluster Networking](https://kubernetes.io/docs/concepts/cluster-administration/networking/), Kubernetes Clusters require a Container Network Interface (CNI) Addon.
+
+Also notice that these, as well as most Addons, create objects in the *kube-system* Namespace.
+
+We can install another commonly used Addon, [metrics-server](https://github.com/kubernetes-sigs/metrics-server).
+
+**note:**: While AWS provides the same installation [instructions](
+https://docs.aws.amazon.com/eks/latest/userguide/metrics-server.html
+), there is an [issue](https://github.com/kubernetes-sigs/metrics-server/issues/247) (and resolution) with it.
+
+We first observe that without *metrics-server* installed, some built-in *kubectl* commands do not work, e.g.:
+
+```plaintext
+kubectl top nodes
+```
+
+We install *metrics-server*:
+
+```plaintext
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.3.6/components.yaml
+```
+
+**note:**: We will cover the *apply* command in more detail later.
+
+We can observe the added objects:
+
+```plaintext
+kubectl get all --all-namespaces
+```
+
+To resolve the issue, we can use the following fix:
+
+```plaintext
+kubectl edit deployment metrics-server -n kube-system
+```
+
+and adding these container arguments:
+
+```plaintext
+--kubelet-preferred-address-types=InternalIP
+--kubelet-insecure-tls=true
+```
+
+We try the built-in *kubectl* command again:
+
+```plaintext
+kubectl top nodes
+```
