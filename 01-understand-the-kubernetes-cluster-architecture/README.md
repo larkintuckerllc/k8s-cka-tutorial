@@ -1,6 +1,6 @@
 # Core Concepts: Understand the Kubernetes Cluster Architecture
 
-[Back][../]
+[Back](../)
 
 [![Core Concepts: Understand the Kubernetes Cluster Architecture](http://img.youtube.com/vi/lp9Swv1G5SI/0.jpg)](
 https://youtu.be/lp9Swv1G5SI)
