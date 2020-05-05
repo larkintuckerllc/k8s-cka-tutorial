@@ -14,7 +14,7 @@
 
 * Install and use kubeadm to install, configure, and manage Kubernetes clusters
 
-[![Installation, Configuration & Validation: Install Kubernetes Masters and Nodes](http://img.youtube.com/vi/XXXXXX/0.jpg)](XXXX)
+[![Installation, Configuration & Validation: Install Kubernetes Masters and Nodes](http://img.youtube.com/vi/D3mQl-FaFfQ/0.jpg)](https://youtu.be/D3mQl-FaFfQ)
 
 ## Script
 
@@ -79,7 +79,7 @@ Finally, on second host, follow instructions to join as Worker Node.
 Confirm operational:
 
 ```plaintext
-servicectl status docker
+systemctl status docker
 ```
 
 #### Kubelet (runs as an OS service)
@@ -89,7 +89,7 @@ servicectl status docker
 Confirm operational:
 
 ```plaintext
-servicectl status kubelet
+systemctl status kubelet
 ```
 
 #### kube-proxy (runs as a Pod)
