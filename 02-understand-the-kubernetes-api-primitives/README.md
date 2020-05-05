@@ -1,5 +1,7 @@
 # Core Concepts: Understand the Kubernetes API Primitives
 
+Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/larkintuckerllc/k8s-cka-tutorial)
+
 [![Core Concepts: Understand the Kubernetes API Primitives](http://img.youtube.com/vi/rwWiOC2j3vs/0.jpg)](https://youtu.be/rwWiOC2j3vs)
 
 ## Script
