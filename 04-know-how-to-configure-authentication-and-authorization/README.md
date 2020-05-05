@@ -68,3 +68,21 @@ grep -e client-certificate-data .kube/config | \
   base64 -d | \
   openssl x509 -noout -text
 ```
+
+### User Authorization (Quick Sidebar)
+
+Default behavior is to use Role Based Access Control (RBAC):
+
+```plaintext
+kubectl describe pod/kube-apiserver-ip-172-31-47-139 -n kube-system
+```
+
+Without getting into the details now, we can see that being in the group *system:masters* grants us full access to the sytem.
+
+```plaintext
+kubectl describe ClusterRoleBinding | grep system:masters
+
+kubectl describe ClusterRole cluster-admin
+```
+
+One key point is that RBAC authorization is additive; i.e., start with no access and then add access (no remove access). This is why we know we have full access.
