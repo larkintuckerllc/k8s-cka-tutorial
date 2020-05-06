@@ -5,3 +5,5 @@
 * [Core Concepts: Understand the Kubernetes API Primitives](02-understand-the-kubernetes-api-primitives)
 
 * [Installation, Configuration & Validation: Install Kubernetes Masters and Node](03-install-kubernetes-masters-and-nodes)
+
+* [Security: Know How to Configure Authentication and Authorization](04-know-how-to-configure-authentication-and-authorization)
