@@ -2,6 +2,8 @@
 
 Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/larkintuckerllc/k8s-cka-tutorial)
 
+**Addendum:** In the video, I confuse the Certificate Authority (CA) and the Server Certificates when extracting the certifcate data.  The extracted data is from the Server Certificate that is signed by the CA Certificate.
+
 [![Security: Know How to Configure Authenication and Authorization](http://img.youtube.com/vi/ZnkB1bIoOMo/0.jpg)](https://youtu.be/ZnkB1bIoOMo)
 
 ## Script
