@@ -106,7 +106,15 @@ kubectl describe ClusterRole cluster-admin
 
 ### Granting Access to Another Cluster Administrator
 
-**note:** These steps were courtesy of [Granting User Access to Your Kubernetes Cluster](https://www.openlogic.com/blog/granting-user-access-your-kubernetes-cluster).
+Broadly the steps are:
+
+1. Create private key and CSR
+
+2. Submit and approve CSR; Download certificate
+
+3. Add private key and certificate to *kubectl* config
+
+**note:** These detailed steps were courtesy of [Granting User Access to Your Kubernetes Cluster](https://www.openlogic.com/blog/granting-user-access-your-kubernetes-cluster).
 
 Create a private key and CSR (public key wrapped in a request):
 
@@ -134,6 +142,8 @@ spec:
   usages:
   - client auth
 ```
+
+**note:** The *groups* entry feels weird to me; but appears to be required.
 
 Submit the CSR:
 
