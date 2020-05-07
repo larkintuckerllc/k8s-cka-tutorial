@@ -54,7 +54,7 @@ Now we need to understand how AWS IAM credentials get mapped to K8S user and gro
 
 ### Granting Access to Another Cluster Administrator
 
-Say we had a second IAM user, e.g., *fred.developer* and we want to give that user full access. This amounts to editing a K8s configuration and add a section:
+Say we had a second IAM user, e.g., *fred* and we want to give that user full access. This amounts to editing a K8s configuration and add a section:
 
 ```plaintext
 kubectl edit configmap/aws-auth -n kube-system aws-auth
