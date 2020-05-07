@@ -64,15 +64,15 @@ We need to add a section:
 
 ```plaintext
   mapUsers: |
-    - userarn: arn:aws:iam::143287522423:user/fred.developer
-      username: fred.developer
+    - userarn: arn:aws:iam::143287522423:user/fred
+      username: fred
       groups:
         - system:masters
 ```
 
 **note:** This is an example of a more general K8s object, *ConfigMap* that we will explore more in depth later.
 
-With this in place, we can login to AWS CLI using *fred.developer* and validate that we still can use *kubectl*.
+With this in place, we can login to AWS CLI using *fred* and validate that we still can use *kubectl*.
 
 ```plaintext
 aws configure
