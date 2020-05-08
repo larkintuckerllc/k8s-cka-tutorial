@@ -12,6 +12,8 @@
 
 * [Security: Know How to Configure Authentication and Authorization](04-know-how-to-configure-authentication-and-authorization)
 
+* [Security: Know How to Configure Authentication and Authorization](05-know-how-to-configure-authentication-and-authorization)
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my prepration for the CKA certification exam.
