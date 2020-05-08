@@ -1,6 +1,6 @@
 # Certified Kubernetes Administrator (CKA) Tutorial
 
-TODO: Video
+[![Core Concepts: Understand the Kubernetes Cluster Architecture](http://img.youtube.com/vi/VdkDxGsQhmY/0.jpg)](https://youtu.be/VdkDxGsQhmY)
 
 ## Videos
 
