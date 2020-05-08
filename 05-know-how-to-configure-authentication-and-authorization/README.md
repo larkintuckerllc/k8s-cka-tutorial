@@ -57,7 +57,7 @@ Now we need to understand how AWS IAM credentials get mapped to K8S user and gro
 Say we had a second IAM user, e.g., *fred* and we want to give that user full access. This amounts to editing a K8s configuration and add a section:
 
 ```plaintext
-kubectl edit configmap/aws-auth -n kube-system aws-auth
+kubectl edit configmap/aws-auth -n kube-system
 ```
 
 We need to add a section:
@@ -159,7 +159,7 @@ Notice that there are four "user-facing", e.g., not system, ClusterRoles:
 * view: read
 
 ```plaintext
-kubectl describe clusterrole read
+kubectl describe clusterrole view
 ```
 
 ### RBAC RoleBinding and ClusterRoleBinding
@@ -171,7 +171,7 @@ kubectl describe clusterrole read
 We look at all the ClusterRoleBindings (most are system related):
 
 ```plaintext
-kubectl get clusterrollebindings
+kubectl get clusterrolebindings
 ```
 
 We then look at one of them in detail:
