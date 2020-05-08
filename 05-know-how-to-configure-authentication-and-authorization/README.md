@@ -2,7 +2,7 @@
 
 Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/larkintuckerllc/k8s-cka-tutorial)
 
-[![Security: Know How to Configure Authenication and Authorization](http://img.youtube.com/vi/XXXXX/0.jpg)](XXXXX)
+[![Security: Know How to Configure Authenication and Authorization](http://img.youtube.com/vi/1tQKe7X1BV4/0.jpg)](https://youtu.be/1tQKe7X1BV4)
 
 ## Script
 
