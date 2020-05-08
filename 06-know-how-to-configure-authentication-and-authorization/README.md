@@ -14,6 +14,12 @@ We will use a simple type of Kubernetes object to explore authorization:
 
 *-Kubernetes-[ConfigMaps](https://kubernetes.io/docs/concepts/configuration/configmap/)*
 
+Let us see a number of patterns of key (string) and value (also string) pairs:
+
+```plaintext
+kubectl apply -f example-cm.yaml
+````
+
 ### AWS IAM Setup
 
 This example, uses three IAM users:
