@@ -16,7 +16,7 @@
 
 ## Script
 
-First a disclaimer...  These videos were made as part of my prepration for the CKA certification exam.
+First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.
 
 The material is organizied around the official curriculum:
 
