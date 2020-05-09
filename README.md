@@ -16,6 +16,8 @@
 
 * [Security: Know How to Configure Authentication and Authorization](06-know-how-to-configure-authentication-and-authorization)
 
+* [Core Concepts: Understand the Kubernetes API Primitives](07-understand-the-kubernetes-api-primitives)
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.
