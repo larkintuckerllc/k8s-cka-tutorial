@@ -74,14 +74,37 @@ kubectl get cm example -o yaml
 
 ### Management Techniques
 
-Warning: A Kubernetes object should be managed using only one technique. Mixing and matching techniques for the same object results in undefined behavior.
+> Kubernetes objects should be managed using only one method at a time. Switching from one method to another is possible, but is a manual process.
+> Note: It is OK to use imperative deletion with declarative management.
+
+
 
 #### Imperative Commands
 
 TODO
 
 ```plaintext
-kubectl create deployment nginx --image nginx
+kubectl create configmap example \
+  --from-literal=a=apple \
+  --from-literal=b=banana
+```
+
+TODO
+
+```plaintext
+kubectl describe configmap example
+```
+
+TODO
+
+```plaintext
+kubectl get configmap example -o yaml
+```
+
+TODO
+
+```plaintext
+kubectl delete configmap example
 ```
 
 #### Imperative Object Configuration
@@ -89,21 +112,70 @@ kubectl create deployment nginx --image nginx
 TODO
 
 ```plaintext
-kubectl create -f nginx.yaml
+kubectl create -f example.yaml
 ```
 
-delete
+```plaintext
+kubectl get configmap example -o yaml
+```
 
-replace
+```plaintext
+kubectl replace -f example.yaml
+```
 
-#### Declarative object configuration
+```plaintext
+kubectl get configmap example -o yaml
+```
+
+```plaintext
+kubectl delete -f example.yaml
+```
+
+#### Declarative Object Configuration
 
 TODO
 
 ```plaintext
-kubectl apply -f nginx.yaml
+kubectl apply -f example.yaml
 ```
 
-diff
+TODO
 
-apply
+```plaintext
+kubectl get configmap example -o yaml
+```
+
+TODO
+
+```plaintext
+kubectl diff -f example.yaml
+```
+
+TODO
+
+```plaintext
+kubectl apply -f example.yaml
+```
+
+TODO
+
+```plaintext
+kubectl get configmap example -o yaml
+```
+
+#### Declarative Object Configuration Details
+
+Folders
+
+```plaintext
+kubectl create configmap example \
+  --from-literal=a=apple \
+  --from-literal=b=banana \
+  --dry-run \
+  -o yaml
+```
+
+How to clear server-defaulted fields or fields set by other writers
+Fields that do not appear in the configuration file can be cleared by setting their values to null and then applying the configuration file. For fields defaulted by the server, this triggers re-defaulting the values.
+
+Changing management methods
