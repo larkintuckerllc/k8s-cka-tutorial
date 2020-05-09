@@ -2,6 +2,16 @@
 
 Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/larkintuckerllc/k8s-cka-tutorial)
 
+**Addendum:** In the video, I forgot to discuss a trick to scaffolding a configuration file from an imperative command.  The representative example is as follows:
+
+```plaintext
+kubectl create configmap example \
+  --from-literal=a=apple \
+  --from-literal=b=banana \
+  --dry-run \
+  -o yaml
+```
+
 [![Core Concepts: Understand the Kubernetes API Primitives](http://img.youtube.com/vi/lj6vf6NsmvY/0.jpg)](https://youtu.be/lj6vf6NsmvY)
 
 ## Script
