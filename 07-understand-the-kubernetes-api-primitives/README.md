@@ -48,6 +48,12 @@ kubectl get cm example -o yaml
 kubectl get node ip-192-168-190-200.ec2.internal -o yaml
 ```
 
+Example of using labels as selectors:
+
+```plaintext
+kubectl get nodes -L beta.kubernetes.io/os=linux
+```
+
 > The metadata is organized around the concept of an application. Kubernetes is not a platform as a service (PaaS) and doesn’t have or enforce a formal notion of an application. Instead, applications are informal and described with metadata. The definition of what an application contains is loose.
 
 ![Recommended Labels](recommended-labels.jpg)
