@@ -64,3 +64,14 @@ kubectl kustomze project-base/prod
 
 #### Generating Resources
 
+> ConfigMap and Secret hold config or sensitive data that are used by other Kubernetes objects, such as Pods. The source of truth of ConfigMap or Secret are usually from somewhere else, such as a .properties file or a ssh key file. 
+
+
+*-Kubernetes-[Declarative Management of Kubernetes Objects Using Kustomize](https://kubernetes.io/docs/tasks/manage-kubernetes-objects/kustomization/)*
+
+See example in *project-cm*.
+
+```plaintext
+kubectl kustomize project-cm
+```
+
