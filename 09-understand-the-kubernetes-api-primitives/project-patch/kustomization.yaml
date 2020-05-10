@@ -1,0 +1,9 @@
+nameSuffix: "-project"
+commonLabels:
+  app.kubernetes.io/name: project
+  app.kubernetes.io/instance: project
+  app.kubernetes.io/version: 0.1.0
+resources:
+- example.yaml
+patchesStrategicMerge:
+- patch.yaml
