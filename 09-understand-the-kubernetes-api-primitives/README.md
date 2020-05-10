@@ -61,3 +61,6 @@ kubectl kustomze project-base/dev
 ```plaintext
 kubectl kustomze project-base/prod
 ```
+
+#### Generating Resources
+
