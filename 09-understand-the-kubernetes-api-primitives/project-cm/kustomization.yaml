@@ -1,7 +1,8 @@
 configMapGenerator:
 - name: example
-  files:
-  - application.properties
+  literals:
+  - a=apple
+  - b=banana
 nameSuffix: "-project"
 commonLabels:
   app.kubernetes.io/name: project
