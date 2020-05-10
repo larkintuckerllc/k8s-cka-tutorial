@@ -20,6 +20,8 @@
 
 * [Core Concepts: Understand the Kubernetes API Primitives](08-understand-the-kubernetes-api-primitives)
 
+* [Core Concepts: Understand the Kubernetes API Primitives](09-understand-the-kubernetes-api-primitives)
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.
