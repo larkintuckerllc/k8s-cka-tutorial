@@ -2,6 +2,8 @@
 
 Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/larkintuckerllc/k8s-cka-tutorial)
 
+**Addendum:** In the video I suggested that one needed to install Kustomize separately.  This is not the case as of the most recent versions of Kubernetes CLI as it is built-in to kubectl.
+
 [![Core Concepts: Understand the Kubernetes API Primitives](http://img.youtube.com/vi/jBS6iq08Qx8/0.jpg)](https://youtu.be/jBS6iq08Qx8)
 
 ## Script
