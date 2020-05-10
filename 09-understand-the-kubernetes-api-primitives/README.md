@@ -12,13 +12,25 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 *-Kubernetes-[Declarative Management of Kubernetes Objects Using Kustomize](https://kubernetes.io/docs/tasks/manage-kubernetes-objects/kustomization/)*
 
+Somewhat overlaps with the functionality of Helm.
+
 #### Setting Cross-Cutting Fields
 
 > It is quite common to set cross-cutting fields for all Kubernetes resources in a project. Some use cases for setting cross-cutting fields
 
 *-Kubernetes-[Declarative Management of Kubernetes Objects Using Kustomize](https://kubernetes.io/docs/tasks/manage-kubernetes-objects/kustomization/)*
 
-TODO
+Replicate the Name and Label example; looking at *project* folder.
+
+```plaintext
+kubectl kustomize project
+```
+
+Then apply:
+
+```plaintext
+kubectl apply -k project
+```
 
 #### Patching
 
@@ -26,7 +38,13 @@ TODO
 
 *-Kubernetes-[Declarative Management of Kubernetes Objects Using Kustomize](https://kubernetes.io/docs/tasks/manage-kubernetes-objects/kustomization/)*
 
-TODO
+The use of the term "patch" implies (at least to me) that this feature is intended to allow for incremental updates to an application over time.
+
+Examine *project-patch* folder:
+
+```plaintext
+kubectl kustomize project-patch
+```
 
 #### Bases and Overlays
 
@@ -34,3 +52,12 @@ TODO
 
 *-Kubernetes-[Declarative Management of Kubernetes Objects Using Kustomize](https://kubernetes.io/docs/tasks/manage-kubernetes-objects/kustomization/)*
 
+This feature appears to allow for different varients of an application; much like Helm Releases.
+
+```plaintext
+kubectl kustomze project-base/dev
+```
+
+```plaintext
+kubectl kustomze project-base/prod
+```
