@@ -41,6 +41,18 @@ Do example of editing *hello-pod.yaml* by adding a container and try to upgrade 
 helm upgrade dev hello-pod
 ```
 
+### Pod Events
+
+> Lastly, you see a log of recent events related to your Pod. The system compresses multiple identical events by indicating the first and last time it was seen and the number of times it was seen. “From” indicates the component that is logging the event, “SubobjectPath” tells you which object (e.g. container within the pod) is being referred to, and “Reason” and “Message” tell you what happened.
+
+*-Kubernetes-[Application Introspection and Debugging](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-application-introspection/)*
+
+```plaintext
+kubectl describe pod hello-dev
+```
+
+**note:** K8s only keeps recent events.
+
 ### Pod Status (Phase)
 
 We then inspect the Pod with particular attention to the status of the Pod:
@@ -111,7 +123,9 @@ kubectl describe pod hello-dev
 
 **note:** For now we will consider a container Running when the entry point is executed. While accurate in this particular example, it requires further discussion (later).
 
-**note:** For now we will consider a container Ready when it is in the Running state. While accurate in this particular example, it requires further discussion (later).
+> Ready tells you whether the container passed its last readiness probe. (In this case, the container does not have a readiness probe configured; the container is assumed to be ready if no readiness probe is configured.)
+
+*-Kubernetes-[Application Introspection and Debugging](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-application-introspection/)*
 
 > A PodSpec has a restartPolicy field with possible values Always, OnFailure, and Never. The default value is Always. restartPolicy applies to all Containers in the Pod. restartPolicy only refers to restarts of the Containers by the kubelet on the same node. Exited Containers that are restarted by the kubelet are restarted with an exponential back-off delay (10s, 20s, 40s …) capped at five minutes, and is reset after ten minutes of successful execution. As discussed in the Pods document, once bound to a node, a Pod will never be rebound to another node.
 
