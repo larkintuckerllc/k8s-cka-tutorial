@@ -22,6 +22,8 @@
 
 * [Core Concepts: Understand the Kubernetes API Primitives](09-understand-the-kubernetes-api-primitives)
 
+* [Application Lifecycle Management: Know Various Ways to Configure Applications](10-know-various-ways-to-configure-applications)
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.
