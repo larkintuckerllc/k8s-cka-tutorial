@@ -19,10 +19,26 @@ As we have seen before, the *hello-pod* folder was scaffolded using *helm create
 
 Let us look at the *Pod* configuration.
 
+**note:** This example uses an image from a public repository. The EKS setup automatically enables access to Elastic Container Registry (ECR) too.
+
 And then create the Pod with:
 
 ```plaintext
 helm install dev hello-pod
+```
+
+> Like individual application containers, Pods are considered to be relatively ephemeral (rather than durable) entities. As discussed in pod lifecycle, Pods are created, assigned a unique ID (UID), and scheduled to nodes where they remain until termination (according to restart policy) or deletion. If a Node dies, the Pods scheduled to that node are scheduled for deletion, after a timeout period. A given Pod (as defined by a UID) is not “rescheduled” to a new node; instead, it can be replaced by an identical Pod, with even the same name if desired, but with a new UID (see replication controller for more details).
+
+*-Kubernetes-[Pods](https://kubernetes.io/docs/concepts/workloads/pods/pod/)*
+
+> Pods are the fundamental building block of Kubernetes applications. Since Pods are intended to be disposable and replaceable, you cannot add a container to a Pod once it has been created. Instead, you usually delete and replace Pods in a controlled fashion using deployments.
+
+*-Kubernetes-[Ephemeral Containers](https://kubernetes.io/docs/concepts/workloads/pods/ephemeral-containers/)*
+
+Do example of editing *hello-pod.yaml* by adding a container and try to upgrade using:
+
+```plaintext
+helm upgrade dev hello-pod
 ```
 
 ### Pod Status (Phase)
@@ -92,6 +108,8 @@ This leads us to examine the Pod's Containers in more detail:
 ```plaintext
 kubectl describe pod hello-dev
 ```
+
+**note:** For now we will consider a container Running when the entry point is executed. While accurate in this particular example, it requires further discussion (later).
 
 **note:** For now we will consider a container Ready when it is in the Running state. While accurate in this particular example, it requires further discussion (later).
 
