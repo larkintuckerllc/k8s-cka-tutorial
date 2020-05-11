@@ -194,3 +194,24 @@ In addition to the image, the Container provides a writable layer. This is why w
 —Docker—[About Storage Drivers](https://docs.docker.com/storage/storagedriver/)
 
 **note:** It is important to note that this writable layer does not persist across container restarts; we will talk about Volumes later.
+
+### Under the Hood
+
+Confirm which Node Pod is running on:
+
+```plaintext
+kubectl describe pod hello-dev
+```
+
+SSH, using Bastion, to Node.
+
+```plaintext
+sudo -i
+docker container ls | grep hello
+```
+
+### Cleanup
+
+```plaintext
+helm uninstall dev
+```
