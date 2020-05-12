@@ -8,7 +8,7 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 ### Not Scheduled (No Node)
 
-TODO: IMAGE
+![Not Scheduled](not-scheduled.png)
 
 Review *not-scheduled*:
 
@@ -28,7 +28,7 @@ Init containers are exactly like regular containers, except:
 
 *-Kubernetes-[Init Containers](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/)*
 
-TODO: IMAGE
+![Not Initialized](not-initialized.png)
 
 Review *not-initialized*:
 
@@ -44,7 +44,7 @@ Install, inspect, uninstall.
 
 ### Not Initialized 3 (Second Bad Cmd)
 
-TODO: IMAGE
+![Not Initialized 3](not-initialized-3.png)
 
 Review *not-initialized-3*:
 
@@ -52,7 +52,7 @@ Install, inspect, uninstall.
 
 ### Not Container Ready (No Image)
 
-TODO: IMAGE
+![Not Container Ready](not-container-ready.png)
 
 Review *not-container-ready*:
 
@@ -60,7 +60,7 @@ Install, inspect, uninstall.
 
 ### Not Container Ready 2 (Bad Cmd)
 
-TODO: IMAGE
+![Not Container Ready 2](not-container-ready-2.png)
 
 Review *not-container-ready-2*:
 
@@ -120,7 +120,7 @@ Probes a number of fields that you can use to more precisely control the behavio
 
 *-Kubernetes-[Configure Liveness, Readiness and Startup Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)*
 
-TODO: IMAGE
+![Not Container Ready 3](not-container-ready-3.png)
 
 Review *not-container-ready-3*:
 
@@ -133,7 +133,7 @@ Install, inspect, uninstall.
 
 *-Kubernetes-[Pod Lifecycle](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle)*
 
-TODO: IMAGE
+![Not Ready](not-ready.png)
 
 Review *not-ready*:
 
@@ -141,7 +141,7 @@ Install, inspect, uninstall.
 
 ### Ready
 
-TODO: IMAGE
+![Ready](ready.png)
 
 Review *ready*:
 
