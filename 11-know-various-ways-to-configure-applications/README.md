@@ -66,6 +66,22 @@ Review *not-container-ready-2*:
 
 Install, inspect, uninstall.
 
+### Not Container Ready 2.5 (postStart)
+
+> Analogous to many programming language frameworks that have component lifecycle hooks, such as Angular, Kubernetes provides Containers with lifecycle hooks. The hooks enable Containers to be aware of events in their management lifecycle and run code implemented in a handler when the corresponding lifecycle hook is executed.
+
+* *PostStart*: This hook executes immediately after a container is created.
+
+* *PreStop*: This hook is called immediately before a container is terminated due to an API request or management event such as liveness probe failure, preemption, resource contention and others.
+
+*-Kubernetes-[Pod Lifecycle](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle)*
+
+**note:** Same state as previous; just different reason.
+
+Review *not-container-ready-2*:
+
+Install, inspect, uninstall.
+
 ### Not Container Ready 3 (Probe)
 
 First we need to understand probes:
