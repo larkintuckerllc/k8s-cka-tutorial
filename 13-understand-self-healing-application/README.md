@@ -57,8 +57,8 @@ Show RS accidentally aquiring a Pod:
 helm install dev aquiring
 ```
 
-TODO: SCALE
+Example of scaling ReplicaSet successfullly.
 
-TODO: CHANGE IMAGE
+Example of not upgrading Pods in ReplicaSet successfully; i.e., changing Pod template only effects future Pods.  Would have to scale to 0 and scale back up to change out version.
 
 TODO: HPA
