@@ -6,7 +6,7 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 * Troubleshoot: Troubleshoot Application Failure
 
-[![Networking: Understand Pod Networking Concepts](http://img.youtube.com/vi/XXXXX/0.jpg)](XXXXX)
+[![Networking: Understand Pod Networking Concepts](http://img.youtube.com/vi/BnsNv8b3LzE)/0.jpg)](https://youtu.be/BnsNv8b3LzE)
 
 ## Script
 

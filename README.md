@@ -26,6 +26,8 @@
 
 * [Application Lifecycle Management: Know Various Ways to Configure Applications](11-know-various-ways-to-configure-applications)
 
+* [Networking: Understand Pod Networking Concepts](12-understand-pod-networking-concepts)
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.
