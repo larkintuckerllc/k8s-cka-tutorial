@@ -122,30 +122,68 @@ ps -aux
 
 ### Cluster Networking
 
-Look at IP address of pod: 192.168.192.119
+Notice IP address.
 
-Look at AWS on Node EC2 and notice secondary IP address.
+```plaintext
+kubectl describe pod example-dev
+```
 
-Login to Node:
-curl 192.168.192.119
+```plaintext
+helm install another tester
+```
+
+kubectl exec example-another -it -- bash
+
+apt-get update
+apt-get install curl -y
+curl XXX.XXX.XXX.XXX
+
+How does does the traffic from this Pod (maybe on another Node) to this IP address make its way to the other Pod?
+
+### Cluster Networking (Under the Hood)
+
+Login to Node and curl address of Pod.
 
 How is traffic to this IP address getting to Pod?
 
-route
+![Network Diagram](network.png)
 
+First, notice that this IP address is allocated from the VPC subnet of the Nodes. This is because of the AWS Pod Networking add-on.
+
+Next, look at AWS on Node EC2 and notice secondary IP address.  This means that Node will listen on this IP address.
+
+```plaintext
 ifconfig
+```
 
-DIAGRAM
+```plaintext
+route
+```
 
 ### Pod IPC
+
+Let us change things up and look at another way to communicate between containers.
 
 > This page shows how to configure process namespace sharing for a pod. When process namespace sharing is enabled, processes in a container are visible to all other containers in that pod.
 > You can use this feature to configure cooperating containers, such as a log handler sidecar container, or to troubleshoot container images that don’t include debugging utilities like a shell.
 
 *-Kubernetes-[Share Process Namespace between Containers in a Pod](https://kubernetes.io/docs/tasks/configure-pod-container/share-process-namespace/)*
 
-kubectl logs example-dev --container httpd --follow
+```plaintext
+helm install dev ipc
+```
 
+Look at logs:
+
+```plaintext
+kubectl logs example-dev --container httpd --follow
+```
+
+```plaintext
+kubectl exec example-dev --container ubuntu -it -- bash
+```
+
+```plaintext
 ps -aux
 kill -HUP XX
-
+```
