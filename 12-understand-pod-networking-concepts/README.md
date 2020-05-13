@@ -50,33 +50,60 @@ A simple example:
 helm install dev networking
 ```
 
+Follow logs:
+
+```plaintext
+kubectl logs example-dev --container httpd --follow
+```
+
 Login into *httpd* container:
 
 ```plaintext
 kubectl exec example-dev -it --container httpd -- bash
 ```
 
-Look at HTML file:
+View web page:
+
+```plaintext
+apt-get update
+apt-get install curl -y
+curl localhost
+```
+
+Observe source:
 
 ```plaintext
 cat htdocs/index.html
 ```
 
-TODO: ##################################
+Sidebar into logs: notice *logs* folder empty.
 
-Notice *logs* folder empty.
+```plaintext
+ls logs
+```
 
+Notice logs being sent to process' STDOUT:
 
-TODO: Look at log files.
+```plaintext
+grep CustomLog conf/httpd.conf
+```
 
-TODO: Look at process
+Can write directly to STDOUT (process id 1):
 
-TODO: -HUP
+```plaintext
+echo hello >> /proc/1/fd/1
+```
+
+Can also signal the process:
+
+```plaintext
+kill -HUP 1
+```
 
 Login into *ubuntu* container:
 
 ```plaintext
-kubectl exec example-dev -it --container httpd
+kubectl exec example-dev -it --container ubuntu -- bash
 ```
 
 View web page:
@@ -87,7 +114,11 @@ apt-get install curl
 curl localhost
 ```
 
-TODO: ps -aux
+Sidebar showing process on id 1:
+
+```plaintext
+ps -aux
+```
 
 ### Cluster Networking
 
