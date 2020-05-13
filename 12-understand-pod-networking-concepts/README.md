@@ -10,25 +10,86 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 ## Script
 
+### Sidebar into Container Logs
+
+> Everything a containerized application writes to stdout and stderr is handled and redirected somewhere by a container engine.
+
+*-Kubernetes-[Logging Architecture](https://kubernetes.io/docs/concepts/cluster-administration/logging/)*
+
+A simple example:
+
+```plaintext
+helm install dev debug
+```
+
+```plaintext
+kubectl logs example-dev
+```
+
+**note:**: *--container* flag to specify container. *--previous* flag used to look at logs from previous container in case it crashes.
+
+> However, the native functionality provided by a container engine or runtime is usually not enough for a complete logging solution. For example, if a container crashes, a pod is evicted, or a node dies, you’ll usually still want to access your application’s logs. As such, logs should have a separate storage and lifecycle independent of nodes, pods, or containers. This concept is called cluster-level-logging. Cluster-level logging requires a separate backend to store, analyze, and query logs. Kubernetes provides no native storage solution for log data, but you can integrate many existing logging solutions into your Kubernetes cluster.
+
+*-Kubernetes-[Logging Architecture](https://kubernetes.io/docs/concepts/cluster-administration/logging/)*
+
+For EKS, see... [Setting Up Container Insights on Amazon EKS and Kubernetes](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/deploy-container-insights-EKS.html)
+
 ### Pod Networking
 
 > Each Pod is assigned a unique IP address for each address family. Every container in a Pod shares the network namespace, including the IP address and network ports. Containers inside a Pod can communicate with one another using localhost. When containers in a Pod communicate with entities outside the Pod, they must coordinate how they use the shared network resources (such as ports).
 
 *-Kubernetes-[Pod Overview](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/)*
 
-**note:** TODO BLURB ABOUT IPC
-
 > List of ports to expose from the container. Exposing a port here gives the system additional information about the network connections a container uses, but is primarily informational. Not specifying a port here DOES NOT prevent that port from being exposed. Any port which is listening on the default "0.0.0.0" address inside a container will be accessible from the network.
 
 *-Kubernetes-[Reference](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#podspec-v1-core)*
 
-ssh into httpd
-show index.html
+A simple example:
 
-ssh into ubuntu
+```plaintext
+helm install dev networking
+```
+
+Login into *httpd* container:
+
+```plaintext
+kubectl exec example-dev -it --container httpd -- bash
+```
+
+Look at HTML file:
+
+```plaintext
+cat htdocs/index.html
+```
+
+TODO: ##################################
+
+Notice *logs* folder empty.
+
+
+TODO: Look at log files.
+
+TODO: Look at process
+
+TODO: -HUP
+
+Login into *ubuntu* container:
+
+```plaintext
+kubectl exec example-dev -it --container httpd
+```
+
+View web page:
+
+```plaintext
 apt-get update
 apt-get install curl
 curl localhost
+```
+
+TODO: ps -aux
+
+### Cluster Networking
 
 Look at IP address of pod: 192.168.192.119
 
@@ -45,12 +106,15 @@ ifconfig
 
 DIAGRAM
 
-### Debug Running Pods
+### Pod IPC
 
-kubectl logs example-dev --container httpd
+> This page shows how to configure process namespace sharing for a pod. When process namespace sharing is enabled, processes in a container are visible to all other containers in that pod.
+> You can use this feature to configure cooperating containers, such as a log handler sidecar container, or to troubleshoot container images that don’t include debugging utilities like a shell.
 
-debug
+*-Kubernetes-[Share Process Namespace between Containers in a Pod](https://kubernetes.io/docs/tasks/configure-pod-container/share-process-namespace/)*
 
-kubectl logs example-dev
+kubectl logs example-dev --container httpd --follow
 
-note: Alpha Ephemeral
+ps -aux
+kill -HUP XX
+

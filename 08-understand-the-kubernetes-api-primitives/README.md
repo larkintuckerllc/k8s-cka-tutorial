@@ -2,6 +2,8 @@
 
 Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/larkintuckerllc/k8s-cka-tutorial)
 
+**Addendum:** You may have observed that Helm is not specifically mentioned in the CKA syllabus.  At the same time, the basics of it were covered in the CKA prep-course I took and is sometimes a topic in job interviews. Finally, it is a handy mechanism to manage K8s resources.
+
 [![Core Concepts: Understand the Kubernetes API Primitives](http://img.youtube.com/vi/QOhMPdu8eeE/0.jpg)](https://youtu.be/QOhMPdu8eeE)
 
 ## Script
