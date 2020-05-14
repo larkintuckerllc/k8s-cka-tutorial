@@ -117,6 +117,44 @@ kubectl rollout history deployment.v1.apps/example-dev
 
 TODO
 
+```plaintext
+helm install dev helm
+```
+
+We observe the rollout history:
+
+```plaintext
+kubectl rollout history deployment.v1.apps/example-dev
+```
+
+Notice the empty, change-cause entry.
+
+Let us create a new revision. We update the deployment with version 20.04 of Ubuntu and add the following annotation; used when creating the revision.
+
+```plaintext
+kubernetes.io/change-cause: 'upgrade to 20.04'
+```
+
+and apply:
+
+```plaintext
+kubectl apply -f no-helm
+```
+
+We can watch the rollout with:
+
+```plaintext
+kubectl rollout status deployment example-dev --watch
+```
+
+And see the updated history with:
+
+```plaintext
+kubectl rollout history deployment.v1.apps/example-dev
+```
+
+
+
 ### Canary Deployment
 
 > If you want to roll out releases to a subset of users or servers using the Deployment, you can create multiple Deployments, one for each release, following the canary pattern...
