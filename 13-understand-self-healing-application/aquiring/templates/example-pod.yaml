@@ -7,7 +7,6 @@ metadata:
     app.kubernetes.io/version: {{ .Chart.Version }}  
     release: dev
   name: example-{{ .Release.Name }}
-  namespace: test
 spec:
   containers:
   - name: ubuntu
