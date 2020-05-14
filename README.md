@@ -28,6 +28,8 @@
 
 * [Networking: Understand Pod Networking Concepts](12-understand-pod-networking-concepts)
 
+* [Application Lifecycle Management: Understand the primitives necessary to create a self-healing application](13-understand-self-healing-application)
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.

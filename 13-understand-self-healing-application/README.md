@@ -2,7 +2,7 @@
 
 Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/larkintuckerllc/k8s-cka-tutorial)
 
-[![Networking: Understand Pod Networking Concepts](http://img.youtube.com/vi/XXXXX/0.jpg)](XXXXX)
+[![Networking: Understand Pod Networking Concepts](http://img.youtube.com/vi/FNNjDbX0UIo/0.jpg)](https://youtu.be/FNNjDbX0UIo)
 
 ## Script
 
