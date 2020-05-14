@@ -6,7 +6,7 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 * Application Lifecycle Management: Know how to scale applications
 
-[![Networking: Understand Pod Networking Concepts](http://img.youtube.com/vi/FNNjDbX0UIo/0.jpg)](https://youtu.be/FNNjDbX0UIo)
+[![Application Lifecycle Management: Understand the primitives necessary to create a self-healing application](http://img.youtube.com/vi/FNNjDbX0UIo/0.jpg)](https://youtu.be/FNNjDbX0UIo)
 
 ## Script
 

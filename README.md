@@ -30,6 +30,8 @@
 
 * [Application Lifecycle Management: Understand the primitives necessary to create a self-healing application](13-understand-self-healing-application)
 
+* [Application Lifecycle Management: Understand the primitives necessary to create a self-healing application](14-understand-self-healing-application)
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.
