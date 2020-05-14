@@ -87,3 +87,34 @@ helm install dev daemonset
 ```plaintext
 helm get all
 ```
+
+### StatefulSet
+
+> Manages the deployment and scaling of a set of Pods, and provides guarantees about the ordering and uniqueness of these Pods.
+> Like a Deployment, a StatefulSet manages Pods that are based on an identical container spec. Unlike a Deployment, a StatefulSet maintains a sticky identity for each of their Pods. These pods are created from the same spec, but are not interchangeable: each has a persistent identifier that it maintains across any rescheduling.
+
+*-Kubernetes-[StatefulSets](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/)*
+
+Observations:
+
+* Similar to Deployment with rolling updates; but default behavior is to roll to one at a time in order
+
+* Does not use a RS
+
+* Maintains unique network identity over time
+
+* Depends on a "fake" Service to ensure unique network identity (DNS); we will look at Services later
+
+```plaintext
+helm install dev statefulset
+```
+
+Login to one of the Pod/Container and install *dnsutils*:
+
+```plaintext
+nslookup example-dev-0.example-dev
+nslookup example-dev-1.example-dev
+nslookup example-dev-2.example-dev
+```
+
+**note:**: Like stable network identity, this will also maintain stable PersistentVolumes (something we will cover later).  Basically, as a Pod is replaced it will get the PersistentVolume (data) that the Pod that it replaced.  Think databases.
