@@ -11,12 +11,50 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 *-Kubernetes-[Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)*
 
+### Without Helm
+
+As there is some overlap between Helm's Chart releases and K8s Deployment revisions, let us first understand revisions without using Helm.
+
+We first create the Deployment:
+
 ```plaintext
 kubectl apply -f no-helm
 ```
+
+We observe the rollout history:
 
 ```plaintext
 kubectl rollout history deployment.v1.apps/example-dev
 ```
 
-kubernetes.io/change-cause
+We can get details on a particular revision with:
+
+```plaintext
+kubectl rollout history deployment.v1.apps/example-dev --revision=1
+```
+
+Notice the empty, change-cause entry.
+
+Let us create a new revision. We update the deployment with version 20.04 of Ubuntu and add the following annotation; used when creating the revision.
+
+```plaintext
+kubernetes.io/change-cause: 'upgrade to 20.04'
+```
+
+and apply:
+
+```plaintext
+kubectl apply -f no-helm
+```
+
+We can watch the rollout with:
+
+```plaintext
+kubectl rollout status deployment example-dev --watch
+```
+
+And see the updated history with:
+
+```plaintext
+kubectl rollout history deployment.v1.apps/example-dev
+```
