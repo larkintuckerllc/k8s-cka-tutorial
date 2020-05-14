@@ -2,6 +2,10 @@
 
 Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/larkintuckerllc/k8s-cka-tutorial)
 
+**note:** Includes the following additional topics:
+
+* Scheduling: Understand the role of DaemonSets
+
 [![Application Lifecycle Management: Understand the primitives necessary to create a self-healing application](http://img.youtube.com/vi/sVSkBVHMupM/0.jpg)](https://youtu.be/sVSkBVHMupM)
 
 ## Script
