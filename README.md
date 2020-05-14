@@ -4,9 +4,8 @@
 
 ## Videos
 
-*[Core Concepts: Understand the Kubernetes Cluster Architecture](01-understand-the-kubernetes-cluster-architecture)*
-
-Keywords: Cluster, Node, Control Plane, etcd, Cluster Topology
+*[Core Concepts: Understand the Kubernetes Cluster Architecture](01-understand-the-kubernetes-cluster-architecture)*  
+*Keywords*: Cluster, Node, Control Plane, etcd, Cluster Topology
 
 * [Core Concepts: Understand the Kubernetes API Primitives](02-understand-the-kubernetes-api-primitives)
 
