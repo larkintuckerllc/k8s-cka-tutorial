@@ -1,6 +1,8 @@
 apiVersion: apps/v1 
 kind: Deployment
 metadata:
+  annotations:
+    kubernetes.io/change-cause: 'upgrade to bogus'
   labels:
     app.kubernetes.io/name: no-helm
     app.kubernetes.io/instance: dev
@@ -21,6 +23,5 @@ spec:
     spec:
       containers:
       - name: ubuntu
-        image: ubuntu:18.04
+        image: ubuntu:bogus
         command: ['tail', '-f', '/dev/null']
-

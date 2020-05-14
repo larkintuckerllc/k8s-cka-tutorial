@@ -11,6 +11,10 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 *-Kubernetes-[Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)*
 
+Observations:
+
+* Default is 10 revisions in history
+
 ### Without Helm
 
 As there is some overlap between Helm's Chart releases and K8s Deployment revisions, let us first understand revisions without using Helm.
@@ -58,3 +62,65 @@ And see the updated history with:
 ```plaintext
 kubectl rollout history deployment.v1.apps/example-dev
 ```
+
+Let us create a new revision. We update the deployment with version bogus of Ubuntu and add the following annotation; used when creating the revision.
+
+```plaintext
+kubernetes.io/change-cause: 'upgrade to bogus'
+```
+
+and apply:
+
+```plaintext
+kubectl apply -f no-helm
+```
+
+We can watch the rollout with:
+
+```plaintext
+kubectl rollout status deployment example-dev --watch
+```
+
+And see the updated history with:
+
+```plaintext
+kubectl rollout history deployment.v1.apps/example-dev
+```
+
+Observe that only one is "up-to-date"; here is a clue that there is a problem; Also observe the conditions:
+
+```plaintext
+kubectl get deployment
+kubectl describe deployment
+```
+
+We can then troubleshoot the Pod:
+
+```plaintext
+kubectl get all
+kubectl describe pod XXXX
+```
+
+We can then rollback:
+
+```plaintext
+kubectl rollout undo deployment.v1.apps/example-dev
+```
+
+**note:** Can specifiy a *--to-revision=X* option
+
+```plaintext
+kubectl rollout history deployment.v1.apps/example-dev
+```
+
+### With Helm
+
+TODO
+
+### Canary Deployment
+
+> If you want to roll out releases to a subset of users or servers using the Deployment, you can create multiple Deployments, one for each release, following the canary pattern...
+
+*-Kubernetes-[Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)*
+
+TODO
