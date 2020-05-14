@@ -2,6 +2,10 @@
 
 Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/larkintuckerllc/k8s-cka-tutorial)
 
+**note:** Includes the following additional topics:
+
+* Application Lifecycle Management: Know how to scale applications
+
 [![Networking: Understand Pod Networking Concepts](http://img.youtube.com/vi/FNNjDbX0UIo/0.jpg)](https://youtu.be/FNNjDbX0UIo)
 
 ## Script
