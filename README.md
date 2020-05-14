@@ -7,15 +7,20 @@
 *[Core Concepts: Understand the Kubernetes Cluster Architecture](01-understand-the-kubernetes-cluster-architecture)*  
 *Keywords*: Cluster, Node, Control Plane, etcd, Cluster Topology
 
-* [Core Concepts: Understand the Kubernetes API Primitives](02-understand-the-kubernetes-api-primitives)
+*[Core Concepts: Understand the Kubernetes API Primitives](02-understand-the-kubernetes-api-primitives)*  
+*Keywords*: API Group, API Resource, Namespace, Addons, Metrics Server
 
-* [Installation, Configuration & Validation: Install Kubernetes Masters and Node](03-install-kubernetes-masters-and-nodes)
+*[Installation, Configuration & Validation: Install Kubernetes Masters and Node](03-install-kubernetes-masters-and-nodes)*  
+*Keywords*: kubeadm, kube-api-server, kube-controller-manager, kube-scheduler, cloud-controller-manager, kublet, kube-proxy, etcd
 
-* [Security: Know How to Configure Authentication and Authorization](04-know-how-to-configure-authentication-and-authorization)
+*[Security: Know How to Configure Authentication and Authorization](04-know-how-to-configure-authentication-and-authorization)*  
+*Keywords*: Authentication, Authorization, Adminission Control, Transport Security, User, Client Certificate Authentication
 
-* [Security: Know How to Configure Authentication and Authorization](05-know-how-to-configure-authentication-and-authorization)
+*[Security: Know How to Configure Authentication and Authorization](05-know-how-to-configure-authentication-and-authorization)*  
+*Keywords*: AWS Authentication, Role-Based Access Control, Authorization Rules, ClusterRole, RoleBinding, ClusterRoleBinding
 
-* [Security: Know How to Configure Authentication and Authorization](06-know-how-to-configure-authentication-and-authorization)
+*[Security: Know How to Configure Authentication and Authorization](06-know-how-to-configure-authentication-and-authorization)*  
+*Keywords*: ConfigMap, Role
 
 * [Core Concepts: Understand the Kubernetes API Primitives](07-understand-the-kubernetes-api-primitives)
 
