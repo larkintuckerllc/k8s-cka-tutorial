@@ -22,13 +22,17 @@
 *[Security: Know How to Configure Authentication and Authorization](06-know-how-to-configure-authentication-and-authorization)*  
 *Keywords*: ConfigMap, Role
 
-* [Core Concepts: Understand the Kubernetes API Primitives](07-understand-the-kubernetes-api-primitives)
+*[Core Concepts: Understand the Kubernetes API Primitives](07-understand-the-kubernetes-api-primitives)*  
+*Keywords*: Metadata, Labels, Annotations, spec, status, Imperative Commands, Imperative Object Configuration, Declarative Object Configuration
 
-* [Core Concepts: Understand the Kubernetes API Primitives](08-understand-the-kubernetes-api-primitives)
+*[Core Concepts: Understand the Kubernetes API Primitives](08-understand-the-kubernetes-api-primitives)*  
+*Keywords*: Helm
 
-* [Core Concepts: Understand the Kubernetes API Primitives](09-understand-the-kubernetes-api-primitives)
+*[Core Concepts: Understand the Kubernetes API Primitives](09-understand-the-kubernetes-api-primitives)*  
+*Keywords*: Kustomize
 
-* [Application Lifecycle Management: Know Various Ways to Configure Applications](10-know-various-ways-to-configure-applications)
+*[Application Lifecycle Management: Know Various Ways to Configure Applications](10-know-various-ways-to-configure-applications)*  
+*Keywords*: Pod, Container, Pod Event, Pod Status (Phase), Pod Condition, Container State, Container Environment
 
 * [Application Lifecycle Management: Know Various Ways to Configure Applications](11-know-various-ways-to-configure-applications)
 
