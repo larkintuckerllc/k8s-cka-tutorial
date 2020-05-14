@@ -61,4 +61,35 @@ Example of scaling ReplicaSet successfullly.
 
 Example of not upgrading Pods in ReplicaSet successfully; i.e., changing Pod template only effects future Pods.  Would have to scale to 0 and scale back up to change out version.
 
-TODO: HPA
+### Horizontal Pod Autoscaler
+
+> The Horizontal Pod Autoscaler automatically scales the number of pods in a replication controller, deployment, replica set or stateful set based on observed CPU utilization (or, with custom metrics support, on some other application-provided metrics).
+
+*-Kubernetes-[Horizontal Pod Autoscaler](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)*
+
+> The HorizontalPodAutoscaler normally fetches metrics from a series of aggregated APIs (metrics.k8s.io, custom.metrics.k8s.io, and external.metrics.k8s.io). The metrics.k8s.io API is usually provided by metrics-server, which needs to be launched separately.
+
+*-Kubernetes-[Horizontal Pod Autoscaler](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)*
+
+Some observations:
+
+* Implemented as a control loop; managed by kube-controller-manager
+
+* Loop cycle defaults to 15 seconds
+
+* Requires resource requests set for metric; otherwise does nothing
+
+A light touch on resource requests:
+
+> When you specify a Pod, you can optionally specify how much of each resource a Container needs. The most common resources to specify are CPU and memory (RAM); there are others.
+
+*-Kubernetes-[Managing Resources for Containers](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/)*
+
+```plaintext
+helm install dev rs-hpa
+```
+
+```plaintext
+kubectl get hpa
+kubectl describe hpa
+```
