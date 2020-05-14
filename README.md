@@ -34,13 +34,17 @@
 *[Application Lifecycle Management: Know Various Ways to Configure Applications](10-know-various-ways-to-configure-applications)*  
 *Keywords*: Pod, Container, Pod Event, Pod Status (Phase), Pod Condition, Container State, Container Environment
 
-* [Application Lifecycle Management: Know Various Ways to Configure Applications](11-know-various-ways-to-configure-applications)
+*[Application Lifecycle Management: Know Various Ways to Configure Applications](11-know-various-ways-to-configure-applications)*  
+*Keywords*: Container Lifecycle Hook, Probe, readinessGates
 
-* [Networking: Understand Pod Networking Concepts](12-understand-pod-networking-concepts)
+*[Networking: Understand Pod Networking Concepts](12-understand-pod-networking-concepts)*  
+*Keywords*: Container Logs, Intra-Pod Networking, Inter-Pod (Cluster) Networking, Intra-Pod IPC
 
-* [Application Lifecycle Management: Understand the primitives necessary to create a self-healing application](13-understand-self-healing-application)
+*[Application Lifecycle Management: Understand the primitives necessary to create a self-healing application](13-understand-self-healing-application)*  
+*Keywords*: ReplicaSet, Horizontal Pod Autoscaler
 
-* [Application Lifecycle Management: Understand the primitives necessary to create a self-healing application](14-understand-self-healing-application)
+*[Application Lifecycle Management: Understand the primitives necessary to create a self-healing application](14-understand-self-healing-application)*  
+*Keywords*: Deployment, DaemonSet, StatefulSet
 
 ## Script
 
