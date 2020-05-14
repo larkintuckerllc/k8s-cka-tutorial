@@ -17,6 +17,15 @@ Recall that changing a ReplicaSet's Pod template did not automatically cause all
 
 Much like ReplicaSets controlling Pods, a Deployment controls a ReplicaSet to address this very problem. Technically, it will at times use two ReplicaSets to achieve the Pod swapout (scaling up one while scaling down another).
 
+**note**: There is an imperative command to create a deployment; can use to quickly create yaml file.
+
+```plaintext
+kubectl run nginx \
+  --image nginx \
+  --dry-run \
+  -o yaml
+```
+
 Let us create a deployment:
 
 ```plaintext
