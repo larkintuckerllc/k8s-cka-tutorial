@@ -62,3 +62,28 @@ We will explore managing Deployment in detail in a later video.
 
 ### DaemonSet
 
+> A DaemonSet ensures that all (or some) Nodes run a copy of a Pod. As nodes are added to the cluster, Pods are added to them. As nodes are removed from the cluster, those Pods are garbage collected. Deleting a DaemonSet will clean up the Pods it created.
+
+*-Kubernetes-[DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/)*
+
+Some observations:
+
+* Like Deployments, can rollout Pod changes
+
+* Does not, however, use ReplicaSets. It directly manages the Pods
+
+* Configuration, virtually same as RS and Deployment; just no replicas
+
+Examples of DaemonSets, *aws-node* and *kube-proxy* for networking:
+
+```plaintext
+kubectl get all --all-namespaces
+```
+
+```plaintext
+helm install dev daemonset
+```
+
+```plaintext
+helm get all
+```
