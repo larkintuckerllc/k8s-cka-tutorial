@@ -69,8 +69,6 @@ So how is traffic getting to the service IP address?
 
 There are three ways a Cluster can be configured: User Space Proxy Mode, iptables Proxy Mode, and IPVS proxy mode.
 
-TODO: CNI
-
 #### User Space Proxy Mode
 
 > In this mode, kube-proxy watches the Kubernetes master for the addition and removal of Service and Endpoint objects. For each Service it opens a port (randomly chosen) on the local node. Any connections to this “proxy port” are proxied to one of the Service’s backend Pods (as reported via Endpoints). kube-proxy takes the SessionAffinity setting of the Service into account when deciding which backend Pod to use.
@@ -96,8 +94,20 @@ TODO: CNI
 
 This is a high-performance feature that we will not address in this series; there is an article on it at [IPVS-Based In-Cluster Load Balancing Deep Dive](https://kubernetes.io/blog/2018/07/09/ipvs-based-in-cluster-load-balancing-deep-dive/).
 
-**note:** IPVS is not currently supported in EKS; but looks like some folks have gotten it to work.
-
 #### AWS Implementation
 
-TODO
+After a bit of digging, we can see that AWS indeed is using iptables mode for Service networking:
+
+```plaintext
+kubectl describe daemonset kube-proxy -n kube-system
+
+kubectl describe cm kube-proxy-config -n kube-system
+```
+
+**note:** IPVS is apparently not currently supported in EKS; but looks like some folks have gotten it to work.
+
+While we talked about it before, wanted to remind ourselves that Pod Networking is handled separately using a CNI Plugin.
+
+> Amazon EKS supports native VPC networking via the Amazon VPC Container Network Interface (CNI) plugin for Kubernetes. Using this CNI plugin allows Kubernetes pods to have the same IP address inside the pod as they do on the VPC network.
+
+*-Kubernetes-[Pod networking (CNI)](https://docs.aws.amazon.com/eks/latest/userguide/pod-networking.html)*
