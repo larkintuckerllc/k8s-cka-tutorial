@@ -17,7 +17,7 @@ Observations:
 
 ### Without Helm
 
-As there is some overlap between Helm's Chart releases and K8s Deployment revisions, let us first understand revisions without using Helm.
+As there is a conceptual overlap between a Helm Chart Release Revision and a K8s Deployment Revision, let us explore K8s Deployment Revisions without using Helm.
 
 We first create the Deployment:
 
@@ -63,25 +63,9 @@ And see the updated history with:
 kubectl rollout history deployment.v1.apps/example-dev
 ```
 
-Let us create a new revision. We update the deployment with version bogus of Ubuntu and add the following annotation; used when creating the revision.
+Create another revision; "image: ubuntu:bogus" and update the annotation "upgrade to bogus" and apply.
 
-```plaintext
-kubernetes.io/change-cause: 'upgrade to bogus'
-```
-
-and apply:
-
-```plaintext
-kubectl apply -f no-helm
-```
-
-We can watch the rollout with:
-
-```plaintext
-kubectl rollout status deployment example-dev --watch
-```
-
-And see the updated history with:
+See the updated history with:
 
 ```plaintext
 kubectl rollout history deployment.v1.apps/example-dev
@@ -115,55 +99,39 @@ kubectl rollout history deployment.v1.apps/example-dev
 
 ### With Helm
 
-TODO
+The punchline here is that Helm's Release Revisions "play well" with K8s Deployment Revisions.
 
 ```plaintext
 helm install dev helm
 ```
 
-We observe the rollout history:
+We observe the rollout history.
 
-```plaintext
-kubectl rollout history deployment.v1.apps/example-dev
-```
-
-Notice the empty, change-cause entry.
-
-Let us create a new revision. We update the deployment with version 20.04 of Ubuntu and add the following annotation; used when creating the revision.
-
-```plaintext
-kubernetes.io/change-cause: 'upgrade to 20.04'
-```
-
-and apply:
+Create a revision; "image: ubuntu:20.04" and create annotation and upgrade:
 
 ```plaintext
 helm upgrade dev helm
 ```
 
-We can watch the rollout with:
+And observe the updated rollout history.
+
+Create another revision; "image: ubuntu:bogus" and update the annotation "upgrade to bogus" and upgrade.
+
+Instead of using K8s to rollback, we will use Helm.
 
 ```plaintext
-kubectl rollout status deployment example-dev --watch
-```
-
-And see the updated history with:
-
-```plaintext
-kubectl rollout history deployment.v1.apps/example-dev
-```
-
-Bogus upgrade with updated change
-
 helm history dev
 
 helm rollback dev
 
 helm history dev
+```
 
+We observe that Helm did the right thing:
+
+```plaintext
 kubectl rollout history deployment.v1.apps/example-dev
-
-Did the right thing.
+```
 
 ### Canary Deployment
 
