@@ -46,6 +46,9 @@
 *[Application Lifecycle Management: Understand the primitives necessary to create a self-healing application](14-understand-self-healing-application)*  
 *Keywords*: Deployment, DaemonSet, StatefulSet
 
+*[Application Lifecycle Management: Understand Deployments and How to Perform Rolling Update and Rollbacks](15-understand-deployments)*  
+*Keywords*: Deployment Revision, Job, CronJob
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.

@@ -2,7 +2,7 @@
 
 Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/larkintuckerllc/k8s-cka-tutorial)
 
-[![Application Lifecycle Management: Understand Deployments and How to Perform Rolling Update and Rollbacks](http://img.youtube.com/vi/XXXXX/0.jpg)](XXXXX)
+[![Application Lifecycle Management: Understand Deployments and How to Perform Rolling Update and Rollbacks](http://img.youtube.com/vi/BGfs_JGibV4/0.jpg)](https://youtu.be/BGfs_JGibV4)
 
 ## Script
 
