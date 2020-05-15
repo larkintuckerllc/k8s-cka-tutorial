@@ -101,11 +101,13 @@ kubectl rollout history deployment.v1.apps/example-dev
 
 The punchline here is that Helm's Release Revisions "play well" with K8s Deployment Revisions.
 
+Rather than giving an blow-by-blow, will do same scenario off screen and show final result.  Basically, will using the *helm" folder (same deployment as the we had before). The difference here is Helm is used to perform the changes, including the rollback.
+
+OFF-SCREEN START
+
 ```plaintext
 helm install dev helm
 ```
-
-We observe the rollout history.
 
 Create a revision; "image: ubuntu:20.04" and create annotation and upgrade:
 
@@ -113,23 +115,19 @@ Create a revision; "image: ubuntu:20.04" and create annotation and upgrade:
 helm upgrade dev helm
 ```
 
-And observe the updated rollout history.
-
 Create another revision; "image: ubuntu:bogus" and update the annotation "upgrade to bogus" and upgrade.
 
-Instead of using K8s to rollback, we will use Helm.
-
 ```plaintext
-helm history dev
-
 helm rollback dev
-
-helm history dev
 ```
 
-We observe that Helm did the right thing:
+OFF-SCREEN END
+
+Observe that Helm did actually initiate a K8S rollback.
 
 ```plaintext
+helm history dev
+
 kubectl rollout history deployment.v1.apps/example-dev
 ```
 
@@ -139,4 +137,11 @@ kubectl rollout history deployment.v1.apps/example-dev
 
 *-Kubernetes-[Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)*
 
-TODO
+Will not do here, but the trick is in the proper use of labels; specifically construct the Pod template labels such that:
+
+* Each Pod template uses different labels to match them up with their Deployment
+
+* Both Pod templates share a common label to allow one to group all the Pods
+
+### Jobs
+
