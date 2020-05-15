@@ -138,7 +138,7 @@ kubernetes.io/change-cause: 'upgrade to 20.04'
 and apply:
 
 ```plaintext
-kubectl apply -f no-helm
+helm upgrade dev helm
 ```
 
 We can watch the rollout with:
@@ -153,7 +153,17 @@ And see the updated history with:
 kubectl rollout history deployment.v1.apps/example-dev
 ```
 
+Bogus upgrade with updated change
 
+helm history dev
+
+helm rollback dev
+
+helm history dev
+
+kubectl rollout history deployment.v1.apps/example-dev
+
+Did the right thing.
 
 ### Canary Deployment
 
