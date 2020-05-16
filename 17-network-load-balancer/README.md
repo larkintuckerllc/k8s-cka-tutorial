@@ -46,7 +46,13 @@ helm install dev load-balancer-ssl
 
 ### NodePort
 
-TODO
+> Exposes the Service on each Node’s IP at a static port (the NodePort). A ClusterIP Service, to which the NodePort Service routes, is automatically created. You’ll be able to contact the NodePort Service, from outside the cluster, by requesting NodeIP:NodePort.
+
+*-Kubernetes-[Service](https://kubernetes.io/docs/concepts/services-networking/service/)*
+
+```plaintext
+helm install dev node-port
+```
 
 ### ExternalName
 
