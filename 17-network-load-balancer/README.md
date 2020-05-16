@@ -28,3 +28,18 @@ Observe AWS Classic LoadBalancer.  In particular the Instances and Listeners.
 
 ### LoadBalancer (HTTPS)
 
+The AWS specific solution involves:
+
+1. Obtaining a custom domain name, e.g., using AWS Route 53
+
+2. Create a SSL/TLS certificate using AWS Certificate Manager
+
+3. Create a LoadBalancer using a configuration
+
+4. Mapping the custom domain name to the LoadBalancer, e.g., using AWS Route 53
+
+Kubernetes provides documentation on the specific configurations for each of the [Cloud Providers](https://kubernetes.io/docs/concepts/cluster-administration/cloud-providers).
+
+```plaintext
+helm install dev load-balancer-ssl
+```
