@@ -43,3 +43,37 @@ Kubernetes provides documentation on the specific configurations for each of the
 ```plaintext
 helm install dev load-balancer-ssl
 ```
+
+### NodePort
+
+TODO
+
+### ExternalName
+
+ExternalName is a special case Service that does not get an IP address, but simply provides DNS CName for an external name:
+
+> When looking up the host my-service.prod.svc.cluster.local, the cluster DNS Service returns a CNAME record with the value my.database.example.com. Accessing my-service works in the same way as other Services but with the crucial difference that redirection happens at the DNS level rather than via proxying or forwarding.
+
+*-Kubernetes-[Service](https://kubernetes.io/docs/concepts/services-networking/service/)*
+
+TODO: EXAMPLE
+
+### Headless Service
+
+This is another special case of a Service:
+
+> Sometimes you don’t need load-balancing and a single Service IP. In this case, you can create what are termed “headless” Services, by explicitly specifying "None" for the cluster IP (.spec.clusterIP).
+
+and
+
+> For headless Services, a cluster IP is not allocated, kube-proxy does not handle these Services, and there is no load balancing or proxying done by the platform for them. How DNS is automatically configured depends on whether the Service has selectors defined:
+
+and
+
+> For headless Services that define selectors, the endpoints controller creates Endpoints records in the API, and modifies the DNS configuration to return records (addresses) that point directly to the Pods backing the Service.
+
+*-Kubernetes-[Service](https://kubernetes.io/docs/concepts/services-networking/service/)*
+
+Re-examine *statefulset* example in *14-understand-self-healing-application*.
+
+**note:** Headless Services w/o a Selector behave similarly; mapping DNS names to EndPoints. Not going to cover this.
