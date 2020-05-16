@@ -12,7 +12,7 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 ## Script
 
-### Basic Cluster IP Example
+### Cluster IP Example (with Selectors)
 
 > Kubernetes Pods are mortal. They are born and when they die, they are not resurrected. If you use a Deployment to run your app, it can create and destroy Pods dynamically.
 > Each Pod gets its own IP address, however in a Deployment, the set of Pods running in one moment in time could be different from the set of Pods running that application a moment later.
@@ -26,7 +26,7 @@ Install service and inspect:
 Notice IP, ClusterIP, port, targetPort, and Endpoint
 
 ```plaintext
-helm install dev service
+helm install dev service-selectors
 
 kubectl get all
 
@@ -34,6 +34,16 @@ kubectl describe service example-dev
 
 kubectl get service example-dev -o yaml
 ```
+
+Side notes:
+
+> A Service can map any incoming port to a targetPort. By default and for convenience, the targetPort is set to the same value as the port field.
+
+and
+
+> For some Services, you need to expose more than one port. Kubernetes lets you configure multiple port definitions on a Service object. When using multiple ports for a Service, you must give all of your ports names so that these are unambiguous.
+
+*-Kubernetes-[Service](https://kubernetes.io/docs/concepts/services-networking/service/)*
 
 Login to ubuntu Pod, update, install:
 
@@ -58,6 +68,22 @@ curl example-dev.default
 ```
 
 **note**: Noticed that *curl* did not properly handle *curl example-dev*
+
+### Cluster IP Example (without Selectors)
+
+> Services most commonly abstract access to Kubernetes Pods, but they can also abstract other kinds of backends. For example:
+
+* You want to have an external database cluster in production, but in your test environment you use your own databases.
+
+* You want to point your Service to a Service in a different Namespace or on another cluster.
+
+* You are migrating a workload to Kubernetes. Whilst evaluating the approach, you run only a proportion of your backends in Kubernetes.
+
+*-Kubernetes-[Service](https://kubernetes.io/docs/concepts/services-networking/service/)*
+
+```plaintext
+helm install dev service-no-selectors
+```
 
 ### Behind the Scenes
 

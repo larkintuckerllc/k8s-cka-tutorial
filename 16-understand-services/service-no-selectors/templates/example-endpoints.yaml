@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Endpoints
+metadata:
+  labels:
+    app.kubernetes.io/name: {{ .Chart.Name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/version: {{ .Chart.Version }}  
+  name: example-{{ .Release.Name }}
+subsets:
+  - addresses:
+      - ip: 50.87.77.39
+    ports:
+      - port: 80
