@@ -49,6 +49,9 @@
 *[Application Lifecycle Management: Understand Deployments and How to Perform Rolling Update and Rollbacks](15-understand-deployments)*  
 *Keywords*: Deployment Revision, Job, CronJob
 
+*[Core Concepts: Understand Services and other Network Primitives](16-understand-services)*  
+*Keywords*: Service, ClusterIP, Endpoints, Service Mode, Container Network Interface (CNI)
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.

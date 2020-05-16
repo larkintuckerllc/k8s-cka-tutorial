@@ -8,7 +8,7 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 * Networking: Understand CNI
 
-[![Core Concepts: Understand Services and other Network Primitives](http://img.youtube.com/vi/BGfs_JGibV4/0.jpg)](https://youtu.be/BGfs_JGibV4)
+[![Core Concepts: Understand Services and other Network Primitives](http://img.youtube.com/vi/NUTuloFZo2Y/0.jpg)](https://youtu.be/NUTuloFZo2Y)
 
 ## Script
 
