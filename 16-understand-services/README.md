@@ -10,6 +10,8 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 **Addendum**: There is an imperative CLI way to create a service that I did not address, e.g., the following will create that YAML for the service.
 
+**Addendum**: In the video, I make the statement that the */etc/resolv.conf* was provided by the container image.  It is not, the Pod itself updates this file as we will see in a later video.
+
 ```plaintext
 kubectl expose deployment/example-dev --dry-run -o yaml
 ```
