@@ -8,6 +8,12 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 * Networking: Understand CNI
 
+**Addendum**: There is an imperative CLI way to create a service that I did not address, e.g., the following will create that YAML for the service.
+
+```plaintext
+kubectl expose deployment/example-dev --dry-run -o yaml
+```
+
 [![Core Concepts: Understand Services and other Network Primitives](http://img.youtube.com/vi/NUTuloFZo2Y/0.jpg)](https://youtu.be/NUTuloFZo2Y)
 
 ## Script
