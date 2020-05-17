@@ -10,11 +10,13 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 **Addendum**: There is an imperative CLI way to create a service that I did not address, e.g., the following will create that YAML for the service.
 
-**Addendum**: In the video, I make the statement that the */etc/resolv.conf* was provided by the container image.  It is not, the Pod itself updates this file as we will see in a later video.
-
 ```plaintext
 kubectl expose deployment/example-dev --dry-run -o yaml
 ```
+
+**Addendum**: In the video, I make the statement that the */etc/resolv.conf* was provided by the container image.  It is not, the Pod itself updates this file as we will see in a later video.
+
+**Addendum**: Did not demonstrate that a Service (with a selector) is actually a controller in that it manages an EndPoints object as Pods with matching labels are created / destroyed.
 
 [![Core Concepts: Understand Services and other Network Primitives](http://img.youtube.com/vi/NUTuloFZo2Y/0.jpg)](https://youtu.be/NUTuloFZo2Y)
 
