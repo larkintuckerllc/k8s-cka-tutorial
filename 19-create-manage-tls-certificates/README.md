@@ -7,11 +7,19 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 ## Script
 
-TODO: HEADER
+So far we have been using HTTP protocol within our cluster and providing HTTPS protocol outside of our cluster by off-loading TLS to the AWS Load Balancer. What if we wanted to use HTTPS end-to-end (say we are required to do this for compliance reasons)?
 
-Manage TLS Certificates in a Cluster
+We will roughly follow the K8s documentation on this topic:
 
-https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster/
+> Till now we have only accessed the nginx server from within the cluster. Before exposing the Service to the internet, you want to make sure the communication channel is secure.
+
+*-Kubernetes-[Connecting Applications with Services](https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/)*
+
+The following article is also useful:
+
+> Kubernetes provides a certificates.k8s.io API, which lets you provision TLS certificates signed by a Certificate Authority (CA) that you control. These CA and certificates can be used by your workloads to establish trust.
+
+*-Kubernetes-[Manage TLS Certificates in a Cluster](https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster/)*
 
 ### Create Certificate Signing Request (CSR)
 
