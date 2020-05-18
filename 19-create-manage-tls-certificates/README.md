@@ -67,6 +67,8 @@ openssl req -new -key server.key -out server.csr
 
 ### Create, Approve K8s CSR Object
 
+> Generate a CSR yaml blob and send it to the apiserver by running the following command:
+
 ```plaintext
 cat <<EOF | kubectl apply -f -
 apiVersion: certificates.k8s.io/v1beta1
@@ -82,15 +84,23 @@ spec:
 EOF
 ```
 
+*-Kubernetes-[Manage TLS Certificates in a Cluster](https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster/)*
+
+Approve the CSR:
+
 ```plaintext
-kubectl get csr
+kubectl certificate approve example-dev.default
 ```
 
-kubectl certificate approve example-dev.default
+### TLS Certificate
 
-### Create TLS Secret
+We first download the certificate:
 
+```plaintext
 kubectl get csr example-dev.default -o jsonpath='{.status.certificate}' | base64 --decode > server.crt
+```
+
+We then store the certificate and private key as a K8s Secret:
 
 ```plaintext
 kubectl create secret tls example-dev \
@@ -98,9 +108,39 @@ kubectl create secret tls example-dev \
   --cert server.crt
 ```
 
-### Secure Server
+**note:** We will talk about secrets in more detail later; just think of them as obscured ConfigMaps for now.
 
+### Server Configuration
+
+> To configure an HTTPS server, the ssl parameter must be enabled on listening sockets in the server block, and the locations of the server certificate and private key files should be specified
+
+*-NGINX-[Configuring HTTPS Servers](https://nginx.org/en/docs/http/configuring_https_servers.html)*
+
+Starting from the original *default.conf* create an updated configuration.
+
+```plaintext
 kubectl create configmap example-dev \
   --from-file=default.conf
+```
 
+### Install Client / Server and Validate
+
+```plaintext
+helm install dev cert
+```
+
+Validate insecure HTTPS using *curl*:
+
+```plaintext
+curl -k https://example-dev.default.svc.cluster.local
+```
+
+Validate secure HTTPS using *curl*:
+
+```plaintext
 curl --cacert /cert/ca.crt https://example-dev.default.svc.cluster.local
+```
+
+### LoadBalancer
+
+Because we used a LoadBalancer for the service, we finish by pointing a DNS name to it.
