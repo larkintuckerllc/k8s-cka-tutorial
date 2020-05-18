@@ -21,21 +21,49 @@ The following article is also useful:
 
 *-Kubernetes-[Manage TLS Certificates in a Cluster](https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster/)*
 
+### Cluster Certificate Authority (CA) Certificate
+
+As the K8s CA is not a root CA that is configured into a browser / OS, we need to obtain it and supply it to our client application. For example, we will be simply using the *curl* CLI and we need to supply a CA certificate using the *--cacert* option:
+
+> (TLS) Tells curl to use the specified certificate file to verify the peer. The file may contain multiple CA certificates. The certificate(s) must be in PEM format. Normally curl is built to use a default file for this, so this option is typically used to alter that default file.
+
+*-Curl-[curl.1 the man page](https://curl.haxx.se/docs/manpage.html)*
+
+We obtain the CA certificate:
+
+```plaintext
+kubectl config view --raw \
+  -o jsonpath='{.clusters[0].cluster.certificate-authority-data}' | \
+  base64 --decode > \
+  ca.crt
+```
+
+We create a K8s ConfigMap to deliver it to our client applications:
+
+```plaintext
+kubectl create configmap ca \
+  --from-file=ca.crt
+```
+
 ### Create Certificate Signing Request (CSR)
 
-Manually Generate a Certificate Signing Request (CSR) Using OpenSSL
+We now need to create a CSR for the domain name for our Service; *example-dev.default.svc.cluster.local*.
 
-https://www.ssl.com/how-to/manually-generate-a-certificate-signing-request-csr-using-openssl/
+> This article will show you how to manually generate a Certificate Signing Request (or CSR) in an Apache or Nginx web hosting environment using OpenSSL.
+
+*-SSL-[Manually Generate a Certificate Signing Request (CSR) Using OpenSSL](https://www.ssl.com/how-to/manually-generate-a-certificate-signing-request-csr-using-openssl/)*
+
+We create the private key:
 
 ```plaintext
 openssl genrsa -out server.key 2048
 ```
 
+We create the CSR:
+
 ```plaintext
 openssl req -new -key server.key -out server.csr
 ```
-
-example-dev.default.svc.cluster.local
 
 ### Create, Approve K8s CSR Object
 
@@ -75,14 +103,4 @@ kubectl create secret tls example-dev \
 kubectl create configmap example-dev \
   --from-file=default.conf
 
-### More Stuff
-
-kubectl config view --raw -o jsonpath='{.clusters[0].cluster.certificate-authority-data}' | base64 --decode > ca.crt
-
-kubectl create configmap ca \
-  --from-file=ca.crt
-
 curl --cacert /cert/ca.crt https://example-dev.default.svc.cluster.local
-
-### More Shit
-
