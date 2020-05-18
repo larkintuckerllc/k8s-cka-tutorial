@@ -62,7 +62,9 @@ ExternalName is a special case Service that does not get an IP address, but simp
 
 *-Kubernetes-[Service](https://kubernetes.io/docs/concepts/services-networking/service/)*
 
-TODO: EXAMPLE
+```plaintext
+helm install dev external-name
+```
 
 ### Headless Service
 
