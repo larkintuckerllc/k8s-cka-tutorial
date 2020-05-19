@@ -58,6 +58,9 @@
 *[Networking: Know How to Configure and Use the Cluster DNS](18-configure-and-use-cluster-dns)*  
 *Keywords*: CoreDNS, kube-dns, Pod DNS Policy, Pod DNS Config
 
+*[Security: Create and Manage TLS Certificates for Cluster Components](19-create-manage-tls-certificates)*  
+*Keywords*: Certificate Authority, CertificateSigningRequest
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.
