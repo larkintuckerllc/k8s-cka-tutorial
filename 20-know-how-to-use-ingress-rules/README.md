@@ -56,6 +56,31 @@ annotations:
     kubernetes.io/ingress.class: alb
 ```
 
-### Ingress
+### Ingress (Simple)
 
-TODO
+> Each HTTP rule contains the following information:
+
+* An optional host. In this example, no host is specified, so the rule applies to all inbound HTTP traffic through the IP address specified. If a host is provided (for example, foo.bar.com), the rules apply to that host.
+
+* A list of paths (for example, /testpath), each of which has an associated backend defined with a serviceName and servicePort. Both the host and path must match the content of an incoming request before the load balancer directs traffic to the referenced Service.
+
+* A backend is a combination of Service and port names as described in the Service doc. HTTP (and HTTPS) requests to the Ingress that matches the host and path of the rule are sent to the listed backend.
+
+*-Kubernetes-[Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)*
+
+We install a simple example:
+
+```plaintext
+helm install dev ingress
+```
+
+### Ingress (Multiple Hosts)
+
+```plaintext
+helm install dev ingress-multiple-hosts
+```
+
+Setup DNS to for *httpd.todosrus.com* and *nginx.todosrus.com*.
+
+### Ingress (Multiple Paths)
+

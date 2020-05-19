@@ -1,0 +1,28 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: {{ .Chart.Name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/version: {{ .Chart.Version }}  
+  name: httpd-{{ .Release.Name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      example: httpd
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ .Chart.Name }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+        app.kubernetes.io/version: {{ .Chart.Version }}  
+        example: httpd
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+      - name: http
+        image: httpd:2.4.43
+        ports:
+        - containerPort: 80
