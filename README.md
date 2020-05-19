@@ -52,6 +52,9 @@
 *[Core Concepts: Understand Services and other Network Primitives](16-understand-services)*  
 *Keywords*: Service, ClusterIP, Endpoints, Service Mode, Container Network Interface (CNI)
 
+*[Deploy and Configure Network Load Balancer](17-network-load-balancer)*  
+*Keywords*: LoadBalancer, NodePort, ExternalName, Headless Service
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.
