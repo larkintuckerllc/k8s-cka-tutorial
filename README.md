@@ -55,6 +55,9 @@
 *[Deploy and Configure Network Load Balancer](17-network-load-balancer)*  
 *Keywords*: LoadBalancer, NodePort, ExternalName, Headless Service
 
+*[Networking: Know How to Configure and Use the Cluster DNS](18-configure-and-use-cluster-dns)*  
+*Keywords*: CoreDNS, kube-dns, Pod DNS Policy, Pod DNS Config
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.
