@@ -5,7 +5,7 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 **Addendum**: As far as being able to use the alternative names, e.g, *example-dev.default*, there were two problems.  First problem is that the FQDN needs be one of the alternative names (fixed in the *csr.cnf* file). Two, this is a [bug](https://github.com/awslabs/amazon-eks-ami/issues/341) that is resolved in the EKS 1.16 (was doing video in EKS 1.15).
 
 [![Security: Create and Manage TLS Certificates for Cluster Components
-](http://img.youtube.com/vi/XXXXXX/0.jpg)](XXXXXX)
+](http://img.youtube.com/vi/XRrRSxPqWyk/0.jpg)](https://youtu.be/XRrRSxPqWyk)
 
 ## Script
 
