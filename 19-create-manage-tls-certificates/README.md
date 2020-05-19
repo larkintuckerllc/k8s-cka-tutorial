@@ -95,6 +95,12 @@ We first download the certificate:
 kubectl get csr example-dev.default -o jsonpath='{.status.certificate}' | base64 --decode > server.crt
 ```
 
+We can look at the contents of the certificate (notice expiration):
+
+```plaintext
+openssl x509 -in server.crt -text -noout
+```
+
 We then store the certificate and private key as a K8s Secret:
 
 ```plaintext
@@ -139,3 +145,32 @@ curl --cacert /cert/ca.crt https://example-dev.default.svc.cluster.local
 ### LoadBalancer
 
 Because we used a LoadBalancer for the service, we finish by pointing a DNS name to it.
+
+### Sidebar Into K8s Public Key Infrastructure (PKI)
+
+The first example of K8s PKI we used was when we created client certificates to authenticate users (when we were using our own K8s Cluster). Again, we don't use this approach for EKS.
+
+The second example of K8s PKI is this example of a server certificate.
+
+Under the hood, however, Kubernetes uses PKI for a number of operations, e.g.,:
+
+> Kubernetes requires PKI for the following operations:
+
+* Client certificates for the kubelet to authenticate to the API server
+
+* Server certificate for the API server endpoint
+
+* AND MORE...
+
+*-Kubernetes-[PKI certificates and requirements](https://kubernetes.io/docs/setup/best-practices/certificates/)*
+
+As with our certificates, these expire in a year and need to be renewed.  The good news is:
+
+> kubeadm renews all the certificates during control plane upgrade.
+> This feature is designed for addressing the simplest use cases; if you don’t have specific requirements on certificate renewal and perform Kubernetes version upgrades regularly (less than 1 year in between each upgrade), kubeadm will take care of keeping your cluster up to date and reasonably secure.
+
+*-Kubernetes-[Certificate Management with kubeadm](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-certs/)*
+
+If the cluster was installed using the *kubeadm* command, then one can use *kubeadm alpha certs renew* to renew all the certificates at any time.
+
+**note:** In the case of EKS, it seems like the approach will be to follow the recommendation of upgrading cluster on a regular (less than 1 year) cycle.
