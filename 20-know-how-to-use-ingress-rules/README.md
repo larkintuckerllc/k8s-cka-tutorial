@@ -39,3 +39,23 @@ In our case, we are going to use the [AWS ALB Ingress Controller](https://github
 The good news is that EKS provides detailed intructions to install it; [ALB Ingress Controller on Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/alb-ingress.html).
 
 Work done offscreen.
+
+**note**: While tedious, the steps all worked except had to address one known [bug](https://stackoverflow.com/questions/60375599/malformedpolicydocument-when-calling-the-createpolicy-operation-aws).
+
+### IngressClass
+
+> Before the IngressClass resource and ingressClassName field were added in Kubernetes 1.18, Ingress classes were specified with a kubernetes.io/ingress.class annotation on the Ingress. This annotation was never formally defined, but was widely supported by Ingress controllers.
+> The newer ingressClassName field on Ingresses is a replacement for that annotation, but is not a direct equivalent. While the annotation was generally used to reference the name of the Ingress controller that should implement the Ingress, the field is a reference to an IngressClass resource that contains additional Ingress configuration, including the name of the Ingress controller.
+
+*-Kubernetes-[Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)*
+
+But, as we saw in the AWS documentation, they still use the annotation, i.e.,:
+
+```plaintext
+annotations:
+    kubernetes.io/ingress.class: alb
+```
+
+### Ingress
+
+TODO
