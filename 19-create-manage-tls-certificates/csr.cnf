@@ -14,5 +14,7 @@ commonName          = example-dev.default.svc.cluster.local
 subjectAltName = @alt_names
 
 [alt_names]
-DNS.1 = example-dev.default
+DNS.1 = example-dev.default.svc.cluster.local
+DNS.2 = example-dev.default
 DNS.2 = example-dev
+
