@@ -6,3 +6,36 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 ## Script
 
+When I first read up on Ingress, I was terribly confused as it seemed to overlap with what our LoadBalancer did.
+
+> What is Ingress?
+Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the Ingress resource.
+
+and
+
+> An Ingress may be configured to give Services externally-reachable URLs, load balance traffic, terminate SSL / TLS, and offer name based virtual hosting. An Ingress controller is responsible for fulfilling the Ingress, usually with a load balancer, though it may also configure your edge router or additional frontends to help handle the traffic.
+
+and
+
+> An Ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer.
+
+*-Kubernetes-[Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)*
+
+Knowing a bit more, the key concepts are:
+
+* *Ingress*: Abstract rules used by an *Ingress Controller* to route HTTP/HTTPS traffic to various Services
+
+* *Ingress Controller*: Vendor-specific implementation that implements the *Ingress* rules; for AWS this is going to be an Application Load Balancer
+
+### Ingress Controller
+
+> In order for the Ingress resource to work, the cluster must have an ingress controller running.
+> Unlike other types of controllers which run as part of the kube-controller-manager binary, Ingress controllers are not started automatically with a cluster. Use this page to choose the ingress controller implementation that best fits your cluster.
+
+*-Kubernetes-[Ingress Controllers](https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/)*
+
+In our case, we are going to use the [AWS ALB Ingress Controller](https://github.com/kubernetes-sigs/aws-alb-ingress-controller).
+
+The good news is that EKS provides detailed intructions to install it; [ALB Ingress Controller on Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/alb-ingress.html).
+
+Work done offscreen.
