@@ -47,22 +47,17 @@ kubectl create configmap ca \
 
 ### Create Certificate Signing Request (CSR)
 
-We now need to create a CSR for the domain name for our Service; *example-dev.default.svc.cluster.local*.
+We now need to create a CSR for the domain name for our Service; *example-dev.default.svc.cluster.local* as well as the shorted versions *example-dev.default* and *example*.
 
-> This article will show you how to manually generate a Certificate Signing Request (or CSR) in an Apache or Nginx web hosting environment using OpenSSL.
-
-*-SSL-[Manually Generate a Certificate Signing Request (CSR) Using OpenSSL](https://www.ssl.com/how-to/manually-generate-a-certificate-signing-request-csr-using-openssl/)*
-
-We create the private key:
+We create the private key and CSR:
 
 ```plaintext
-openssl genrsa -out server.key 2048
-```
-
-We create the CSR:
-
-```plaintext
-openssl req -new -key server.key -out server.csr
+openssl req \
+  -out server.csr \
+  -newkey rsa:2048 \
+  -nodes \
+  -keyout server.key \
+  -config csr.cnf
 ```
 
 ### Create, Approve K8s CSR Object
