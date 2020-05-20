@@ -93,29 +93,6 @@ resource "aws_security_group_rule" "control_plane" {
   type              = "egress"
 }
 
-resource "aws_security_group" "remote_access" {
-  name   = "${local.identifier}-remoteAccess"
-  vpc_id = module.vpc.vpc_id
-}
-
-resource "aws_security_group_rule" "remote_access_ingress" {
-  from_port                = 22
-  protocol                 = "tcp"
-  security_group_id        = aws_security_group.remote_access.id
-  source_security_group_id = module.vpc.bastion_security_group_id
-  to_port                  = 22
-  type                     = "ingress"
-}
-
-resource "aws_security_group_rule" "remote_access_egress" {
-  cidr_blocks       = ["0.0.0.0/0"]
-  from_port         = 0
-  protocol          = "-1"
-  security_group_id = aws_security_group.remote_access.id
-  to_port           = 0
-  type              = "egress"
-}
-
 # CLUSTER RESOURCES
 
 resource "aws_eks_cluster" "this" {

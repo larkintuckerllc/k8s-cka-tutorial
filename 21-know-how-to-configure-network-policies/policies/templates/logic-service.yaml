@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/name: {{ .Chart.Name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/version: {{ .Chart.Version }}  
+  name: logic-{{ .Release.Name }}
+spec:
+  selector:
+    tier: logic
+    release: {{ .Release.Name }}
+  ports:
+    - protocol: TCP
+      port: 80
+  type: LoadBalancer
