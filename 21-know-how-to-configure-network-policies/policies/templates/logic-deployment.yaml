@@ -6,6 +6,7 @@ metadata:
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/version: {{ .Chart.Version }}  
   name: logic-{{ .Release.Name }}
+  namespace: production-{{ .Release.Name }}
 spec:
   replicas: 1
   selector:

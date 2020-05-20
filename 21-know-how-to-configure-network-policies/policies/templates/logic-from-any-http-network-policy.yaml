@@ -6,6 +6,7 @@ metadata:
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/version: {{ .Chart.Version }}
   name: logic-from-any-http-{{ .Release.Name }}
+  namespace: production-{{ .Release.Name }}
 spec:
   podSelector:
     matchLabels:
