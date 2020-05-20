@@ -87,3 +87,9 @@ Setup DNS to for *httpd.todosrus.com* and *nginx.todosrus.com*.
 ```plaintext
 helm install dev ingress-multiple-paths
 ```
+
+### Ingress (HTTPS)
+
+```plaintext
+helm install dev ingress-https
+```
