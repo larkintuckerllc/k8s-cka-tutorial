@@ -13,7 +13,12 @@ spec:
   rules:
   - http:
       paths:
-      - path: /*
+      - path: /a/*
         backend:
-          serviceName: example-{{ .Release.Name }}
+          serviceName: a-{{ .Release.Name }}
           servicePort: 80
+      - path: /b/*
+        backend:
+          serviceName: b-{{ .Release.Name }}
+          servicePort: 80
+
