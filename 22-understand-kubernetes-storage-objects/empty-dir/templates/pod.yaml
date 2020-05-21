@@ -6,7 +6,7 @@ spec:
   containers:
   - name: ubuntu-a
     command: ['tail', '-f', '/dev/null']
-    image: ubuntu
+    image: ubuntu:18.04
     volumeMounts:
     - name: cache
       mountPath: /cache
