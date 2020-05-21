@@ -107,4 +107,8 @@ First, PersistentVolumes are not namespaced but PVCs are:
 
 First requires Cluster setup; [How do I use persistent storage in Amazon EKS?](https://aws.amazon.com/premiumsupport/knowledge-center/eks-persistent-storage/).
 
-TODO:
+```plaintext
+helm install dev storage-class
+```
+
+Delete Pod and PVC and observe deletion of PV (and backing storage).
