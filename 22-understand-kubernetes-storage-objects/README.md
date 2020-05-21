@@ -6,9 +6,15 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 ## Script
 
-TODO: WEAVE IN MEDIUM ARTICLE.
+Script borrows from: [Kubernetes Storage By Example: Part 1](https://codeburst.io/kubernetes-storage-by-example-part-1-27f44ae8fb8b).
+
+### Writable Container Layer
+
+See Medium article section of same name.
 
 ### Volumes (Temporary)
+
+See Medium article section of same name.
 
 ```plaintext
 helm install dev empty-dir
@@ -16,7 +22,9 @@ helm install dev empty-dir
 
 ### Volumes (Persistent)
 
-Here we are going to create an EBS volume in the same AZ as our SINGLE node. In the more general example, of having multiple nodes in different AZ, we are going have to figure out how to schedule Pods on the correct Node to access the EBS!
+See Medium article section of same name; not using *hostPath* but EBS here.
+
+Here we are going to create an EBS volume in the same AZ as our SINGLE node. In the more general example, of having multiple nodes in different AZ, we are going have to figure out how to schedule Pods on the correct Node to access the EBS.
 
 ```plaintext
 kubectl describe node
@@ -32,13 +40,13 @@ Verify by using *lsblk* and *df -h*.
 
 ### PersistentVolume and PersistentVolumeClaim
 
+See Medium article section of same name.
+
 This is an example of static provisioning.
 
 > A cluster administrator creates a number of PVs. They carry the details of the real storage, which is available for use by cluster users. They exist in the Kubernetes API and are available for consumption.
 
-```plaintext
-helm install dev persistent-volume
-```
+Here using EBS.
 
 > Each PV gets its own set of access modes describing that specific PV’s capabilities.
 
@@ -100,6 +108,8 @@ First, PersistentVolumes are not namespaced but PVCs are:
 *-Kubernetes-[Persistent Volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)*
 
 ### StorageClass
+
+See Medium article section of same name.
 
 > When none of the static PVs the administrator created match a user’s PersistentVolumeClaim, the cluster may try to dynamically provision a volume specially for the PVC. This provisioning is based on StorageClasses: the PVC must request a storage class and the administrator must have created and configured that class for dynamic provisioning to occur.
 
