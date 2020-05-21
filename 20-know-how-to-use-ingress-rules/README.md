@@ -2,7 +2,7 @@
 
 Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/larkintuckerllc/k8s-cka-tutorial)
 
-[![Networking: Know How to Use Ingress Rules](http://img.youtube.com/vi/XXXXX/0.jpg)]()
+[![Networking: Know How to Use Ingress Rules](http://img.youtube.com/vi/ydziARWNnT4/0.jpg)](https://youtu.be/ydziARWNnT4)
 
 ## Script
 

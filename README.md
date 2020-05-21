@@ -61,6 +61,9 @@
 *[Security: Create and Manage TLS Certificates for Cluster Components](19-create-manage-tls-certificates)*  
 *Keywords*: Certificate Authority, CertificateSigningRequest
 
+*[Networking: Know How to Use Ingress Rules](20-know-how-to-use-ingress-rules)*  
+*Keywords*: Ingress Controller, Ingress
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.
