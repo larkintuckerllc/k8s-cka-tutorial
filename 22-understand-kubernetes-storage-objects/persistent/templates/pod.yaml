@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: example
+spec:
+  containers:
+  - name: ubuntu
+    command: ['tail', '-f', '/dev/null']
+    image: ubuntu:18.04
+    volumeMounts:
+    - name: data
+      mountPath: /data
+  volumes:
+  - name: data
+    awsElasticBlockStore:
+      volumeID: vol-0ab2ba888bd7c6521
+      fsType: ext4
