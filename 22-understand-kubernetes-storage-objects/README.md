@@ -6,6 +6,8 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 ## Script
 
+TODO: WEAVE IN MEDIUM ARTICLE.
+
 ### Volumes (Temporary)
 
 ```plaintext
@@ -103,3 +105,6 @@ First, PersistentVolumes are not namespaced but PVCs are:
 
 *-Kubernetes-[Persistent Volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)*
 
+First requires Cluster setup; [How do I use persistent storage in Amazon EKS?](https://aws.amazon.com/premiumsupport/knowledge-center/eks-persistent-storage/).
+
+TODO:
