@@ -2,7 +2,7 @@
 
 Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/larkintuckerllc/k8s-cka-tutorial)
 
-[![Security: Know How to Use Network Policies](http://img.youtube.com/vi/XXXXX/0.jpg)]()
+[![Security: Know How to Use Network Policies](http://img.youtube.com/vi/mZut69rBfZ4/0.jpg)](https://youtu.be/mZut69rBfZ4)
 
 ## Script
 

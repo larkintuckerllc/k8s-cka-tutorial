@@ -64,6 +64,9 @@
 *[Networking: Know How to Use Ingress Rules](20-know-how-to-use-ingress-rules)*  
 *Keywords*: Ingress Controller, Ingress
 
+*[Security: Know How to Configure Network Policies](21-know-how-to-configure-network-policies)*  
+*Keywords*: Network Policy
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.
