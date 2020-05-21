@@ -27,7 +27,7 @@ spec:
       - name: flask
         env:
         - name: REDIS_URL
-          value: {{ printf "redis://data-%s" .Release.Name }}
+          value: {{ printf "redis://redis-%s" .Release.Name }}
         image: 143287522423.dkr.ecr.us-east-1.amazonaws.com/todos:0.1.0
         ports:
         - containerPort: 80

@@ -26,5 +26,7 @@ So how do these tiers relate to K8s concepts?
 
 Thinking about tiers as basically groupings of Pods, it is unsurprising that we use K8s labels and Namespaces to define these tiers. In this example, the tiers are defined by:
 
-* *Logic Tier*: Pods with namespace = production with a label key/value = network/production: true
+* *Logic Tier*: Pods with namespace: production with a label network/logic: true
+
+* *Data Tier*: Pods with namespace: production with a label network/data: true
 
