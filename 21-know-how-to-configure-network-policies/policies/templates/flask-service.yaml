@@ -5,13 +5,13 @@ metadata:
     app.kubernetes.io/name: {{ .Chart.Name }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/version: {{ .Chart.Version }}  
-  name: data-{{ .Release.Name }}
+  name: flask-{{ .Release.Name }}
   namespace: production-{{ .Release.Name }}
 spec:
   selector:
-    tier: data
+    app: flask
     release: {{ .Release.Name }}
   ports:
-    - name: redis
-      protocol: TCP
-      port: 6379
+    - protocol: TCP
+      port: 80
+  type: LoadBalancer

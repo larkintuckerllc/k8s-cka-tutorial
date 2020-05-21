@@ -5,13 +5,13 @@ metadata:
     app.kubernetes.io/name: {{ .Chart.Name }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/version: {{ .Chart.Version }}  
-  name: logic-{{ .Release.Name }}
+  name: redis-{{ .Release.Name }}
   namespace: production-{{ .Release.Name }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      tier: logic
+      app: redis
       release: {{ .Release.Name }}
   template:
     metadata:
@@ -19,21 +19,12 @@ spec:
         app.kubernetes.io/name: {{ .Chart.Name }}
         app.kubernetes.io/instance: {{ .Release.Name }}
         app.kubernetes.io/version: {{ .Chart.Version }}  
-        tier: logic
-        networking/logic: "true"
+        app: redis
         release: {{ .Release.Name }}
+        networking/data: "true"
     spec:
       containers:
-      - name: api
-        env:
-        - name: REDIS_URL
-          value: {{ printf "redis://data-%s" .Release.Name }}
-        image: 143287522423.dkr.ecr.us-east-1.amazonaws.com/todos:0.1.0
+      - name: redis
+        image: redis:6.0.3
         ports:
-        - containerPort: 80
-          name: http
-        readinessProbe:
-          httpGet:
-            path: /probe
-            port: http
-
+        - containerPort: 6379
