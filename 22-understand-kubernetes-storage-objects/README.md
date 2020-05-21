@@ -107,6 +107,12 @@ First, PersistentVolumes are not namespaced but PVCs are:
 
 First requires Cluster setup; [How do I use persistent storage in Amazon EKS?](https://aws.amazon.com/premiumsupport/knowledge-center/eks-persistent-storage/).
 
+> The volumeBindingMode field controls when volume binding and dynamic provisioning should occur.
+> By default, the Immediate mode indicates that volume binding and dynamic provisioning occurs once the PersistentVolumeClaim is created. For storage backends that are topology-constrained and not globally accessible from all Nodes in the cluster, PersistentVolumes will be bound or provisioned without knowledge of the Pod’s scheduling requirements. This may result in unschedulable Pods.
+> A cluster administrator can address this issue by specifying the WaitForFirstConsumer mode which will delay the binding and provisioning of a PersistentVolume until a Pod using the PersistentVolumeClaim is created. PersistentVolumes will be selected or provisioned conforming to the topology that is specified by the Pod’s scheduling constraints. These include, but are not limited to, resource requirements, node selectors, pod affinity and anti-affinity, and taints and tolerations.
+
+*-Kubernetes-[Storage Classes](https://kubernetes.io/docs/concepts/storage/storage-classes/)*
+
 ```plaintext
 helm install dev storage-class
 ```
