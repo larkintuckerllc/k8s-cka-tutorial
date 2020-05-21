@@ -5,9 +5,8 @@ metadata:
     app.kubernetes.io/name: {{ .Chart.Name }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/version: {{ .Chart.Version }}
-    networking/logic: "true"
-  name: example-{{ .Release.Name }}
-  namespace: production-{{ .Release.Name }}
+  name: ubuntu-{{ .Release.Name }}
+  namespace: personal-{{ .Release.Name }}
 spec:
   containers:
   - name: ubuntu
