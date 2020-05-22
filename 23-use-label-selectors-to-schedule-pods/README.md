@@ -8,6 +8,8 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 * Scheduling: Display Scheduler Events
 
+* Scheduling: Understand how to run multiple schedulers and how to configure Pods to use them
+
 [![Scheduling: Use Label Selectors to Schedule Pods](http://img.youtube.com/vi/XXXXX/0.jpg)]()
 
 ## Script
@@ -28,7 +30,21 @@ and
 
 *-Kubernetes-[Kubernetes Scheduler](https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/)*
 
-**note:** It is important to note, that *kube-scheduler*  works by identifying what Node to run Pods on during scheduling; it does not deal with executing Pods, i.e., evicting.
+**note:** It is important to note, that schedulers works by identifying what Node to run Pods on during scheduling; it does not deal with executing Pods, i.e., evicting.
+
+### Custom Scheduler
+
+> Kubernetes ships with a default scheduler that is described here. If the default scheduler does not suit your needs you can implement your own scheduler. Not just that, you can even run multiple schedulers simultaneously alongside the default scheduler and instruct Kubernetes what scheduler to use for each of your pods. Let’s learn how to run multiple schedulers in Kubernetes with an example.
+
+*-Kubernetes-[Configure Multiple Schedulers](https://kubernetes.io/docs/tasks/administer-cluster/configure-multiple-schedulers/)*
+
+Process generally involves:
+
+* Install new scheduler using a Deployment; schedulers are associated with a unique cluster-wide name to identify them
+
+* Associate Pods to scheduler using the name, i.e., *schedulerName: default-scheduler*
+
+We will look at in a minute.
 
 ### nodeName
 
@@ -43,6 +59,8 @@ Here we fail:
 ```plaintext
 helm install dev node-name
 ```
+
+**note**: Look at the *schedulerName* value in full yaml.
 
 ```plaintext
 kubectl describe pod example
