@@ -6,6 +6,8 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 * Scheduling: Manually schedule a pod without a scheduler
 
+* Scheduling: Display Scheduler Events
+
 [![Scheduling: Use Label Selectors to Schedule Pods](http://img.youtube.com/vi/XXXXX/0.jpg)]()
 
 ## Script
@@ -35,6 +37,18 @@ and
 *-Kubernetes-[Assigning Pods to Nodes](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/)*
 
 **note**: By directly setting *nodeName* you by-pass the scheduler as this is what scheduler actually does.  The Kublet on that Node is what then actually runs the Pod (uses this value).
+
+Here we fail:
+
+```plaintext
+helm install dev node-name
+```
+
+```plaintext
+kubectl describe pod example
+
+kubectl get events -n kube-system
+```
 
 ### nodeSelector
 
