@@ -24,4 +24,18 @@ and
 
 > nodeSelector is the simplest recommended form of node selection constraint. nodeSelector is a field of PodSpec. It specifies a map of key-value pairs. For the pod to be eligible to run on a node, the node must have each of the indicated key-value pairs as labels (it can have additional labels as well). The most common usage is one key-value pair.
 
-TODO: EXAMPLE
+Notice that Nodes are pre-populated with a number of labels; including one that specifies the Availability Zone.
+
+```plaintext
+kubectl get nodes
+
+kubectl describe node XXX
+```
+
+In the last video, we created a Pod using an EBS volume that is only usable on Pods scheduled to Nodes in a particular Availability Zone. We had one Node, so we glossed over this problem.
+
+Here we start up two Nodes.
+
+```plaintext
+helm install dev node-selector
+```
