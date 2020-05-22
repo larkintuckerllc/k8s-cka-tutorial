@@ -122,4 +122,12 @@ and
 
 The general idea is that you specify a *topologyKey* for a selection rule that groups Nodes based on this key; these are labels on Nodes, e.g., Availability Zone. Then the rule is about Pods (identified by label) in that group.
 
-TODO: EXAMPLE
+Here we spread out Pods across Availability Zones.
+
+```plaintext
+helm install dev pod-affinity
+```
+
+```plaintext
+kubectl get pod -o=custom-columns=NODE:.spec.nodeName,NAME:.metadata.name
+```
