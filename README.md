@@ -67,6 +67,9 @@
 *[Security: Know How to Configure Network Policies](21-know-how-to-configure-network-policies)*  
 *Keywords*: Network Policy
 
+*[Storage: Understand Kubernetes Storage Objects](22-understand-kubernetes-storage-objects)*  
+*Keywords*: PersistentVolume, PersistentVolumeClaim, StorageClaim 
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.
