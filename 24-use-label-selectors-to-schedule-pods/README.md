@@ -6,6 +6,8 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 ## Script
 
+**note:** Will observe that this is NOT about using label selectors but rather another label-LIKE selector (Taints). Felt it would be a mistake to not cover.
+
 > Node affinity, is a property of Pods that attracts them to a set of nodes (either as a preference or a hard requirement). Taints are the opposite – they allow a node to repel a set of pods.
 
 and
@@ -25,6 +27,8 @@ The key observations here are that Taints / Tolerations:
 * Feature is principally driven from Node configuration
 
 * Can impact both scheduling (kube-scheduler) and execution (kublet)
+
+**note:** Other than impacting during execution, I was confused as to why this feature is needed as we could accomplish the same thing with a nodeAffinity (with the negative operators). Turns out there is an important difference in usage.
 
 As we will see, we can repel Pods from a Node without making any changes to the Pod template; not true for nodeName, nodeSelector, and Affinity.
 
@@ -60,10 +64,43 @@ Install and observe tolerations:
 helm install dev hello-pod
 ```
 
+**note:** Leave pod running.
+
 Daemon Pods even more:
 
 ```plaintext
 kubectl describe pod kube-proxy-2rlfj -n kube-system
 ```
 
-TODO: EXAMPLE OF EVICTING A POD AND THEN REMOVING
+### Custom Taint
+
+Since we did not create the Nodes using a declarative configuration file, we will use an imperative command to manipulate Nodes.
+
+Observe pod on a node.
+
+```plaintext
+kubectl get pod -o=custom-columns=NODE:.spec.nodeName
+```
+
+```plaintext
+kubectl taint nodes XXXX mykey=:NoExecute
+
+kubectl taint nodes XXXX mykey2=myvalue2:NoExecute
+```
+
+Observe taints:
+
+```plaintext
+kubectl describe node XXXX
+```
+
+Observe eviction.
+
+Remove taints:
+
+```plaintext
+kubectl taint nodes XXXX mykey:NoExecute-
+kubectl taint nodes XXXX mykey2:NoExecute-
+```
+
+Observe clean...
