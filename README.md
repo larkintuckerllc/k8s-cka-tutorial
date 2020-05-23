@@ -70,6 +70,10 @@
 *[Storage: Understand Kubernetes Storage Objects](22-understand-kubernetes-storage-objects)*  
 *Keywords*: PersistentVolume, PersistentVolumeClaim, StorageClaim 
 
+
+*[Scheduling: Use Label Selectors to Schedule Pods](23-use-label-selectors-to-schedule-pods)*  
+*Keywords*: nodeName, nodeSelector, nodeAffinity, podAffinity, podAntiAffinity
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.

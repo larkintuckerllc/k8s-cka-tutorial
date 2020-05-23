@@ -10,7 +10,7 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 * Scheduling: Understand how to run multiple schedulers and how to configure Pods to use them
 
-[![Scheduling: Use Label Selectors to Schedule Pods](http://img.youtube.com/vi/XXXXX/0.jpg)]()
+[![Scheduling: Use Label Selectors to Schedule Pods](http://img.youtube.com/vi/XtZBhTs6vmY/0.jpg)](https://youtu.be/XtZBhTs6vmY)
 
 ## Script
 
