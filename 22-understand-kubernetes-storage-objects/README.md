@@ -12,7 +12,7 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 * Storage: Know how to configure applications with persistent storage
 
-[![Storage: Understand Kubernetes Storage Objects](http://img.youtube.com/vi/XXXXX/0.jpg)]()
+[![Storage: Understand Kubernetes Storage Objects](http://img.youtube.com/vi/-7zlpHRQwlA/0.jpg)](https://youtu.be/-7zlpHRQwlA)
 
 ## Script
 
