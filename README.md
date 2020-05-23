@@ -70,9 +70,11 @@
 *[Storage: Understand Kubernetes Storage Objects](22-understand-kubernetes-storage-objects)*  
 *Keywords*: PersistentVolume, PersistentVolumeClaim, StorageClaim 
 
-
 *[Scheduling: Use Label Selectors to Schedule Pods](23-use-label-selectors-to-schedule-pods)*  
 *Keywords*: nodeName, nodeSelector, nodeAffinity, podAffinity, podAntiAffinity
+
+*[Scheduling: Use Label Selectors to Schedule Pods](24-use-label-selectors-to-schedule-pods)*  
+*Keywords*: Taint, Toleration
 
 ## Script
 

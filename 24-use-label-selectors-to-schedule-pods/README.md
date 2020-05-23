@@ -2,7 +2,7 @@
 
 Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/larkintuckerllc/k8s-cka-tutorial)
 
-[![Scheduling: Use Label Selectors to Schedule Pods](http://img.youtube.com/vi/XXXXX/0.jpg)]()
+[![Scheduling: Use Label Selectors to Schedule Pods](http://img.youtube.com/vi/q4uJge2mnA0/0.jpg)](https://youtu.be/q4uJge2mnA0)
 
 ## Script
 
