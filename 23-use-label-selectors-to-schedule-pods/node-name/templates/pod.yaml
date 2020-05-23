@@ -7,5 +7,4 @@ spec:
   - name: ubuntu
     command: ['tail', '-f', '/dev/null']
     image: ubuntu:18.04
-  nodeName: bogus
-
+  nodeName: ip-192-168-137-205.ec2.internal
