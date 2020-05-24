@@ -62,4 +62,16 @@ Look at CloudWatch entry at: */aws/containerinsights/Cluster_Name/host*
 
 ### Control Plane
 
-TODO
+The K8s documentation suggest that the control plane logging (on the Master Node) is in the following locations:
+
+* /var/log/kube-apiserver.log
+
+* /var/log/kube-scheduler.log
+
+* /var/log/kube-controller-manager.log
+
+But in the case of AWS EKS, the control plane does run on a host we have access to. It is however available in CloudWatch on a feature by feature basis.
+
+Show configuration in AWS.
+
+Show log in CloudWatch
