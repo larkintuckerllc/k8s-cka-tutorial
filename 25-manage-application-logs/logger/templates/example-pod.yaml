@@ -10,4 +10,4 @@ spec:
   containers:
   - name: ubuntu
     image: ubuntu:18.04
-    command: ['sh', '-c', 'i=0; while true; do echo "[$(uname -n)] $(date)"; i=$((i+1)); sleep 60; done']
+    command: ['/bin/sh', '-c', 'i=0; while true; do echo "[$(uname -n)] $(date)"; i=$((i+1)); sleep 1; done']
