@@ -40,6 +40,8 @@ and
 
 ### CPU
 
+**note:** Metrics collection interval is 1 minute (minimum of 15 seconds).
+
 > metrics_collection_interval – In the kubernetes section, you can specify how often the agent collects metrics. The default is 60 seconds. The default cadvisor collection interval in kubelet is 15 seconds, so don't set this value to less than 15 seconds.
 
 *-AWS-[Set Up the CloudWatch Agent to Collect Cluster Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Container-Insights-setup-metrics.html)*
@@ -61,4 +63,20 @@ Makes sense since we are using a t3-medium with 2 vCPU.
 Metrics from AWS Container Insights.
 
 ### Memory
+
+```plaintext
+helm install dev stress-memory
+```
+
+```plaintext
+kubectl top pod
+
+kubectl top node
+```
+
+**note**: Not as stable as CPU.
+
+Makes sense since we are using a t3-medium with 4 Gi memory.
+
+Metrics from AWS Container Insights.
 
