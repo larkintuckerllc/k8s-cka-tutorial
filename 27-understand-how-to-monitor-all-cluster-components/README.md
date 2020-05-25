@@ -1,14 +1,60 @@
-# TODO
+# Logging/Monitoring: Understand How to Monitor All Cluster Components
 
 Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/larkintuckerllc/k8s-cka-tutorial)
 
-[![TODO](http://img.youtube.com/vi/XXXXX/0.jpg)]()
+Includes:
+
+* Logging/Monitoring: Understand How to Monitor Applications
+
+[![Logging/Monitoring: Understand How to Monitor All Cluster Components](http://img.youtube.com/vi/XXXXX/0.jpg)]()
 
 ## Script
 
-### Metrics Sources and Sinks
+### Metrics For The Kubernetes Control Plane
 
-One thing that confused me was the relationship between Metrics Server, the Metrics API, and tools for aggregating metrics (Prometheus or AWS Container Insights).
+> System component metrics can give a better look into what is happening inside them. Metrics are particularly useful for building dashboards and alerts.
+
+and
+
+> Metrics in Kubernetes control plane are emitted in prometheus format and are human readable.
+
+and
+
+> In most cases metrics are available on /metrics endpoint of the HTTP server. For components that doesn’t expose endpoint by default it can be enabled using --bind-address flag.
+
+* kube-controller-manager
+
+* kube-proxy
+
+* kube-apiserver
+
+* kube-scheduler
+
+* kubelet
+
+For example, we can get the metrics for kube-apiserver fairly directly:
+
+```plaintext
+kubectl get --raw /metrics
+```
+
+For Kublet (and specifically the containers), we can get it indirectly through kube-apiserver:
+
+```plaintext
+kubectl get --raw /api/v1/nodes/ip-192-168-176-205.ec2.internal/proxy/metrics/cadvisor
+```
+
+For some other (sort-of) Control Plane element:
+
+```plaintext
+kubectl --namespace=kube-system port-forward deployment/coredns 9090:9153
+```
+
+**note**: For AWS, we cannot directly interact with the other Control Plane elements, e.g., kube-scheduler.
+
+### Metrics Server
+
+One confusing thing is the relationship between the Metrics Server and the various aformentioned */metrics* endpoints.
 
 > The resource metrics pipeline provides a limited set of metrics related to cluster components such as the Horizontal Pod Autoscaler controller, as well as the kubectl top utility. These metrics are collected by the lightweight, short-term, in-memory metrics-server and are exposed via the metrics.k8s.io API.
 
@@ -20,15 +66,31 @@ and
 
 Key points:
 
-* Kublet exposes metric data gathered from Container Engine on an API on each Node
-
 * Metrics Server aggregates data from the Node API and exposes a summary API on kube-apiserver; replaces what used to be done by Heapster
 
-* The summary API is used by the *kubectl top* command as well as the Horizontal Pod Autoscaler controller
+* This summary API is used by the *kubectl top* command as well as the Horizontal Pod Autoscaler controller
 
-* Other tools DO NOT use the aggregated Metrics Server API. It is unclear if they use the Kublet API or directly inquire the Container Engine
+* Other tools DO NOT use the aggregated Metrics Server API. The get their information more directly from the Control Plane metrics directly.
 
-### Metrics
+```plaintext
+helm install dev stress-cpu
+```
+
+Leave running.
+
+Notice the API endpoint exposed by Metrics Server.
+
+```plaintext
+kubectl get --raw /apis/metrics.k8s.io/v1beta1/namespaces/default/pods/stress-cpu-dev
+```
+
+As opposed to the raw data from Kublet:
+
+```plaintext
+kubectl get --raw /api/v1/nodes/ip-192-168-176-205.ec2.internal/proxy/metrics/cadvisor
+```
+
+### Container Metrics
 
 > CPU is reported as the average usage, in CPU cores, over a period of time. This value is derived by taking a rate over a cumulative CPU counter provided by the kernel (in both Linux and Windows kernels).
 
@@ -40,15 +102,7 @@ and
 
 ### CPU
 
-**note:** Metrics collection interval is 1 minute (minimum of 15 seconds).
-
-> metrics_collection_interval – In the kubernetes section, you can specify how often the agent collects metrics. The default is 60 seconds. The default cadvisor collection interval in kubelet is 15 seconds, so don't set this value to less than 15 seconds.
-
-*-AWS-[Set Up the CloudWatch Agent to Collect Cluster Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Container-Insights-setup-metrics.html)*
-
-```plaintext
-helm install dev stress-cpu
-```
+Again the raw container metrics originate from Kublets */metrics* endpoint, but are aggregated into:
 
 Metrics from Metrics Server:
 
@@ -58,15 +112,19 @@ kubectl top pod
 kubectl top node
 ```
 
-Makes sense since we are using a t3-medium with 2 vCPU.
-
 Metrics from AWS Container Insights.
 
+Makes sense since we are using a t3-medium with 2 vCPU.
+
 ### Memory
+
+Similarly for memory.
 
 ```plaintext
 helm install dev stress-memory
 ```
+
+Leave running to end.
 
 ```plaintext
 kubectl top pod
@@ -76,9 +134,9 @@ kubectl top node
 
 **note**: Not as stable as CPU.
 
-Makes sense since we are using a t3-medium with 4 Gi memory.
-
 Metrics from AWS Container Insights.
+
+Makes sense since we are using a t3-medium with 4 Gi memory.
 
 ### Dashboard
 
@@ -103,3 +161,13 @@ When it comes to monitoring application, Prometheus often comes up.
 Just a quick dip into Prometheus; details are out of scope.
 
 [Control plane metrics with Prometheus](https://docs.aws.amazon.com/eks/latest/userguide/prometheus.html)
+
+```plaintext
+kubectl --namespace=prometheus port-forward deploy/prometheus-server 9090
+```
+
+Look at *container_memory_usage_bytes*.
+
+Also, observe all the other metrics from the various Control Plane that we can see.
+
+**note:** Finally, while outside the scope of this series, you can also create your own custom application metrics and expose them to Prometheus.
