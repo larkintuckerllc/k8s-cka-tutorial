@@ -80,3 +80,26 @@ Makes sense since we are using a t3-medium with 4 Gi memory.
 
 Metrics from AWS Container Insights.
 
+### Dashboard
+
+We can see this same data using the [Kubernetes Dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/).
+
+Installed off-screen.
+
+See both Node and Pod utilization.
+
+### Prometheus
+
+When it comes to monitoring application, Prometheus often comes up.
+
+> Prometheus is an open-source systems monitoring and alerting toolkit originally built at SoundCloud. Since its inception in 2012, many companies and organizations have adopted Prometheus, and the project has a very active developer and user community. It is now a standalone open source project and maintained independently of any company.
+
+![Prometheus Architecture](architecture.png)
+
+*-Prometheus-[Overview](https://prometheus.io/docs/introduction/overview/)*
+
+**note**: Ran into a EKS limit when installing Prometheus; [Max Pods](https://github.com/awslabs/amazon-eks-ami/blob/master/files/eni-max-pods.txt)
+
+Just a quick dip into Prometheus; details are out of scope.
+
+[Control plane metrics with Prometheus](https://docs.aws.amazon.com/eks/latest/userguide/prometheus.html)
