@@ -6,7 +6,7 @@ Includes:
 
 * Logging/Monitoring: Understand How to Monitor Applications
 
-[![Logging/Monitoring: Understand How to Monitor All Cluster Components](http://img.youtube.com/vi/XXXXX/0.jpg)]()
+[![Logging/Monitoring: Understand How to Monitor All Cluster Components](http://img.youtube.com/vi/DGfDbCYDRXs/0.jpg)](https://youtu.be/DGfDbCYDRXs)
 
 ## Script
 

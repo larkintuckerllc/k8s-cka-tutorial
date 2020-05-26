@@ -82,6 +82,9 @@
 *[Logging/Monitoring: Manage Cluster Component Logs](26-manage-cluster-component-logs)*  
 *Keywords*:
 
+*[Logging/Monitoring: Understand How to Monitor All Cluster Components](27-understand-how-to-monitor-all-cluster-components)*  
+*Keywords*: Metrics Server, Dashboard, Prometheus 
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.
