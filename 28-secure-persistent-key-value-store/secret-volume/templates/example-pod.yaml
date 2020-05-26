@@ -10,13 +10,21 @@ spec:
   containers:
   - name: ubuntu
     image: ubuntu:18.04
-    command: ['/bin/ls', '/etc/config']
+    command: 
+      - /bin/sh
+      - -c
+      - >
+        while true;
+        do
+          cat /etc/config/A
+          echo
+          sleep 1;
+          done
     volumeMounts:
     - name: config
-      mountPath: /etc/config
+      mountPath: '/etc/config'
       readOnly: true
   volumes:
   - name: config
-    configMap:
-      name: example-{{ .Release.Name }}
-  restartPolicy: Never
+    secret:
+      secretName: example-{{ .Release.Name }}

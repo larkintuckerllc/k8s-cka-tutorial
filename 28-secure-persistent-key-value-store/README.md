@@ -46,4 +46,8 @@ https://github.com/kubernetes/kubernetes/blob/7693a1d5fe2a35b6e2e205f03ae9b3eddc
 
 ### Secret Volume
 
+> Inside the container that mounts a secret volume, the secret keys appear as files and the secret values are base64 decoded and stored inside these files.
+
+TODO: AUTO-UPDATE
+
 TODO: AWS
