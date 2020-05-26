@@ -79,6 +79,9 @@
 *[Logging/Monitoring: Manage Application Logs](25-manage-application-logs)*  
 *Keywords*: Sidecar Container, fluentd, Node Agent  
 
+*[Logging/Monitoring: Manage Cluster Component Logs](26-manage-cluster-component-logs)*  
+*Keywords*:
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.
