@@ -2,7 +2,7 @@
 
 Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/larkintuckerllc/k8s-cka-tutorial)
 
-[![Logging/Monitoring: Manage Application Logs](http://img.youtube.com/vi/XXXXX/0.jpg)]()
+[![Logging/Monitoring: Manage Application Logs](http://img.youtube.com/vi/SeDwgzZcPIQ/0.jpg)](https://youtu.be/SeDwgzZcPIQ)
 
 ## Script
 

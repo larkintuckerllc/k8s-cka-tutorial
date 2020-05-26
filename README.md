@@ -76,6 +76,9 @@
 *[Scheduling: Use Label Selectors to Schedule Pods](24-use-label-selectors-to-schedule-pods)*  
 *Keywords*: Taint, Toleration
 
+*[Logging/Monitoring: Manage Application Logs](25-manage-application-logs)*  
+*Keywords*: Sidecar Container, fluentd, Node Agent  
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.
