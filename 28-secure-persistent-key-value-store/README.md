@@ -6,7 +6,13 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 ## Script
 
-TODO: ConfigMap
+```plaintext
+helm install dev config-map-environment
+```
+
+```plaintext
+helm install dev config-map-volume
+```
 
 TODO: Secrets
 
