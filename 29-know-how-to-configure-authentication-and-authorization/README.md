@@ -6,4 +6,10 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 ## Script
 
-TODO: ServiceAccount
+```plaintext
+helm install dev service-account
+```
+
+```plaintext
+curl -H "Authorization: bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)" --cacert /vr/run/secrets/kubernetes.io/serviceaccount/ca.crt https://kubernetes.default/api/v1/namespaces/default/pods
+```
