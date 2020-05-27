@@ -14,6 +14,12 @@ and
 
 *-Kubernetes-[Managing Resources for Containers](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/)*
 
+Notice that Node maintains totals:
+
+```plaintext
+kubectl describe nodes
+```
+
 ### CPU
 
 > Limits and requests for CPU resources are measured in cpu units. One cpu, in Kubernetes, is equivalent to 1 vCPU/Core for cloud providers and 1 hyperthread on bare-metal Intel processors.
@@ -40,7 +46,23 @@ and
 
 *-Kubernetes-[Managing Resources for Containers](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/)*
 
-TODO: EXAMPLE
+Success:
+
+```plaintext
+helm install dev cpu-request-success
+```
+
+Observe nodes:
+
+```plaintext
+kubectl describe nodes
+```
+
+Failure:
+
+```plaintext
+helm install dev cpu-request-failure
+```
 
 ### Resource Limits and Execution
 
@@ -52,7 +74,17 @@ and
 
 *-Kubernetes-[Managing Resources for Containers](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/)*
 
-TODO: EXAMPLE OF BOTH
+Notice that CPU is limited:
+
+```plaintext
+helm install dev cpu-limit-failure
+```
+
+Notice that container is killed:
+
+```plaintext
+helm install dev memory-limit-failure
+```
 
 ### Other Resources
 
