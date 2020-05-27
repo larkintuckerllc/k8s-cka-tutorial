@@ -2,6 +2,8 @@
 
 Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/larkintuckerllc/k8s-cka-tutorial)
 
+**Addendum:** Should have mentioned that one uses the *--previous* flag with *kubectl logs* to get the logs from the previous container.
+
 [![Logging/Monitoring: Manage Application Logs](http://img.youtube.com/vi/SeDwgzZcPIQ/0.jpg)](https://youtu.be/SeDwgzZcPIQ)
 
 ## Script
