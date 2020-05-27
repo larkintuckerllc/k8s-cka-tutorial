@@ -88,6 +88,10 @@
 *[Security: Secure Persistent Key Value Store](28-secure-persistent-key-value-store)*  
 *Keywords*: ConfigMap, Secret
 
+*[Security: Know How to Configure Authentication and Authorization](29-know-how-to-configure-authentication-and-authorization)*  
+*Keywords*: ServiceAccount
+
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.
