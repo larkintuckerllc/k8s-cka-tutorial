@@ -85,6 +85,9 @@
 *[Logging/Monitoring: Understand How to Monitor All Cluster Components](27-understand-how-to-monitor-all-cluster-components)*  
 *Keywords*: Metrics Server, Dashboard, Prometheus 
 
+*[Security: Secure Persistent Key Value Store](28-secure-persistent-key-value-store)*  
+*Keywords*: ConfigMap, Secret
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.

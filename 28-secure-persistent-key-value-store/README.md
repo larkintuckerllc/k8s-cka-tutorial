@@ -2,7 +2,7 @@
 
 Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/larkintuckerllc/k8s-cka-tutorial)
 
-[![Security: Secure Persistent Key Value Store](http://img.youtube.com/vi/XXXXX/0.jpg)]()
+[![Security: Secure Persistent Key Value Store](http://img.youtube.com/vi/KjbeicqU844/0.jpg)](https://youtu.be/KjbeicqU844)
 
 ## Script
 
