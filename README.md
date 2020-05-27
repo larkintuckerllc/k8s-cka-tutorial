@@ -91,6 +91,8 @@
 *[Security: Know How to Configure Authentication and Authorization](29-know-how-to-configure-authentication-and-authorization)*  
 *Keywords*: ServiceAccount
 
+*[Scheduling: Understand How Resource Limits Can Affect Pod Scheduling](30-understand-resource-limits)*  
+*Keywords*: Resource Request, Resource Limits
 
 ## Script
 
