@@ -34,7 +34,7 @@ Guessing general rules:
 
 * Default: Default
 
-TODO: IMAGE
+![combinations](combinations.png)
 
 ### LimitRange Min-Max
 
@@ -42,7 +42,7 @@ TODO: IMAGE
 helm install dev min-max
 ```
 
-TODO: IMAGE
+![min-max](min-max.png)
 
 ### LimitRange Default
 
@@ -50,4 +50,4 @@ TODO: IMAGE
 helm install dev default
 ```
 
-TODO: IMAGE
+![default](default.png)
