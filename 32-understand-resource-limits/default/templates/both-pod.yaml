@@ -5,7 +5,7 @@ metadata:
     app.kubernetes.io/name: {{ .Chart.Name }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/version: {{ .Chart.Version }}
-  name: request-{{ .Release.Name }}
+  name: both-{{ .Release.Name }}
 spec:
   containers:
   - name: ubuntu
@@ -13,4 +13,6 @@ spec:
     command: ['tail', '-f', '/dev/null']
     resources:
       requests:
-        cpu: 100m
+        cpu: 50m
+      limits:
+        cpu: 200m

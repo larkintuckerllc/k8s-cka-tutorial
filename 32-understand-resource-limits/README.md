@@ -12,14 +12,42 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 helm install dev combinations
 ```
 
-Describe this as "generous"; observe in Node describe:
+Guessing general rules:
 
-* Backwards => Invalid Pod Defn
+* Request <= Limit
 
-* None => No Changes
+* Maximum Limit Defaults to Infinity (0)
 
-* No Limit => No Changes
+* (Limit) No Limit No Default: Maximum
 
-* Both => No Changes
+* (Limit) No Limit Default: Default
 
-* No Request => Request Set to Limit
+* (Request) No Request and Limit: Limit
+
+* (Request) No Request and No Limit:  Complicated
+
+(Request) No Request and No Limit:
+
+* No Default No Max: Zero (0)
+
+* No Default Max: Max
+
+* Default: Default
+
+TODO: IMAGE
+
+### LimitRange Min-Max
+
+```plaintext
+helm install dev min-max
+```
+
+TODO: IMAGE
+
+### LimitRange Default
+
+```plaintext
+helm install dev default
+```
+
+TODO: IMAGE
