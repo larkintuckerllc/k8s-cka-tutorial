@@ -5,10 +5,13 @@ metadata:
     app.kubernetes.io/name: {{ .Chart.Name }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/version: {{ .Chart.Version }}
-  name: example-{{ .Release.Name }}
+  name: b-{{ .Release.Name }}
 spec:
   containers:
   - name: ubuntu
     image: ubuntu:18.04
     command: ['tail', '-f', '/dev/null']
-  priorityClassName: example
+    resources:
+      requests:
+        cpu: 1
+
