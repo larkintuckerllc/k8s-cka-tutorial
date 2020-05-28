@@ -13,5 +13,5 @@ spec:
     command: ['tail', '-f', '/dev/null']
     resources:
       requests:
-        cpu: 750m
+        cpu: 850m
 
