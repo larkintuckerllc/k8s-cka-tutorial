@@ -20,19 +20,13 @@ Guessing general rules:
 
 * (Limit) No Limit No Default: Maximum
 
-* (Limit) No Limit Default: Default
-
 * (Request) No Request and Limit: Limit
 
-* (Request) No Request and No Limit:  Complicated
+* (Request) No Request and No Limit: Complicated
 
 (Request) No Request and No Limit:
 
 * No Default No Max: Zero (0)
-
-* No Default Max: Max
-
-* Default: Default
 
 ![combinations](combinations.png)
 
@@ -42,12 +36,23 @@ Guessing general rules:
 helm install dev min-max
 ```
 
+(Request) No Request and No Limit
+
+* No Default Max: Max
+
 ![min-max](min-max.png)
+
 
 ### LimitRange Default
 
 ```plaintext
 helm install dev default
 ```
+
+* (Limit) No Limit Default: Default
+
+(Request) No Request and No Limit
+
+* Default: Default
 
 ![default](default.png)
