@@ -1,12 +1,10 @@
-# Scheduling: Use Label Selectors to Schedule Pods
+# Scheduling: Understand How Resource Limits Can Affect Pod Scheduling
 
 Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/larkintuckerllc/k8s-cka-tutorial)
 
-[![Scheduling: Use Label Selectors to Schedule Pods](http://img.youtube.com/vi/XXXXX/0.jpg)]()
+[![Scheduling: Understand How Resource Limits Can Affect Pod Scheduling](http://img.youtube.com/vi/XXXXX/0.jpg)]()
 
 ## Script
-
-This material is technically not about Label selectors, but is related to scheduling.
 
 ### QoS
 
