@@ -42,16 +42,17 @@ helm install dev min-max
 
 ![min-max](min-max.png)
 
-
 ### LimitRange Default
 
 ```plaintext
 helm install dev default
 ```
 
+Guessing general rules:
+
 * (Limit) No Limit Default: Default
 
-(Request) No Request and No Limit
+(Request) No Request and No Limit:
 
 * Default: Default
 
