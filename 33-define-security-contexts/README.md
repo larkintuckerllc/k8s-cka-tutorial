@@ -32,6 +32,8 @@ helm install dev basic
 
 Look at example of *user-group-fs.yaml*.
 
+**note**: The user and group *securityContext* options can be applied at the Pod or Container level.
+
 Notice the settings:
 
 > AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process.
@@ -54,3 +56,40 @@ Create file in mounted volume to confirm behavior.
 
 *-Kubernetes-[Pods](https://kubernetes.io/docs/concepts/workloads/pods/pod/)*
 
+### capabilities
+
+> For the purpose of performing permission checks, traditional UNIX
+       implementations distinguish two categories of processes: privileged
+       processes (whose effective user ID is 0, referred to as superuser or
+       root), and unprivileged processes (whose effective UID is nonzero).
+       Privileged processes bypass all kernel permission checks, while
+       unprivileged processes are subject to full permission checking based
+       on the process's credentials (usually: effective UID, effective GID,
+       and supplementary group list).
+
+and
+
+ > Starting with kernel 2.2, Linux divides the privileges traditionally
+       associated with superuser into distinct units, known as capabilities,
+       which can be independently enabled and disabled.  Capabilities are a
+       per-thread attribute.
+
+-Linux Man-[capabilities](https://www.man7.org/linux/man-pages/man7/capabilities.7.html)
+
+First, containers define what capabilities they run with.
+
+```plaintext
+helm install dev none
+```
+
+Install *apt-get install libcap2-bin*  and run *capsh --print*. Notice *chown* capability.
+
+Create file */tmp/test* and chown it to *nobody*.
+
+Can override with *add* and *drop*:
+
+```plaintext
+helm install dev cap
+```
+
+Notice cannot chown file.
