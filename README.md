@@ -97,6 +97,9 @@
 *[Scheduling: Understand How Resource Limits Can Affect Pod Scheduling](31-understand-resource-limits)*  
 *Keywords*: QoS Class, PriorityClass
 
+*[Scheduling: Understand How Resource Limits Can Affect Pod Scheduling](32-understand-resource-limits)*  
+*Keywords*: LimitRange, ResourceQuota 
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.
