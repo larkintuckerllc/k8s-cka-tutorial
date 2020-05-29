@@ -93,3 +93,37 @@ helm install dev cap
 ```
 
 Notice cannot chown file.
+
+### Pod Security Policy
+
+> A Pod Security Policy is a cluster-level resource that controls security sensitive aspects of the pod specification. The PodSecurityPolicy objects define a set of conditions that a pod must run with in order to be accepted into the system, as well as defaults for the related fields.
+
+and
+
+> Pod security policy control is implemented as an optional (but recommended) admission controller. PodSecurityPolicies are enforced by enabling the admission controller, but doing so without authorizing any policies will prevent any pods from being created in the cluster.
+
+and
+
+> When a PodSecurityPolicy resource is created, it does nothing. In order to use it, the requesting user or target pod’s service account must be authorized to use the policy, by allowing the use verb on the policy.
+
+and
+
+> Most Kubernetes pods are not created directly by users. Instead, they are typically created indirectly as part of a Deployment, ReplicaSet, or other templated controller via the controller manager. Granting the controller access to the policy would grant access for all pods created by that controller, so the preferred method for authorizing policies is to grant access to the pod’s service account (see example).
+
+*-Kubernetes-[Pod Security Policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/)*
+
+> Amazon EKS clusters with Kubernetes version 1.13 and higher have a default pod security policy named eks.privileged. This policy has no restriction on what kind of pod can be accepted into the system, which is equivalent to running Kubernetes with the PodSecurityPolicy controller disabled.
+
+*-AWS-[Pod security policy](https://docs.aws.amazon.com/eks/latest/userguide/pod-security-policy.html)*
+
+```plaintext
+kubectl get psp
+
+kubectl describe psp eks.privileged
+
+kubectl describe clusterrole eks:podsecuritypolicy:privileged
+
+ kubectl describe clusterrolebinding eks:podsecuritypolicy:authenticated
+```
+
+### Locking Down Default
