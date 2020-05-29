@@ -5,7 +5,7 @@ metadata:
     app.kubernetes.io/name: {{ .Chart.Name }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/version: {{ .Chart.Version }}
-  name: user-group-fs-{{ .Release.Name }}
+  name: user-group-{{ .Release.Name }}
 spec:
   containers:
   - name: ubuntu
@@ -13,13 +13,7 @@ spec:
     command: ['tail', '-f', '/dev/null']
     securityContext:
       allowPrivilegeEscalation: false
-    volumeMounts:
-      - mountPath: /cache
-        name: cache
+      readOnlyRootFilesystem: true
   securityContext:
     runAsUser: 1000
     runAsGroup: 1000
-    fsGroup: 2000
-  volumes:
-  - name: cache
-    emptyDir: {}

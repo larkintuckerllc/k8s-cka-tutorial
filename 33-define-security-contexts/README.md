@@ -27,18 +27,30 @@ Use *id* and *ps aux* commands to observe UID and GID. Create file in */tmp* to 
 Let us lock down the user and group:
 
 ```plaintext
-helm install dev run-as
+helm install dev basic
 ```
 
-Notice the allowPrivilegeEscalation setting:
+Look at example of *user-group-fs.yaml*.
+
+Notice the settings:
 
 > AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process.
 
-*-Kubernetes-[SecurityContext v1 core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#securitycontext-v1-core)*
+and
+
+> readOnlyRootFilesystem: Mounts the container’s root filesystem as read-only.
+
+*-Kubernetes-[Configure a Security Context for a Pod or Container](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/)*
 
 Repeat checking user and group.
 
 Look at example of *user-group-fs-pod.yaml*.
 
 Create file in mounted volume to confirm behavior.
+
+**note:**  There is a separate concept of provileged mode.
+
+> Any container in a Pod can enable privileged mode, using the privileged flag on the security context of the container spec. This is useful for containers that want to use Linux capabilities like manipulating the network stack and accessing devices. Processes within the container get almost the same privileges that are available to processes outside a container.
+
+*-Kubernetes-[Pods](https://kubernetes.io/docs/concepts/workloads/pods/pod/)*
 
