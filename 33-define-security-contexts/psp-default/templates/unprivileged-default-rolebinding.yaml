@@ -1,0 +1,17 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  labels:
+    app.kubernetes.io/name: {{ .Chart.Name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/version: {{ .Chart.Version }}
+  name: unprivileged:default-{{ .Release.Name }}
+subjects:
+- kind: Group
+  name: system:serviceaccounts:default
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: unprivileged-{{ .Release.Name }}
+  apiGroup: rbac.authorization.k8s.io
+
