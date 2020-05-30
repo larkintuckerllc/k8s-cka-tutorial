@@ -2,7 +2,7 @@
 
 Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/larkintuckerllc/k8s-cka-tutorial)
 
-[![Security: Define Security Context](http://img.youtube.com/vi/XXXXX/0.jpg)]()
+[![Security: Define Security Context](http://img.youtube.com/vi/tUbZco7ps3g/0.jpg)](https://youtu.be/tUbZco7ps3g)
 
 ## Script
 

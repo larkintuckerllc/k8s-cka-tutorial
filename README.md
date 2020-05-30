@@ -100,6 +100,9 @@
 *[Scheduling: Understand How Resource Limits Can Affect Pod Scheduling](32-understand-resource-limits)*  
 *Keywords*: LimitRange, ResourceQuota 
 
+*[Certified Kubernetes Administrator (CKA) Tutorial](33-define-security-contexts)*  
+*Keywords*: securityContext, PodSecurityPolicy
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.

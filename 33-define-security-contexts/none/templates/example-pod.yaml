@@ -11,3 +11,5 @@ spec:
   - name: ubuntu
     image: ubuntu:18.04
     command: ['tail', '-f', '/dev/null']
+    securityContext:
+      privileged: true
