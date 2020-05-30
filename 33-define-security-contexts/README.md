@@ -127,3 +127,39 @@ kubectl describe clusterrole eks:podsecuritypolicy:privileged
 ```
 
 ### Locking Down Default
+
+First, we need to preserve privileged for other Namespaces.
+
+```plaintext
+helm install psp-system psp-system
+```
+
+Next need to delete cluster-wide privileged binding:
+
+```plaintext
+kubectl delete  clusterrolebinding eks:podsecuritypolicy:authenticated
+```
+
+Now we can validate that we have a problem:
+
+```plaintext
+helm install dev deployment
+```
+
+We fix the problem:
+
+```plaintext
+helm install psp-default psp-default
+```
+
+We validate success:
+
+```plaintext
+helm install dev deployment
+```
+
+and validate failure:
+
+```plaintext
+helm install dev deployment-priv
+```
