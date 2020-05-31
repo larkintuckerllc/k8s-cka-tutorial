@@ -6,6 +6,8 @@ Also includes:
 
 * Cluster Maintenance: Implement Backup and Restore Methodologies
 
+* Cluster Maintenance: Facilitate operating system upgrades
+
 [![Cluster Maintenance: Understand Kubernetes Cluster Upgrade Process](http://img.youtube.com/vi/XXXXX/0.jpg)]()
 
 ## Script
@@ -145,3 +147,9 @@ For each Worker Node pretty much the same as the secondary control plane nodes.
 **note**: Upgrade does create some temp files should the upgrade fail and you have to manually restore files.
 
 Also, remember that upgrade process updates the TLS certificates that expire yearly; so regular updates addreses the need to update them.
+
+### Node OS Upgrades
+
+While did not find documents on this, seems like best bet is to drain the Nodes, apply upgrades, and then uncordon the Node.
+
+Looks like K8s marks its packages to prevent accidental upgrade when OS is upgraded.
