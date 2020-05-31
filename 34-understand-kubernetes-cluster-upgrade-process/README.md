@@ -10,6 +10,14 @@ Also includes:
 
 ## Script
 
+First, we can tell the current versions of both the Cluster and the Nodes using:
+
+```plaintext
+kubectl version
+
+kubectl get nodes
+```
+
 ### EKS
 
 AWS EKS provides a turn-key upgrade process that requires little to no explanation.
@@ -88,4 +96,52 @@ ETCDCTL_API=3 \
 
 This file can be used to restore the database using the *etcdctl* CLI tool.
 
-### TODO
+### Upgrading kubeadm Clusters
+
+Instructions are detailed:
+
+> This page explains how to upgrade a Kubernetes cluster created with kubeadm from version 1.17.x to version 1.18.x, and from version 1.18.x to 1.18.y (where y > x).
+
+*-Kubernetes-[Upgrading kubeadm clusters](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/)*
+
+Will summarize steps:
+
+Determine available versions
+
+Upgrade *kubeadm*
+
+Drain Control Plane Node (master); show:
+
+```plaintext
+kubectl drain ip-172-31-32-241 --ignore-daemonsets
+```
+
+Notice new taint too.
+
+Plan upgrade; show:
+
+```plaintext
+kubadmn upgrade plan
+```
+
+Gives options to actually do upgrade.
+
+**note:** Will have to consider upgrades of other addons; including Pod Networking CNI addon.
+
+Uncordon master:
+
+```plaintext
+kubectl uncordon ip-172-31-32-241
+```
+
+Notice taints.
+
+Upgrade additional Control Plane Nodes using same process; but different final command.
+
+Update kubectl and kublet on all control plane nodes; includes restarting kublet.
+
+For each Worker Node pretty much the same as the secondary control plane nodes.
+
+**note**: Upgrade does create some temp files should the upgrade fail and you have to manually restore files.
+
+Also, remember that upgrade process updates the TLS certificates that expire yearly; so regular updates addreses the need to update them.
