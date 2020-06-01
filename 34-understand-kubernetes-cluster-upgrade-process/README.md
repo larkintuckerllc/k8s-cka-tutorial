@@ -8,7 +8,7 @@ Also includes:
 
 * Cluster Maintenance: Facilitate operating system upgrades
 
-[![Cluster Maintenance: Understand Kubernetes Cluster Upgrade Process](http://img.youtube.com/vi/XXXXX/0.jpg)]()
+[![Cluster Maintenance: Understand Kubernetes Cluster Upgrade Process](http://img.youtube.com/vi/7Upa19ytLjs/0.jpg)](https://youtu.be/7Upa19ytLjs)
 
 ## Script
 
@@ -26,7 +26,7 @@ AWS EKS provides a turn-key upgrade process that requires little to no explanati
 
 > When a new Kubernetes version is available in Amazon EKS, you can update your cluster to the latest version.
 
-*-AWS-[Updating an Amazon EKS cluster Kubernetes version}(https://docs.aws.amazon.com/eks/latest/userguide/update-cluster.html#1-16-prequisites)*
+*-AWS-[Updating an Amazon EKS cluster Kubernetes version](https://docs.aws.amazon.com/eks/latest/userguide/update-cluster.html#1-16-prequisites)*
 
 ### Backup and Restore Strategies
 

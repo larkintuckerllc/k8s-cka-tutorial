@@ -103,6 +103,9 @@
 *[Security: Define Security Context](33-define-security-contexts)*  
 *Keywords*: securityContext, PodSecurityPolicy
 
+*[Cluster Maintenance: Understand Kubernetes Cluster Upgrade Process](34-understand-kubernetes-cluster-upgrade-process)*  
+*Keywords*: kubeadm, etcdctl
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.
