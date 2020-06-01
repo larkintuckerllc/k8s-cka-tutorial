@@ -10,3 +10,4 @@ spec:
   containers:
   - name: hello
     image: sckmkny/hello:0.1.0
+    imagePullPolicy: Always

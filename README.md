@@ -106,6 +106,9 @@
 *[Cluster Maintenance: Understand Kubernetes Cluster Upgrade Process](34-understand-kubernetes-cluster-upgrade-process)*  
 *Keywords*: kubeadm, etcdctl
 
+*[Security: Work with Images Securely](35-work-with-images-securely)*  
+*Keywords*: imagePullSecrets
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.
