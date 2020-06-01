@@ -2,6 +2,10 @@
 
 Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/larkintuckerllc/k8s-cka-tutorial)
 
+Also includes:
+
+* Installation, Configuration & Validation: Understand the networking configuration on the cluster nodes
+
 **Addendum**: As far as being able to use the alternative names, e.g, *example-dev.default*, there were two problems.  First problem is that the FQDN needs be one of the alternative names (fixed in the *csr.cnf* file). Two, this is a [bug](https://github.com/awslabs/amazon-eks-ami/issues/341) that is resolved in the EKS 1.16 (was doing video in EKS 1.15).
 
 [![Security: Create and Manage TLS Certificates for Cluster Components

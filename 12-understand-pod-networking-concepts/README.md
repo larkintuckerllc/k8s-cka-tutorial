@@ -4,6 +4,8 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 **note:** Includes the following additional topics:
 
+* Networking: Understand the networking configuration on the cluster nodes
+
 * Troubleshoot: Troubleshoot Application Failure
 
 [![Networking: Understand Pod Networking Concepts](http://img.youtube.com/vi/BnsNv8b3LzE/0.jpg)](https://youtu.be/BnsNv8b3LzE)
