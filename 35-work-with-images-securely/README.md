@@ -59,6 +59,8 @@ docker push sckmkny/hello:0.1.0
 
 Basically a walk-through of the document [Pull an Image from a Private Registry](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/).
 
+**Addendum**: Should have briefly mentioned that this security section fits into the [4C’s of Cloud Native Security](https://kubernetes.io/docs/concepts/security/).
+
 ### Pull an Image from a Private Registry (Service Account Level)
 
 Follow [Add image pull secret to service account](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#add-imagepullsecrets-to-a-service-account) to edit *default* ServiceAccount.
