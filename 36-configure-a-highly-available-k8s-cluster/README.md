@@ -2,7 +2,7 @@
 
 Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/larkintuckerllc/k8s-cka-tutorial)
 
-[![Installation, Configuration & Validation: Configure a Highly-Available Kubernetes Cluster](http://img.youtube.com/vi/XXXXX/0.jpg)]()
+[![Installation, Configuration & Validation: Configure a Highly-Available Kubernetes Cluster](http://img.youtube.com/vi/qYGn3tyFejY/0.jpg)](https://youtu.be/qYGn3tyFejY)
 
 ## Script
 

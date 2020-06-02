@@ -109,6 +109,9 @@
 *[Security: Work with Images Securely](35-work-with-images-securely)*  
 *Keywords*: imagePullSecrets
 
+*[Installation, Configuration & Validation: Configure a Highly-Available Kubernetes Cluster](36-configure-a-highly-available-k8s-cluster)*  
+*Keywords*: kubeadm
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.
