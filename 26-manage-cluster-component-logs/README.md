@@ -2,6 +2,12 @@
 
 Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/larkintuckerllc/k8s-cka-tutorial)
 
+Also includes:
+
+* Troubleshooting: Troubleshoot control plane failure
+
+* Troubleshooting: Troubleshoot worker node failure
+
 [![Logging/Monitoring: Manage Cluster Component Logs](http://img.youtube.com/vi/X_1hJHBXbRk/0.jpg)](https://youtu.be/X_1hJHBXbRk)
 
 ## Script

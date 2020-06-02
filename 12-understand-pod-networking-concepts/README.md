@@ -8,6 +8,10 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 * Troubleshoot: Troubleshoot Application Failure
 
+* Troubleshoot: Troubleshoot Networking
+
+**Addendum**: Failed to show that the *iptables-save* command could be used to inspect the iptables that are managed by kube-proxy.
+
 [![Networking: Understand Pod Networking Concepts](http://img.youtube.com/vi/BnsNv8b3LzE/0.jpg)](https://youtu.be/BnsNv8b3LzE)
 
 ## Script
