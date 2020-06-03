@@ -134,6 +134,8 @@ A number of things to know off the top of your head:
   
 * Run temporary Pod to hit a URL: *k run tmp --restart=Never --rm --image=busybox -i -- wget -O- XXXXX*
 
+* Create configuration file from live resource: *k get deployment XXXXX -o yaml*
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.
