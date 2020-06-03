@@ -1,5 +1,7 @@
 # Certified Kubernetes Administrator (CKA) Tutorial
 
+**Addendum**: After the *Videos* section below, I summarized some test preparation steps that I found useful.
+
 [![Core Concepts: Understand the Kubernetes Cluster Architecture](http://img.youtube.com/vi/VdkDxGsQhmY/0.jpg)](https://youtu.be/VdkDxGsQhmY)
 
 ## Videos
@@ -111,6 +113,26 @@
 
 *[Installation, Configuration & Validation: Configure a Highly-Available Kubernetes Cluster](36-configure-a-highly-available-k8s-cluster)*  
 *Keywords*: kubeadm
+
+## Test Preparation
+
+While it has an unusual URL, I found the [Kubernetes Exam Simulator](https://killer.sh/) well worth the money.
+
+A number of things to know off the top of your head:
+
+* Create CLI shortcuts, e.g., *alias k=kubctl* and *do="--dry-run=client -o yaml"*
+
+* Manipulate the kubectl configuration file:  *k config view*, *k config set-context XXXXX --cluster=XXXXX --namespace=XXXXX --user=XXXXX*, *k config use-context XXXXX*
+
+* Create a namespace: *k create namespace XXXX*
+
+* Scaffold a deployment configuration file: *k create deployment XXXXX --image XXXXX -n XXXXX $do*
+
+* Scaffold a service configuration file: *k expose deployment XXXXX --port=XX --target-port=XX -n XXXXX $do*. Apparently does not properly add namespace to file
+
+* Get application-centric resources from a namespace: *k get all -n test -o wide*
+  
+* Run temporary Pod to hit a URL: *k run tmp --restart=Never --rm --image=busybox -i -- wget -O- XXXXX*
 
 ## Script
 
