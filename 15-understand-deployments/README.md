@@ -4,6 +4,14 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 [![Application Lifecycle Management: Understand Deployments and How to Perform Rolling Update and Rollbacks](http://img.youtube.com/vi/BGfs_JGibV4/0.jpg)](https://youtu.be/BGfs_JGibV4)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+Search *job* to find:
+
+* [Jobs - Run to Completion](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/)
+
+* [CronJob](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/)
+
 ## Script
 
 > Sometimes, you may want to rollback a Deployment; for example, when the Deployment is not stable, such as crash looping. By default, all of the Deployment’s rollout history is kept in the system so that you can rollback anytime you want (you can change that by modifying revision history limit).

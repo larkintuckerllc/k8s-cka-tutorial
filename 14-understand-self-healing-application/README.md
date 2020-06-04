@@ -6,7 +6,19 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 * Scheduling: Understand the role of DaemonSets
 
+**Addendum**: The *kubectl run* command creates a Pod and not a Deployment; this might have changed between K8s versions.
+
 [![Application Lifecycle Management: Understand the primitives necessary to create a self-healing application](http://img.youtube.com/vi/sVSkBVHMupM/0.jpg)](https://youtu.be/sVSkBVHMupM)
+
+## Test Preparation: Relevant Kubernetes Documentation
+
+Search terms:
+
+* *deployments*: [Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
+
+* *daemonset*: [DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/)
+
+* *statefulset*: [StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/)
 
 ## Script
 
