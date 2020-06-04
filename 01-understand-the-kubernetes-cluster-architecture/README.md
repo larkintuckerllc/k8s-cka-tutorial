@@ -7,6 +7,10 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 [![Core Concepts: Understand the Kubernetes Cluster Architecture](http://img.youtube.com/vi/lp9Swv1G5SI/0.jpg)](
 https://youtu.be/lp9Swv1G5SI)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+None. This section is purely theory.
+
 ## Script
 
 We start with a basic understanding of Kubernetes:
