@@ -4,6 +4,14 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 [![Security: Know How to Configure Authenication and Authorization](http://img.youtube.com/vi/dPX0Gbt4qh0/0.jpg)](https://youtu.be/dPX0Gbt4qh0)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+Search for *configmap* to find:
+
+* [ConfigMaps](https://kubernetes.io/docs/concepts/configuration/configmap/)
+
+* [Configure a Pod to Use a ConfigMap](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/)
+
 ## Script
 
 ### Sidebar into ConfigMaps
