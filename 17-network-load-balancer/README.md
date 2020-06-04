@@ -4,6 +4,10 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 [![Networking: Deploy and Configure Network Load Balancer](http://img.youtube.com/vi/E--M8fTrDBs/0.jpg)](https://youtu.be/E--M8fTrDBs)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+Search *service* to find [Service](https://kubernetes.io/docs/concepts/services-networking/service/).
+
 ## Script
 
 ### LoadBalancer

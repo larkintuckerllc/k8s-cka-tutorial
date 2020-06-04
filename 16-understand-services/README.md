@@ -20,6 +20,10 @@ kubectl expose deployment/example-dev --dry-run -o yaml
 
 [![Core Concepts: Understand Services and other Network Primitives](http://img.youtube.com/vi/NUTuloFZo2Y/0.jpg)](https://youtu.be/NUTuloFZo2Y)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+Search *service* to find [Service](https://kubernetes.io/docs/concepts/services-networking/service/).
+
 ## Script
 
 ### Cluster IP Example (with Selectors)

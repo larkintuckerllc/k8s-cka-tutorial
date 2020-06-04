@@ -4,6 +4,14 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 [![Networking: Know How to Configure and Use the Cluster DNS](http://img.youtube.com/vi/v9zhyPzYT7E/0.jpg)](https://youtu.be/v9zhyPzYT7E)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+Search term *dns* finds:
+
+* [DNS for Service and Pods](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/)
+
+* [Customizing DNS Service](https://github.com/larkintuckerllc/k8s-cka-tutorial/tree/master/18-configure-and-use-cluster-dns)
+
 ## Script
 
 ### CoreDNS
