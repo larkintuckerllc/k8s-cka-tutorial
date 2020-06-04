@@ -4,21 +4,21 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 **Addendum:** In the video, I confuse the Certificate Authority (CA) and the Server Certificates when extracting the certifcate data.  The extracted data is from the Server Certificate that is signed by the CA Certificate.
 
+**Addendum:** Turns out the *groups* entry on the CertificateSigningRequest configuration is not needed.
+
 [![Security: Know How to Configure Authenication and Authorization](http://img.youtube.com/vi/ZnkB1bIoOMo/0.jpg)](https://youtu.be/ZnkB1bIoOMo)
 
 ## Test Preparation: Relevant Kubernetes Documentation
 
-### Creating an Authorization Client Certificate
+While I could not find a single document that walks through the entire process of creating an authorization client certificate, we can piece it together by searching for the following terms:
 
-While I could not find a singular document that walks through the entire process of creating an authorization client certificate, we can get close by:
+* *certificates*: [Certificates](https://kubernetes.io/docs/concepts/cluster-administration/certificates/)
 
-1. Search for *authentication* to find [Authenticating](https://kubernetes.io/docs/reference/access-authn-authz/authentication/); provides information on creating an authentication certificate signing request
+* *authentication*: [Authenticating](https://kubernetes.io/docs/reference/access-authn-authz/authentication/)
 
-2. Search for *certificate signing request* to find [Manage TLS Certificates in a Cluster](https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster/); provides process to sign a certificate signing request
+* *certificate signing request*: [Manage TLS Certificates in a Cluster](https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster/)
 
-3. Search for *certificates* to find [PKI certificates and requirements](https://kubernetes.io/docs/setup/best-practices/certificates/); provides details on the neccessary x509 usages for client authentication
-
-TODO: CHECK NEED FOR GROUP
+* *certificates*: [PKI certificates and requirements](https://kubernetes.io/docs/setup/best-practices/certificates/)
 
 ## Script
 
