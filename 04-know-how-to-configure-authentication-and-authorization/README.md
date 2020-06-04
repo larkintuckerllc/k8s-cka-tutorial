@@ -6,6 +6,20 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 [![Security: Know How to Configure Authenication and Authorization](http://img.youtube.com/vi/ZnkB1bIoOMo/0.jpg)](https://youtu.be/ZnkB1bIoOMo)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+### Creating an Authorization Client Certificate
+
+While I could not find a singular document that walks through the entire process of creating an authorization client certificate, we can get close by:
+
+1. Search for *authentication* to find [Authenticating](https://kubernetes.io/docs/reference/access-authn-authz/authentication/); provides information on creating an authentication certificate signing request
+
+2. Search for *certificate signing request* to find [Manage TLS Certificates in a Cluster](https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster/); provides process to sign a certificate signing request
+
+3.Search for *certificates* to find [PKI certificates and requirements](https://kubernetes.io/docs/setup/best-practices/certificates/); provides details on the neccessary x509 usages for client authentication
+
+TODO: CHECK NEED FOR GROUP
+
 ## Script
 
 First, will acknowledge that authentication and authorization is usually a complicated topic; Kubernetes is no different. Also, will mention that most tutorials that I have seen introduce this topic at the end; here we do it early.

@@ -4,6 +4,10 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 [![Core Concepts: Understand the Kubernetes API Primitives](http://img.youtube.com/vi/rwWiOC2j3vs/0.jpg)](https://youtu.be/rwWiOC2j3vs)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+None.
+
 ## Script
 
 Now that we have an operational Kubernetes Cluster, we can understand many of its features through the API it exposes.

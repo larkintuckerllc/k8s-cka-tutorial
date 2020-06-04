@@ -18,6 +18,10 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 [![Installation, Configuration & Validation: Install Kubernetes Masters and Nodes](http://img.youtube.com/vi/D3mQl-FaFfQ/0.jpg)](https://youtu.be/D3mQl-FaFfQ)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+None.
+
 ## Script
 
 There are compelling reasons to use Amazon's EKS instead of trying to install your own cluster from scratch; mostly EKS has deep integrations with other AWS services out of the box and is HA. But we are here to learn...

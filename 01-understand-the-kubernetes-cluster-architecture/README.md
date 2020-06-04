@@ -9,7 +9,7 @@ https://youtu.be/lp9Swv1G5SI)
 
 ## Test Preparation: Relevant Kubernetes Documentation
 
-None. This section is purely theory.
+None.
 
 ## Script
 
