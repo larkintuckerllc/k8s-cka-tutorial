@@ -4,6 +4,10 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 [![Security: Know How to Use Network Policies](http://img.youtube.com/vi/mZut69rBfZ4/0.jpg)](https://youtu.be/mZut69rBfZ4)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+Search for *network policies* and find [Network Policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/).
+
 ## Script
 
 ### Sidebar into Building Image

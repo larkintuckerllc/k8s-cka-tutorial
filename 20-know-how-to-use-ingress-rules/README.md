@@ -4,6 +4,10 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 [![Networking: Know How to Use Ingress Rules](http://img.youtube.com/vi/ydziARWNnT4/0.jpg)](https://youtu.be/ydziARWNnT4)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+Search for *ingress* and find [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/).
+
 ## Script
 
 When I first read up on Ingress, I was terribly confused as it seemed to overlap with what our LoadBalancer did.
