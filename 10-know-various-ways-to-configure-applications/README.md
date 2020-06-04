@@ -4,6 +4,10 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 [![Application Lifecycle Management: Know Various Ways to Configure Applications](http://img.youtube.com/vi/HM3DeXNWWYs/0.jpg)](https://youtu.be/HM3DeXNWWYs)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+None
+
 ## Script
 
 Quite frankly, I am glad to moving onto other K8s persisted objects other than ConfigMaps.

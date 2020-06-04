@@ -14,6 +14,10 @@ kubectl create configmap example \
 
 [![Core Concepts: Understand the Kubernetes API Primitives](http://img.youtube.com/vi/lj6vf6NsmvY/0.jpg)](https://youtu.be/lj6vf6NsmvY)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+Non
+
 ## Script
 
 In this video we are going to focus on K8s object management. Recall that we can get a list of the kinds of objects we can work with:

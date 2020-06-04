@@ -142,11 +142,13 @@ At the same time, there are a number of things to know off the top of your head:
 
 * Create a namespace: *k create namespace XXXX*
 
-* Scaffold a pod configuration file: *k run XXXXX --image XXXXX -n XXXXX $do*
+* Scaffold a Pod configuration file: *k run XXXXX --image XXXXX -n XXXXX $do*
 
-* Scaffold a deployment configuration file: *k create deployment XXXXX --image XXXXX -n XXXXX $do*
+* Login to a Pod: *k exec XXXXX -it -- bash*
 
-* Scaffold a service configuration file: *k expose deployment XXXXX --port=XX --target-port=XX -n XXXXX $do*
+* Scaffold a Deployment configuration file: *k create deployment XXXXX --image XXXXX -n XXXXX $do*
+
+* Scaffold a Service configuration file: *k expose deployment XXXXX --port=XX --target-port=XX -n XXXXX $do*
 
 * Extract text out of certificates: *openssl x509 -text -in XXXX*
 

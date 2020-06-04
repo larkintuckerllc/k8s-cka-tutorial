@@ -6,6 +6,10 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 [![Core Concepts: Understand the Kubernetes API Primitives](http://img.youtube.com/vi/jBS6iq08Qx8/0.jpg)](https://youtu.be/jBS6iq08Qx8)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+None
+
 ## Script
 
 ### Kustomize
