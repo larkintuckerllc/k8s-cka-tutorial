@@ -16,7 +16,7 @@ While I could not find a singular document that walks through the entire process
 
 2. Search for *certificate signing request* to find [Manage TLS Certificates in a Cluster](https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster/); provides process to sign a certificate signing request
 
-3.Search for *certificates* to find [PKI certificates and requirements](https://kubernetes.io/docs/setup/best-practices/certificates/); provides details on the neccessary x509 usages for client authentication
+3. Search for *certificates* to find [PKI certificates and requirements](https://kubernetes.io/docs/setup/best-practices/certificates/); provides details on the neccessary x509 usages for client authentication
 
 TODO: CHECK NEED FOR GROUP
 
