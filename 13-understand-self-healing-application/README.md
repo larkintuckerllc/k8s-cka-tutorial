@@ -8,6 +8,14 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 [![Application Lifecycle Management: Understand the primitives necessary to create a self-healing application](http://img.youtube.com/vi/FNNjDbX0UIo/0.jpg)](https://youtu.be/FNNjDbX0UIo)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+Topics to search for:
+
+* *replicaset*: [ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/)
+
+* *horizontal pod autoscaler*: [Horizontal Pod AutoScaler](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)
+
 ## Script
 
 ### ReplicaSet
