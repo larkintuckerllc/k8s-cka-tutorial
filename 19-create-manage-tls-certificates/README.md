@@ -8,8 +8,18 @@ Also includes:
 
 **Addendum**: As far as being able to use the alternative names, e.g, *example-dev.default*, there were two problems.  First problem is that the FQDN needs be one of the alternative names (fixed in the *csr.cnf* file). Two, this is a [bug](https://github.com/awslabs/amazon-eks-ami/issues/341) that is resolved in the EKS 1.16 (was doing video in EKS 1.15).
 
+**Addendum**: Later learned that the *ca.crt* file is automatically provided to containers as part of the ServiceAccount token.
+
 [![Security: Create and Manage TLS Certificates for Cluster Components
 ](http://img.youtube.com/vi/XRrRSxPqWyk/0.jpg)](https://youtu.be/XRrRSxPqWyk)
+
+## Test Preparation: Relevant Kubernetes Documentation
+
+Have to piece together two documents by searching for *certificates*:
+
+* [Certificates](https://kubernetes.io/docs/concepts/cluster-administration/certificates/)
+
+* [Manage TLS Certificates in a Cluster](https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster/)
 
 ## Script
 
