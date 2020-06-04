@@ -14,6 +14,10 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 [![Networking: Understand Pod Networking Concepts](http://img.youtube.com/vi/BnsNv8b3LzE/0.jpg)](https://youtu.be/BnsNv8b3LzE)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+Search *ipc* to find [Share Process Namespace between Containers in a Pod](https://kubernetes.io/docs/tasks/configure-pod-container/share-process-namespace/).
+
 ## Script
 
 ### Sidebar into Container Logs
