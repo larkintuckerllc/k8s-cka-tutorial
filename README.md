@@ -130,6 +130,8 @@ At the same time, there are a number of things to know off the top of your head:
 
 * Manipulate the kubectl configuration file:  *k config view*, *k config set-context XXXXX --cluster=XXXXX --namespace=XXXXX --user=XXXXX*, *k config use-context XXXXX*
 
+* Get status and logs from Node service, e.g. *kublet* and *docker*: *systemctl --type service*, *systemctl status XXXXX*, and *journalctl -u XXXXX*
+
 * Get application-centric resources from a namespace: *k get all -n XXXXX -o wide*
 
 * Run temporary Pod to hit a URL: *k run tmp --restart=Never --rm --image=busybox -i -- wget -O- XXXXX*
