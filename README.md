@@ -118,25 +118,35 @@
 
 While it has an unusual URL, I found the [Kubernetes Exam Simulator](https://killer.sh/) well worth the money.
 
-A number of things to know off the top of your head:
+Also, as you can use the official Kubernetes documentation during the exam, it is important to be able to navigate it quickly. The assumption is that you already know the theory, but need to use the documentation to remember the specific configuration syntax.
 
-* Create CLI shortcuts, e.g., *alias k=kubctl* and *do="--dry-run=client -o yaml"*
+As a exercise, I went back to each section and added my thoughts on how to find the relevant configuration syntax.
+
+At the same time, there are a number of things to know off the top of your head:
+
+**note:** In many cases, I provided the namespace as a CLI argument, but the namespace does not get populated in the output YAML file; you need to add manually.
+
+* Create time saving CLI shortcuts, e.g., *alias k=kubctl* and *do="--dry-run=client -o yaml"*.
 
 * Manipulate the kubectl configuration file:  *k config view*, *k config set-context XXXXX --cluster=XXXXX --namespace=XXXXX --user=XXXXX*, *k config use-context XXXXX*
 
-* Create a namespace: *k create namespace XXXX*
+* Get application-centric resources from a namespace: *k get all -n XXXXX -o wide*
 
-* Scaffold a deployment configuration file: *k create deployment XXXXX --image XXXXX -n XXXXX $do*
-
-* Scaffold a service configuration file: *k expose deployment XXXXX --port=XX --target-port=XX -n XXXXX $do*. Apparently does not properly add namespace to file
-
-* Get application-centric resources from a namespace: *k get all -n test -o wide*
-  
 * Run temporary Pod to hit a URL: *k run tmp --restart=Never --rm --image=busybox -i -- wget -O- XXXXX*
 
 * Create configuration file from live resource: *k get deployment XXXXX -o yaml*
 
+* Create a namespace: *k create namespace XXXX*
+
+* Scaffold a pod configuration file: *k run XXXXX --image XXXXX -n XXXXX $do*
+
+* Scaffold a deployment configuration file: *k create deployment XXXXX --image XXXXX -n XXXXX $do*
+
+* Scaffold a service configuration file: *k expose deployment XXXXX --port=XX --target-port=XX -n XXXXX $do*
+
 * Extract text out of certificates: *openssl x509 -text -in XXXX*
+
+* Retrieve iptables on a Node: *iptables-save*
 
 ## Script
 
