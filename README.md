@@ -136,6 +136,8 @@ A number of things to know off the top of your head:
 
 * Create configuration file from live resource: *k get deployment XXXXX -o yaml*
 
+* Extract text out of certificates: *openssl x509 -text -in XXXX*
+
 ## Script
 
 First a disclaimer...  These videos were made as part of my preparation for the CKA certification exam.
