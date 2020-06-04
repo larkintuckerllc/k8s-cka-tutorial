@@ -4,6 +4,12 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 [![Application Lifecycle Management: Know Various Ways to Configure Applications](http://img.youtube.com/vi/YsPZBzU6uU4/0.jpg)](https://youtu.be/YsPZBzU6uU4)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+Search *init containers* to find [Init Containers](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/).
+
+Search *pod lifecycle* to find [Pod Lifecycle](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/); has links to Container lifecyle hooks and probes.
+
 ## Script
 
 ### Not Scheduled (No Node)
