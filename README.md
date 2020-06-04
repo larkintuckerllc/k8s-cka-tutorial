@@ -126,11 +126,13 @@ At the same time, there are a number of things to know off the top of your head:
 
 **note:** In many cases, I provided the namespace as a CLI argument, but the namespace does not get populated in the output YAML file; you need to add manually.
 
-* Create time saving CLI shortcuts, e.g., *alias k=kubctl* and *do="--dry-run=client -o yaml"*.
+* Create time saving CLI shortcuts, e.g., *alias k=kubctl* and *do="--dry-run=client -o yaml"*
 
 * Manipulate the kubectl configuration file:  *k config view*, *k config set-context XXXXX --cluster=XXXXX --namespace=XXXXX --user=XXXXX*, *k config use-context XXXXX*
 
 * Get status and logs from Node service, e.g. *kublet* and *docker*: *systemctl --type service*, *systemctl status XXXXX*, and *journalctl -u XXXXX*
+
+* Get API resource detail: *k api-resources -o wide*
 
 * Get application-centric resources from a namespace: *k get all -n XXXXX -o wide*
 

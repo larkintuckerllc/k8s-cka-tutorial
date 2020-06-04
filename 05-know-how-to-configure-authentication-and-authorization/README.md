@@ -4,6 +4,10 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 [![Security: Know How to Configure Authenication and Authorization](http://img.youtube.com/vi/1tQKe7X1BV4/0.jpg)](https://youtu.be/1tQKe7X1BV4)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+Search for *rbac* to find [Using RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
+
 ## Script
 
 Now that we have explored authentication by manually creating Certificates for the cluster we created using *kubeadm*, we explore how authentication works for our EKS cluster.
