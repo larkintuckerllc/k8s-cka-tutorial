@@ -4,6 +4,10 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 [![Scheduling: Use Label Selectors to Schedule Pods](http://img.youtube.com/vi/q4uJge2mnA0/0.jpg)](https://youtu.be/q4uJge2mnA0)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+Search for *taint* and find [Taints and Tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/).
+
 ## Script
 
 **note:** Will observe that this is NOT about using label selectors but rather another label-LIKE selector (Taints). Felt it would be a mistake to not cover.

@@ -4,6 +4,10 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 [![Security: Know How to Configure Authenication and Authorization](http://img.youtube.com/vi/a84w2maFWI4/0.jpg)](https://youtu.be/a84w2maFWI4)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+TODO
+
 ## Script
 
 ### default ServiceAccount in default

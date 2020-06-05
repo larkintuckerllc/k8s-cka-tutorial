@@ -12,6 +12,10 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 [![Scheduling: Use Label Selectors to Schedule Pods](http://img.youtube.com/vi/XtZBhTs6vmY/0.jpg)](https://youtu.be/XtZBhTs6vmY)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+Search for *assign pods* and get [Assign Pods to Nodes](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/).
+
 ## Script
 
 > A scheduler watches for newly created Pods that have no Node assigned. For every Pod that the scheduler discovers, the scheduler becomes responsible for finding the best Node for that Pod to run on. The scheduler reaches this placement decision taking into account the scheduling principles described below.

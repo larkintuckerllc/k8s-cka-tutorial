@@ -10,6 +10,10 @@ Also includes:
 
 [![Logging/Monitoring: Manage Cluster Component Logs](http://img.youtube.com/vi/X_1hJHBXbRk/0.jpg)](https://youtu.be/X_1hJHBXbRk)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+None
+
 ## Script
 
 > There are two types of system components: those that run in a container and those that do not run in a container. For example:

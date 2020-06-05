@@ -8,6 +8,10 @@ Includes:
 
 [![Logging/Monitoring: Understand How to Monitor All Cluster Components](http://img.youtube.com/vi/DGfDbCYDRXs/0.jpg)](https://youtu.be/DGfDbCYDRXs)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+None
+
 ## Script
 
 ### Metrics For The Kubernetes Control Plane
