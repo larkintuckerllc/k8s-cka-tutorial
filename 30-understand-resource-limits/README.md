@@ -4,6 +4,10 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 [![Scheduling: Understand How Resource Limits Can Affect Pod Scheduling](http://img.youtube.com/vi/PxTb1CBWeZA/0.jpg)](https://youtu.be/PxTb1CBWeZA)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+Search for *resources* and find [Managing Resources for Containers - Kubernetes](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/).
+
 ## Script
 
 > When you specify a Pod, you can optionally specify how much of each resource a Container needs. The most common resources to specify are CPU and memory (RAM); there are others.

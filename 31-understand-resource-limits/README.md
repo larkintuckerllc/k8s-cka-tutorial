@@ -4,6 +4,12 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 [![Scheduling: Understand How Resource Limits Can Affect Pod Scheduling](http://img.youtube.com/vi/sW91aPJ8N3g/0.jpg)](https://youtu.be/sW91aPJ8N3g)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+Search for *qos* and find [Configure Quality of Service for Pods](https://kubernetes.io/docs/tasks/configure-pod-container/quality-service-pod/).
+
+Search for *pod priority* and find [Pod Priority and Preemption](https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/).
+
 ## Script
 
 ### QoS

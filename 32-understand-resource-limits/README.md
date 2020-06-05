@@ -4,6 +4,10 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 [![Scheduling: Understand How Resource Limits Can Affect Pod Scheduling](http://img.youtube.com/vi/ih9e757LaWw/0.jpg)](https://youtu.be/ih9e757LaWw)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+Search for *limit range* and find [Limit Ranges](https://kubernetes.io/docs/concepts/policy/limit-range/). Related topics are linked.
+
 ## Script
 
 ### Requests and Limits Combinations

@@ -6,7 +6,7 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 ## Test Preparation: Relevant Kubernetes Documentation
 
-TODO
+Search for *service account* to find [Configure Service Accounts for Pods](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/).
 
 ## Script
 
