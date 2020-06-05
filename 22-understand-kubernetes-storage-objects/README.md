@@ -14,6 +14,18 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 [![Storage: Understand Kubernetes Storage Objects](http://img.youtube.com/vi/-7zlpHRQwlA/0.jpg)](https://youtu.be/-7zlpHRQwlA)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+Searching for *storage* we find:
+
+* [Volumes](https://kubernetes.io/docs/concepts/storage/)
+
+* [Persistent Volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
+
+* [Configure a Pod to Use a PersistentVolume for Storage](https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/)
+
+* [Storage Classes](https://kubernetes.io/docs/concepts/storage/storage-classes/)
+
 ## Script
 
 Script borrows from: [Kubernetes Storage By Example: Part 1](https://codeburst.io/kubernetes-storage-by-example-part-1-27f44ae8fb8b).
