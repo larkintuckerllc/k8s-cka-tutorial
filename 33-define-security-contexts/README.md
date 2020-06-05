@@ -4,6 +4,14 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 [![Security: Define Security Context](http://img.youtube.com/vi/tUbZco7ps3g/0.jpg)](https://youtu.be/tUbZco7ps3g)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+Search for *security context* to find:
+
+* [Configure a Security Context for a Pod or Container](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/)
+
+* [Pod Security Policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/)
+
 ## Script
 
 ### Basic securityContext

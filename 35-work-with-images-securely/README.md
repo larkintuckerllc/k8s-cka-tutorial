@@ -4,6 +4,16 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 [![Security: Work with Images Securely](http://img.youtube.com/vi/QeAFOMXARqc/0.jpg)](https://youtu.be/QeAFOMXARqc)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+Search for *imagePullSecrets*  and find:
+
+* [Images](https://kubernetes.io/docs/concepts/containers/images/)
+
+* [Pull an Image from a Private Registry](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/)
+
+* [Configure Service Accounts for Pods](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/)
+
 ## Script
 
 ### Private Registry Solutions

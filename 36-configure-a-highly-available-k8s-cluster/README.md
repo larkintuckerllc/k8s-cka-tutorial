@@ -4,6 +4,10 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 [![Installation, Configuration & Validation: Configure a Highly-Available Kubernetes Cluster](http://img.youtube.com/vi/qYGn3tyFejY/0.jpg)](https://youtu.be/qYGn3tyFejY)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+None
+
 ## Script
 
 **note:** It is not clear what the three "end-to-end" topics in the installation section relate to.  I ended up concluding that they where about troubleshooting and as such are covered in other section.

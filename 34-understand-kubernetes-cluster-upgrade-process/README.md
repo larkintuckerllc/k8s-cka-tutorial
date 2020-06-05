@@ -10,6 +10,12 @@ Also includes:
 
 [![Cluster Maintenance: Understand Kubernetes Cluster Upgrade Process](http://img.youtube.com/vi/7Upa19ytLjs/0.jpg)](https://youtu.be/7Upa19ytLjs)
 
+## Test Preparation: Relevant Kubernetes Documentation
+
+Search for *etcd* and find [Operating etcd clusters for Kubernetes](https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/).
+
+Search for *upgrade cluster* and find [Upgrading kubeadm clusters](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/).
+
 ## Script
 
 First, we can tell the current versions of both the Cluster and the Nodes using:
