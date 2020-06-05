@@ -132,6 +132,8 @@ At the same time, there are a number of things to know off the top of your head:
 
 * Get status and logs from Node service, e.g. *kublet* and *docker*: *systemctl --type service*, *systemctl status XXXXX*, and *journalctl -u XXXXX*
 
+* Get API groups (and versions): *k api-versions*
+
 * Get API resource detail: *k api-resources -o wide*
 
 * Get application-centric resources from a namespace: *k get all -n XXXXX -o wide*
