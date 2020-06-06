@@ -146,6 +146,8 @@ In the interest of time, there are a number of things to know off the top of you
 
 * Annotate resouces: *k annotate XXXXX XXXXX*
 
+* Validate authorization: *k auth can-i XXXXX XXXXX [-as XXXXXX]*
+
 ### Inspection
 
 * Manipulate the kubectl configuration file:  *k config view*, *k config use-context XXXXX*
