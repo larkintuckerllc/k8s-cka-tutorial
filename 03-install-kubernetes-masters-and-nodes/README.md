@@ -20,7 +20,7 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 ## Test Preparation: Relevant Kubernetes Documentation
 
-None.
+In our example, we added a Worker Node as part of the intitial install. In the exam, we need to be prepared to add a Worker Node after-the-fact using the instructions at [Creating a single control-plane cluster with kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/); one thing document fails to mention is that the kube-apiserver runs on port *6443*. Search for *install kubeadm*.
 
 ## Script
 
