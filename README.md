@@ -122,39 +122,73 @@ Also, as you can use the official Kubernetes documentation during the exam, it i
 
 As a exercise, I went back to each section and added my thoughts on how to find the relevant configuration syntax.
 
-At the same time, there are a number of things to know off the top of your head:
+In the interest of time, there are a number of things to know off the top of your head:
 
-**note:** In many cases, I provided the namespace as a CLI argument, but the namespace does not get populated in the output YAML file; you need to add manually.
+### Misc Not kubectl
 
-* Create time saving CLI shortcuts, e.g., *alias k=kubctl* and *do="--dry-run=client -o yaml"*
+* Create time saving CLI shortcuts: *alias k=kubctl* and *do="--dry-run=client -o yaml"*
 
-* Manipulate the kubectl configuration file:  *k config view*, *k config set-context XXXXX --cluster=XXXXX --namespace=XXXXX --user=XXXXX*, *k config use-context XXXXX*
-
-* Get status and logs from Node service, e.g. *kublet* and *docker*: *systemctl --type service*, *systemctl status XXXXX*, and *journalctl -u XXXXX*
-
-* Get API groups (and versions): *k api-versions*
-
-* Get API resource detail: *k api-resources -o wide*
-
-* Get application-centric resources from a namespace: *k get all -n XXXXX -o wide*
-
-* Run temporary Pod to hit a URL: *k run tmp --restart=Never --rm --image=busybox -i -- wget -O- XXXXX*
-
-* Create configuration file from live resource: *k get deployment XXXXX -o yaml*
-
-* Create a namespace: *k create namespace XXXX*
-
-* Scaffold a Pod configuration file: *k run XXXXX --image XXXXX -n XXXXX $do*
-
-* Login to a Pod: *k exec XXXXX -it -- bash*
-
-* Scaffold a Deployment configuration file: *k create deployment XXXXX --image XXXXX -n XXXXX $do*
-
-* Scaffold a Service configuration file: *k expose deployment XXXXX --port=XX --target-port=XX -n XXXXX $do*
+* Get status and logs from Node service: *kublet* and *docker*: *systemctl --type service*, *systemctl status XXXXX*, and *journalctl -u XXXXX*
 
 * Extract text out of certificates: *openssl x509 -text -in XXXX*
 
 * Retrieve iptables on a Node: *iptables-save*
+
+### Misc kubectl
+
+**note:** Can use ranges in CLI, i.e., *{1..3}*
+
+* Copy files to a container: *k cp --help*
+
+* Delete resources: *k delete XXXXX XXXXX*; to return quickly from Pod deletion use *--wait=false*
+
+* Label resources: *k label XXXXX XXXX*
+
+* Annotate resouces: *k annotate XXXXX XXXXX*
+
+### Inspection
+
+* Manipulate the kubectl configuration file:  *k config view*, *k config use-context XXXXX*
+
+* Get API groups / resource: *k api-versions* and *k api-resources -o wide*
+
+* Get application-centric resources from a namespace: *k get all -n XXXXX -o wide*
+
+* Run temporary Pod to hit a URL: *k run tmp --restart=Never --rm --image=busybox -it -- wget -O- --timeout 3 XXXXX*
+
+* Create configuration file from live resource: *k get XXXXX XXXXX -o yaml
+
+* Login to a Pod: *k exec XXXXX -it -- sh*
+
+### Imperative Creation
+
+**note:** Need to pay attention to namespaces, i.e., supply the *-n XXXXX* option to add *namespace* to configuration file after generating it with *$do* option.
+
+**note:** Also the *--help* option is super helpful here.
+
+* Create a Pod: *k run XXXXX --image=XXXXX*
+
+* Create a Namespace: *k create namespace XXXX*
+
+* Create a Deployment: *k create deployment XXXXX --image =XXXXX*
+
+* Create a Service: *k expose deployment XXXXX --port=XX --target-port=XX*
+
+* Create an Job, CronJob...: *k create --help*
+
+### Deployment Manipulation
+
+* History: *k rollout history deployment XXXXX*
+
+* Status: *k rollout status deployment XXXXX [--revision=X]*
+
+* Undo: *k rollout undo deployment XXXXX [--to-revision=X]*
+
+* Pause: *k rollout pause deployment XXXXX*
+
+* Set Image: *k set image --help*
+
+* Autoscale: *k autoscale --help*
 
 ## Script
 
