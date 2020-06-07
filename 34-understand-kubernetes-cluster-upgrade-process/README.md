@@ -8,6 +8,19 @@ Also includes:
 
 * Cluster Maintenance: Facilitate operating system upgrades
 
+**Addendum:** Instead of using the *apiserver-etcd-client.crt* (and key) to authorize *etcdctl*, we can simply use the *server.crt* (and key) in the *etcd* folder.
+
+**Addendum:** Did not cover restoring from a snapshot and the K8s documentation is pretty thin here.  Following the documentation provided by [CKA CKAD Simulator
+](https://killer.sh), the process is essentially as follows:
+
+1. Stop kube-apiserver (move static configuration out of *manifests* folder)
+
+2. Restore the snapshot into a new etcd database folder, e.g, *ETCDCTL_API=3 etcdctl snapshot restore /tmp/etcd-backup.db --data-dir /var/lib/etcd-backup*
+
+3. Update the etcd static configuration file to point to the new etcd database folder; this will reload etcd
+
+4. Start kube-apiserver (restore static configuration)
+
 [![Cluster Maintenance: Understand Kubernetes Cluster Upgrade Process](http://img.youtube.com/vi/7Upa19ytLjs/0.jpg)](https://youtu.be/7Upa19ytLjs)
 
 ## Test Preparation: Relevant Kubernetes Documentation
