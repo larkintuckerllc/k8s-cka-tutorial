@@ -156,7 +156,7 @@ In the interest of time, there are a number of things to know off the top of you
 
 * Get application-centric resources from a namespace: *k get all -n XXXXX -o wide*
 
-* Run temporary Pod to hit a URL: *k run tmp --restart=Never --rm --image=busybox -it -- wget -O- --timeout 3 XXXXX*
+* Run temporary Pod to hit a URL: *k run tmp --restart=Never --rm --image=busybox -it -- wget -O- -T 3 XXXXX*
 
 * Create configuration file from live resource: *k get XXXXX XXXXX -o yaml
 

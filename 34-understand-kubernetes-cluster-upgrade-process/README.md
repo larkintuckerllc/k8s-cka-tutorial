@@ -10,7 +10,7 @@ Also includes:
 
 **Addendum:** Instead of using the *apiserver-etcd-client.crt* (and key) to authorize *etcdctl*, we can simply use the *server.crt* (and key) in the *etcd* folder.
 
-**Addendum:** Did not cover restoring from a snapshot and the K8s documentation is pretty thin here.  Following the documentation provided by [CKA CKAD Simulator
+**Addendum:** Did not cover restoring from a snapshot as the K8s documentation is pretty thin here.  But following the documentation provided by [CKA CKAD Simulator
 ](https://killer.sh), the process is essentially as follows:
 
 1. Stop kube-apiserver (move static configuration out of *manifests* folder)
