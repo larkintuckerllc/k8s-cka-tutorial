@@ -22,6 +22,12 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 In our example, we added a Worker Node as part of the intitial install. In the exam, we need to be prepared to add a Worker Node after-the-fact using the instructions at [Creating a single control-plane cluster with kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/); one thing document fails to mention is that the kube-apiserver runs on port *6443*. Search for *install kubeadm*.
 
+It turns out that *kubeadm* has an option to printout the join command when creating a new token (use help, but believe option is *--print-join-command*).
+
+While most of the K8s PKI certificates are in the folder */etc/kubernetes/pki*, kublet keeps them in a separate (hard to find) location; defaults to */var/lib/kubelet/pki*.
+
+Another important file location is */etc/cni/net.d* as it contains the CNI Addon configuration file.
+
 ## Script
 
 There are compelling reasons to use Amazon's EKS instead of trying to install your own cluster from scratch; mostly EKS has deep integrations with other AWS services out of the box and is HA. But we are here to learn...

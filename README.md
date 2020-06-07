@@ -162,6 +162,10 @@ In the interest of time, there are a number of things to know off the top of you
 
 * Login to a Pod: *k exec XXXXX -it -- sh*
 
+* Learn to use basic JSONPath, [JSONPath Support](https://kubernetes.io/docs/reference/kubectl/jsonpath/); often helpful in getting specific summary information from an array of objects
+
+* Learn to sort results, principally by time, e.g.,  *--sort-by=.metadata.creationTimestamp*
+
 ### Imperative Creation
 
 **note:** Need to pay attention to namespaces, i.e., supply the *-n XXXXX* option to add *namespace* to configuration file after generating it with *$do* option.

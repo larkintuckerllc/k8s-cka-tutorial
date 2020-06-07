@@ -16,7 +16,17 @@ kubectl create configmap example \
 
 ## Test Preparation: Relevant Kubernetes Documentation
 
-Non
+In the video series, never specifically focused on making API calls directly (not using *kubectl*). The general pattern involves hitting REST endpoints as follows:
+
+* The browser client, e.g., *curl* needs to either have the K8s CA certificate or browse insecurely, e.g., with *--insecure* option
+
+* The call needs to be authorized with a valid bearer token, e.g., with HTTP header: *Authorization: Bearer XXXXX*
+
+* The REST endpoints for resources follow the patterns:
+
+Core Group: */api/v1/XXXXX*
+
+Named Groups: */apis/$GROUP_NAME/$VERSION/XXXXX*
 
 ## Script
 
