@@ -146,7 +146,9 @@ In the interest of time, there are a number of things to know off the top of you
 
 * Annotate resouces: *k annotate XXXXX XXXXX*
 
-* Validate authorization: *k auth can-i XXXXX XXXXX [-as XXXXXX]*
+* Validate authorization: *k auth can-i XXXXX XXXXX [-as XXXXXX] [-as-group XXXXX]*
+
+* General options, e.g., *-as XXXXX*: *k options*
 
 ### Inspection
 

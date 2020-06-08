@@ -8,6 +8,10 @@ Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/l
 
 Search for *rbac* to find [Using RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
 
+**note:** Buried in this document is how to refer to a ServiceAccount *SA* in Namespace *NS*, i.e., *system:serviceaccount:NS:SA*. Also such accounts can be grouped by Namespace, i.e., *system:serviceaccounts:NS* (plural).
+
+While not covered in video, the ability to impersonate another user is important to know.  Search for *impersonate* to find [Authenticating](https://kubernetes.io/docs/reference/access-authn-authz/authentication/).
+
 ## Script
 
 Now that we have explored authentication by manually creating Certificates for the cluster we created using *kubeadm*, we explore how authentication works for our EKS cluster.
