@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fruit
+  namespace: a
+data:
+  a: apple
+  b: banana

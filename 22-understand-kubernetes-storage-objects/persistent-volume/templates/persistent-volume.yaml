@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: data
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 100Gi
+  storageClassName: development
+  awsElasticBlockStore:
+    volumeID: vol-043b6c84ba7206a9f
+    fsType: ext4

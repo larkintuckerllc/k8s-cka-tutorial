@@ -1,7 +1,15 @@
 # Core Concepts: Understand the Kubernetes Cluster Architecture
 
+Back to [Certified Kubernetes Administrator (CKA) Tutorial](https://github.com/larkintuckerllc/k8s-cka-tutorial)
+
+**Addendum:** When discussing Cluster topologies, I said that the Control Plane runs on a Node. While this is the case some cases, it can also run outside of a Node; for example this is how it runs for Amazon EKS.
+
 [![Core Concepts: Understand the Kubernetes Cluster Architecture](http://img.youtube.com/vi/lp9Swv1G5SI/0.jpg)](
 https://youtu.be/lp9Swv1G5SI)
+
+## Test Preparation: Relevant Kubernetes Documentation
+
+None.
 
 ## Script
 

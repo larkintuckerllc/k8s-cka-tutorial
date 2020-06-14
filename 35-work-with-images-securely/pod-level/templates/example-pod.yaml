@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app.kubernetes.io/name: {{ .Chart.Name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/version: {{ .Chart.Version }}
+  name: example-{{ .Release.Name }}
+spec:
+  containers:
+  - name: hello
+    image: sckmkny/hello:0.1.0
+  imagePullSecrets:
+  - name: regcred

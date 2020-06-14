@@ -1,0 +1,25 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: no-helm
+    app.kubernetes.io/instance: dev
+    app.kubernetes.io/version: 0.1.0
+  name: example-dev
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      release: dev
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: no-helm
+        app.kubernetes.io/instance: dev
+        app.kubernetes.io/version: 0.1.0
+        release: dev
+    spec:
+      containers:
+      - name: ubuntu
+        image: ubuntu:18.04
+        command: ['tail', '-f', '/dev/null']

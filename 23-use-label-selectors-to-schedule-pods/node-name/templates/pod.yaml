@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: example
+spec:
+  containers:
+  - name: ubuntu
+    command: ['tail', '-f', '/dev/null']
+    image: ubuntu:18.04
+  nodeName: ip-192-168-137-205.ec2.internal

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app.kubernetes.io/name: {{ .Chart.Name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/version: {{ .Chart.Version }}  
+  name: example-{{ .Release.Name }}
+spec:
+  containers:
+  - name: c1
+    image: ubuntu:18.04
+    command: ['tail', '-f', '/dev/null']
+  initContainers:
+  - name: i1
+    image: bogus:1234

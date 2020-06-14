@@ -1,0 +1,20 @@
+[ req ]
+distinguished_name = req_distinguished_name
+req_extensions     = req_ext
+prompt             = no
+
+[ req_distinguished_name ]
+countryName         = US
+stateOrProvinceName = Florida
+localityName        = Gainesville
+organizationName    = Larkin Tucker LLC
+commonName          = example-dev.default.svc.cluster.local
+
+[ req_ext ]
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = example-dev.default.svc.cluster.local
+DNS.2 = example-dev.default
+DNS.2 = example-dev
+

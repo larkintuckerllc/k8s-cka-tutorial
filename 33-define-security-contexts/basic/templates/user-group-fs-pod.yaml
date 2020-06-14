@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app.kubernetes.io/name: {{ .Chart.Name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/version: {{ .Chart.Version }}
+  name: user-group-fs-{{ .Release.Name }}
+spec:
+  containers:
+  - name: ubuntu
+    image: ubuntu:18.04
+    command: ['tail', '-f', '/dev/null']
+    securityContext:
+      allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: true
+    volumeMounts:
+      - mountPath: /cache
+        name: cache
+  securityContext:
+    runAsUser: 1000
+    runAsGroup: 1000
+    fsGroup: 2000
+  volumes:
+  - name: cache
+    emptyDir: {}

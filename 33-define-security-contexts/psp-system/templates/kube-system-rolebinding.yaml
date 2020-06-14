@@ -1,0 +1,18 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  labels:
+    app.kubernetes.io/name: {{ .Chart.Name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/version: {{ .Chart.Version }}
+  name: eks:psp:priv:kube-system-{{ .Release.Name }}
+  namespace: kube-system
+subjects:
+- kind: Group
+  name: system:serviceaccounts:kube-system
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: eks:podsecuritypolicy:privileged
+  apiGroup: rbac.authorization.k8s.io
+

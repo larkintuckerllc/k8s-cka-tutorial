@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app.kubernetes.io/name: {{ .Chart.Name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/version: {{ .Chart.Version }}
+  name: example-{{ .Release.Name }}
+spec:
+  containers:
+  - name: app
+    image: ubuntu:18.04
+    command: 
+      - /bin/sh
+      - -c
+      - >
+        i=0;
+        while true;
+        do
+          echo "[$(uname -n)] $(date)" >> /var/log/app.log;
+          i=$((i+1));
+          sleep 1;
+          done
+    volumeMounts:
+    - name: varlog
+      mountPath: /var/log
+  - name: sidecar
+    image: ubuntu:18.04
+    command: ['/bin/sh', '-c', 'tail -n+1 -f /var/log/app.log']
+    volumeMounts:
+    - name: varlog
+      mountPath: /var/log
+  volumes:
+  - name: varlog
+    emptyDir: {}
+  

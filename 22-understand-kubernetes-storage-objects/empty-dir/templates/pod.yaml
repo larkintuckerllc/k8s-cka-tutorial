@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: example
+spec:
+  containers:
+  - name: ubuntu-a
+    command: ['tail', '-f', '/dev/null']
+    image: ubuntu:18.04
+    volumeMounts:
+    - name: cache
+      mountPath: /cache
+  - name: ubuntu-b
+    command: ['tail', '-f', '/dev/null']
+    image: ubuntu:18.04
+    volumeMounts:
+    - name: cache
+      mountPath: /cache
+  volumes:
+  - name: cache
+    emptyDir: {}

@@ -1,0 +1,10 @@
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  labels:
+    app.kubernetes.io/name: {{ .Chart.Name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/version: {{ .Chart.Version }}
+  name: example
+value: 100
+
