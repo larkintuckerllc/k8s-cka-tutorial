@@ -84,7 +84,7 @@ nslookup headless-dev.default.svc.cluster.local
 This is the case where we need to have a persistent name for each Pod in the Service; using StatefulSet and Headless Service.
 
 ```plaintext
-lookup headless-dev-0.headless-dev
+nslookup headless-dev-0.headless-dev
 ```
 
 ### Service and Pod A Records
@@ -92,7 +92,7 @@ lookup headless-dev-0.headless-dev
 This is the case of persistent name for each Pod using Headless Service.
 
 ```plaintext
-lookup pod-a.pod-dev
+nslookup pod-a.pod-dev
 ```
 
 #### Service SVC Records
