@@ -50,7 +50,7 @@ journalctl -u docker.service -f
 
 Look at CloudWatch entry at: */aws/containerinsights/Cluster_Name/dataplane*
 
-### Kublet
+### Kubelet 
 
 ```plaintext
 journalctl -u kubelet.service -f
