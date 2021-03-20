@@ -1,9 +1,10 @@
-click==7.1.1
-Flask==1.1.2
-Flask-Cors==3.0.8
+-i https://pypi.org/simple/
+click==7.1.2
+flask-cors==3.0.8
+flask==1.1.2
 itsdangerous==1.1.0
-Jinja2==2.11.2
-MarkupSafe==1.1.1
+jinja2==2.11.3
+markupsafe==1.1.1
 redis==3.4.1
-six==1.14.0
-Werkzeug==1.0.1
+six==1.15.0
+werkzeug==1.0.1
